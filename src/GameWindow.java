@@ -14,10 +14,6 @@ public class GameWindow extends Frame implements Runnable {
     private Image image;
     private BufferedImage background;
 
-    private Mountain mountain = new Mountain(0, Helper.WINDOW_HEIGHT - 204);
-    private Land land1 = new Land(100, 500);
-    private Land land2 = new Land(600, 300);
-
     public GameWindow() {
         //thiet lap tieu de cho cua so
         this.setTitle("Balloon Fight - Cuộc chiến khinh khí cầu");
@@ -59,10 +55,6 @@ public class GameWindow extends Frame implements Runnable {
     public void paint(Graphics g) {
         super.paint(g);
         g.drawImage(background, 0, 0, null);
-
-        mountain.draw(g);
-        land1.draw(g);
-        land2.draw(g);
     }
 
     //Game Loop

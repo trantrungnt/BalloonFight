@@ -3,8 +3,8 @@
  */
 public class Main {
     public static void main(String[] args) {
-        GameWindow gameWindow = new GameWindow();
-        Thread thread = new Thread(gameWindow);
+        PlayWindow playWindow = new PlayWindow();
+        Thread thread = new Thread(playWindow);
         thread.start();
     }
 }
