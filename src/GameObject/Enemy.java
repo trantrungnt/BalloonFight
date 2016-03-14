@@ -1,6 +1,7 @@
 package GameObject;
 
 import Main.Helper;
+import Main.Resources;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -18,7 +19,7 @@ public class Enemy extends FigureAbstract {
         this.positionY=positionY;
         this.moveSpeed=moveSpeed;
         try{
-            this.sprite= ImageIO.read(new File("Resources.Enemy"));
+            this.sprite= ImageIO.read(new File(Resources.ENEMY));
 
         }catch (IOException e){
             e.printStackTrace();
