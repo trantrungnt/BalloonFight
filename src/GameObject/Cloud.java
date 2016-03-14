@@ -10,7 +10,9 @@ import Main.*;
  * Created by TuấnCon on 3/14/2016.
  */
 public class Cloud extends GameObject {
-    private Cloud(){}
+    private Cloud() {
+
+    }
 
     public Cloud(int positionX, int positionY) {
             this.setPositionX(positionX);
@@ -20,13 +22,5 @@ public class Cloud extends GameObject {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-    }
-
-
-    @Override
-    public void draw(Graphics g) {
-        g.drawImage(this.getSprite(), this.getPositionX(), this.getPositionY(), null);
-
-
     }
 }

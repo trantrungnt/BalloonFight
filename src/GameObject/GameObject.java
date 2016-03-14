@@ -2,7 +2,6 @@ package GameObject;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import Main.*;
 
 /**
  * Created by AsusA42F on 3/13/2016.
@@ -12,7 +11,18 @@ public abstract class GameObject {
     protected int positionY;
     public BufferedImage sprite;
 
-    public abstract void draw(Graphics g);
+    GameObject() {
+
+    }
+
+    public GameObject(int positionX, int positionY) {
+        this.positionX = positionX;
+        this.positionY = positionY;
+    }
+
+    public void draw(Graphics g) {
+        g.drawImage(this.getSprite(), this.getPositionX(), this.getPositionY(), null);
+    }
 
     public int getPositionX() {
         return positionX;

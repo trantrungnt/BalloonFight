@@ -1,10 +1,10 @@
 package GameObject;
 
+import Main.Resources;
+
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import Main.*;
 
 /**
  * Created by AsusA42F on 3/14/2016.
@@ -22,9 +22,5 @@ public class MenuTitle extends GameObject {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void draw(Graphics g) {
-        g.drawImage(this.getSprite(), this.getPositionX(), this.getPositionY(), null);
     }
 }

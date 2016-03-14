@@ -1,7 +1,5 @@
 package GameObject;
 
-import java.awt.*;
-
 /**
  * Created by TuấnCon on 3/14/2016.
  */
@@ -9,7 +7,6 @@ public abstract class EnemyAbstract extends GameObject {
     protected int moveSpeed;
     protected int maxSpeed;
     protected int health;
-
 
     public int getmoveSpeed() {
         return moveSpeed;
