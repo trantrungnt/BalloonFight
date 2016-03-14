@@ -8,9 +8,9 @@ import Main.*;
  * Created by AsusA42F on 3/13/2016.
  */
 public abstract class GameObject {
-    private int positionX;
-    private int positionY;
-    private BufferedImage sprite;
+    protected int positionX;
+    protected int positionY;
+    public BufferedImage sprite;
 
     public abstract void draw(Graphics g);
 
