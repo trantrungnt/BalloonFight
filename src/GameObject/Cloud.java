@@ -1,7 +1,10 @@
+package GameObject;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import Main.*;
 
 /**
  * Created by TuấnCon on 3/14/2016.

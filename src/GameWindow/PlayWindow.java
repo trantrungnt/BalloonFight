@@ -1,4 +1,8 @@
+package GameWindow;
+
 import java.awt.*;
+import Main.*;
+import GameObject.*;
 
 /**
  * Created by AsusA42F on 3/13/2016.
