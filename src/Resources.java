@@ -5,5 +5,5 @@ public class Resources {
     public static final String BACKGROUND = "Resources/Sprite/image 162.png";
     public static final String MOUNTAIN = "Resources/Sprite/image 166.png";
     public static final String LAND = "Resources/Sprite/image 161.png";
-    public static final String PLAYER = "Resources/Sprite/image 189.png";
+    public static final String CLOUD= "Resources/Sprite/image 228.png";
 }
