@@ -1,7 +1,7 @@
 package GameObject;
 
 /**
- * Created by ASUS on 3/14/2016.
+ * Created by TuấnCon on 3/14/2016.
  */
 public class EnemyAbstract {
 }
