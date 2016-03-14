@@ -5,7 +5,7 @@ import java.awt.*;
 /**
  * Created by TuấnCon on 3/14/2016.
  */
-public abstract class FigureAbstract extends GameObject {
+public abstract class EnemyAbstract extends GameObject {
     protected int moveSpeed;
     protected int maxSpeed;
     protected int health;

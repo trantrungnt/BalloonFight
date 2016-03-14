@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * Created by TuấnCon on 3/14/2016.
  */
-public class Enemy extends FigureAbstract {
+public class Enemy extends EnemyAbstract {
     private int direction;
 
     public Enemy( int positionX, int positionY, int moveSpeed){
