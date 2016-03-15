@@ -67,11 +67,11 @@ public class Player extends PlayerAbstract  {
 
 
 
-    public int getdirection() {
+    public int getDirection() {
         return direction;
     }
 
-    public void setdirection(int direction) {
+    public void setDirection(int direction) {
         this.direction = direction;
     }
 }

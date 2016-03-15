@@ -23,6 +23,4 @@ public class PlayManager {
         }
         return _sharePointer;
     }
-
-
 }
