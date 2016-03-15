@@ -3,7 +3,6 @@ package GameWindow;
 import GameObject.*;
 import Main.GameManager;
 import Main.Helper;
-import Main.Main;
 import Main.Resources;
 
 import javax.imageio.ImageIO;
@@ -68,8 +67,8 @@ public class Window extends Frame implements Runnable, MouseListener {
     public void paint(Graphics g) {
         super.paint(g);
         g.drawImage(background, 0, 0, null);
-        if (Main.gameWindowStack.size() > 0) {
-            Main.gameWindowStack.peek().draw(g);
+        if (GameManager.getInstance().getGameWindowStack().size() > 0) {
+            GameManager.getInstance().getGameWindowStack().peek().draw(g);
         }
     }
 
@@ -91,32 +90,32 @@ public class Window extends Frame implements Runnable, MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if (Main.gameWindowStack.peek() instanceof MenuWindow) { // hien tai dang o Menu Window
+        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) { // hien tai dang o Menu Window
             PlayButton playButton = MenuWindowManager.getInstance().getMenuWindow().getPlayButton();
             if (playButton.getPositionX() <= e.getX() && e.getX() <= playButton.getPositionX() + playButton.getSprite().getWidth()
                     && playButton.getPositionY() <= e.getY() && e.getY() <= playButton.getPositionY() + playButton.getSprite().getHeight()) {
                 // chuyen sang Play Window khi an Play
-                Main.gameWindowStack.add(PlayWindowManager.getInstance().getPlayWindow());
+                GameManager.getInstance().getGameWindowStack().add(PlayWindowManager.getInstance().getPlayWindow());
             }
-        } else if (Main.gameWindowStack.peek() instanceof PlayWindow) { // hien tai dang o Play Window
+        } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
             MenuButton menuButton = PlayWindowManager.getInstance().getPlayWindow().getMenuButton();
             if (menuButton.getPositionX() <= e.getX() && e.getX() <= menuButton.getPositionX() + menuButton.getSprite().getWidth()
                     && menuButton.getPositionY() <= e.getY() && e.getY() <= menuButton.getPositionY() + menuButton.getSprite().getHeight()) {
-                if (Main.gameWindowStack.size() > 1) {
+                if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Menu Window khi an Menu
-                    Main.gameWindowStack.pop();
+                    GameManager.getInstance().getGameWindowStack().pop();
                 }
             } else {
                 // chuyen sang Game Over Window (DEBUG MODE: khi an ngoai nut Menu)
-                Main.gameWindowStack.add(GameOverWindowManager.getInstance().getGameOverWindow());
+                GameManager.getInstance().getGameWindowStack().add(GameOverWindowManager.getInstance().getGameOverWindow());
             }
-        } else if (Main.gameWindowStack.peek() instanceof GameOverWindow) { // hien tai dang o Game Over Window
+        } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof GameOverWindow) { // hien tai dang o Game Over Window
             AgainButton againButton = GameOverWindowManager.getInstance().getGameOverWindow().getAgainButton();
             if (againButton.getPositionX() <= e.getX() && e.getX() <= againButton.getPositionX() + againButton.getSprite().getWidth()
                     && againButton.getPositionY() <= e.getY() && e.getY() <= againButton.getPositionY() + againButton.getSprite().getHeight()) {
-                if (Main.gameWindowStack.size() > 1) {
+                if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Play Window khi an Again
-                    Main.gameWindowStack.pop();
+                    GameManager.getInstance().getGameWindowStack().pop();
                 }
             }
         }
