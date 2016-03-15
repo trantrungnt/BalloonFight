@@ -4,26 +4,11 @@ package GameObject;
  * Created by Admin on 3/14/2016.
  */
 public abstract class PlayerAbstract extends GameObject {
-    protected int moveSpeed; // toc do di chuyen binh thuong
-    protected int maxSpeed; // toc do khi bay (an Z)
-    protected int health;
-    protected Animation animation;
-
-    public int getMoveSpeed() {
-        return moveSpeed;
-    }
-
-    public void setMoveSpeed(int moveSpeed) {
-        this.moveSpeed = moveSpeed;
-    }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-    }
+    private int speedX;
+    private int speedY;
+    private int speed;
+    private int health;
+    private Animation animation;
 
     public int getHealth() {
         return health;
@@ -37,7 +22,31 @@ public abstract class PlayerAbstract extends GameObject {
         return animation;
     }
 
+    public int getSpeedX() {
+        return speedX;
+    }
+
+    public void setSpeedX(int speedX) {
+        this.speedX = speedX;
+    }
+
+    public int getSpeedY() {
+        return speedY;
+    }
+
+    public void setSpeedY(int speedY) {
+        this.speedY = speedY;
+    }
+
     public void setAnimation(Animation animation) {
         this.animation = animation;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
     }
 }

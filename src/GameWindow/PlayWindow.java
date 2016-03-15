@@ -85,5 +85,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         PlayManager.getInstance().getPlayerKey().setDirection(0);
+        PlayManager.getInstance().getPlayerKey().setSpeedX(0);
+        PlayManager.getInstance().getPlayerKey().setSpeedY(1);
     }
 }

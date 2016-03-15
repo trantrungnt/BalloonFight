@@ -24,17 +24,18 @@ public class Player extends PlayerAbstract {
     private Player() {
         setPositionX(0);
         setPositionY(0);
-        setMoveSpeed(0);
-        setMaxSpeed(0);
+        setDirection(0);
+        setSpeedX(0);
+        setSpeedY(1);
+        setSpeed(0);
     }
 
-    public Player(int positionX, int positionY, int moveSpeed) {
+    public Player(int positionX, int positionY, int speed) {
         setPositionX(positionX);
         setPositionY(positionY);
+        setSpeed(speed);
         this.flip1 = getPositionX();
         this.flip2 = 50;
-        setMoveSpeed(moveSpeed);
-        setMaxSpeed(3);
         try {
             setSprite(ImageIO.read(new File(Resources.PLAYER)));
         } catch (IOException e) {
@@ -44,25 +45,28 @@ public class Player extends PlayerAbstract {
     }
 
     private void moveByKey() {
-        if (this.direction == 1) { //nhan s de di xuong duoi
-            this.positionY += this.moveSpeed;
+        if (this.direction == 1) { // nhan s de di xuong duoi
+            setSpeedX(0);
+            setSpeedY(getSpeed());
         }
 
-        if (this.direction == 2) {
-            this.positionY -= this.moveSpeed;
+        if (this.direction == 3) { // nhan d de di sang phai
+            setSpeedX(getSpeed());
+            setSpeedY(1);
         }
 
-        if (this.direction == 3) {
-            this.positionX += this.moveSpeed;
+        if (this.direction == 4) { // nhan a de di sang trai
+            setSpeedX(-getSpeed());
+            setSpeedY(1);
         }
 
-        if (this.direction == 4) {
-            this.positionX -= this.moveSpeed;
+        if (this.direction == 5) { // nhan z de bay len
+            setSpeedX(0);
+            setSpeedY(-getSpeed());
         }
 
-        if (this.direction == 5) {
-            this.positionY -= this.maxSpeed;
-        }
+        setPositionX(getPositionX() + getSpeedX());
+        setPositionY(getPositionY() + getSpeedY());
     }
 
 
@@ -73,7 +77,7 @@ public class Player extends PlayerAbstract {
     @Override
     public void draw(Graphics g) {
         if (this.direction == 5) {
-            this.animation.draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
+            this.getAnimation().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
         } else {
             if (this.direction == 3) { // di sang phai
                 this.flip1 = getPositionX() + getSprite().getWidth();
