@@ -31,6 +31,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
         cloud.draw(g);
         menuButton.draw(g);
         PlayManager.getInstance().getPlayerKey().draw(g);
+        EnemyManager.getInstance().getEnemy1().draw(g);
     }
 
     public Mountain getMountain() {

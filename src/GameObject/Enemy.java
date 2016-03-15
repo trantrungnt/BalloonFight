@@ -4,6 +4,7 @@ import Main.Helper;
 import Main.Resources;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -34,13 +35,16 @@ public class Enemy extends EnemyAbstract {
     }
 
     public void move() {
-        this.moveSpeed += this.moveSpeed;
+        this.positionX += this.moveSpeed;
         if (this.positionX <= 0) {
             this.moveSpeed = -this.getmoveSpeed();
         }
         if (this.positionX >= Helper.WINDOW_WIDTH) {
             this.moveSpeed = -this.moveSpeed;
         }
+    }
+    public  void draw(Graphics g){
+        g.drawImage(sprite,positionX,positionY,null);
     }
 
     public void update() {

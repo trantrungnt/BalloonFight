@@ -1,9 +1,6 @@
 package GameWindow;
 
-import GameObject.AgainButton;
-import GameObject.MenuButton;
-import GameObject.PlayButton;
-import GameObject.PlayManager;
+import GameObject.*;
 import Main.GameManager;
 import Main.Helper;
 import Main.Main;
@@ -82,6 +79,7 @@ public class Window extends Frame implements Runnable, MouseListener {
     public void run() {
         while (true) {
             PlayManager.getInstance().getPlayerKey().update();
+            EnemyManager.getInstance().getEnemy1().update();
             repaint();
             try {
                 Thread.sleep(17);
