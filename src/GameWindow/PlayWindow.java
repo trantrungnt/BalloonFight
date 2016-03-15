@@ -77,7 +77,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
             PlayManager.getInstance().getPlayerKey().setDirection(1);
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_Z) { //nhan phim x de bat dau bay
+        if (e.getKeyCode() == KeyEvent.VK_Z) { //nhan phim z de bat dau bay
             PlayManager.getInstance().getPlayerKey().setDirection(5);
         }
     }

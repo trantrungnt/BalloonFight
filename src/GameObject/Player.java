@@ -1,71 +1,73 @@
 package GameObject;
-import Main.Resources;
 
+import Main.Resources;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by Admin on 3/14/2016.
  */
-public class Player extends PlayerAbstract  {
+public class Player extends PlayerAbstract {
     private int direction;
-    private Player(){
+
+    private Player() {
         setPositionX(0);
         setPositionY(0);
-        setmoveSpeed(0);
-        setmaxSpeed(0);
+        setMoveSpeed(0);
+        setMaxSpeed(0);
     }
-    public Player(int positionX, int positionY, int moveSpeed){
+
+    public Player(int positionX, int positionY, int moveSpeed) {
         setPositionX(positionX);
         setPositionY(positionY);
-        setmoveSpeed(moveSpeed);
-        setmaxSpeed(3);
-
-        try{
-            this.sprite=ImageIO.read(new File(Resources.PLAYER));
-        }
-        catch (Exception e){
+        setMoveSpeed(moveSpeed);
+        setMaxSpeed(3);
+        try {
+            setSprite(ImageIO.read(new File(Resources.PLAYER)));
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        this.setAnimation(new Animation(Resources.PLAYER_ANIMATION, 50, 75, 1, 3, 170));
     }
 
-    private void moveByKey(){
-        if(this.direction == 1) { //nhan s de di xuong duoi
+    private void moveByKey() {
+        if (this.direction == 1) { //nhan s de di xuong duoi
             this.positionY += this.moveSpeed;
         }
 
-
-        if(this.direction == 2){
-            this.positionY -=this.moveSpeed;
+        if (this.direction == 2) {
+            this.positionY -= this.moveSpeed;
         }
 
-        if(this.direction == 3){
-           this.positionX +=this.moveSpeed;
+        if (this.direction == 3) {
+            this.positionX += this.moveSpeed;
         }
 
-        if(this.direction == 4){
-            this.positionX -=this.moveSpeed;
+        if (this.direction == 4) {
+            this.positionX -= this.moveSpeed;
         }
 
-        if(this.direction == 5){
-           this.positionY -= this.maxSpeed;
+        if (this.direction == 5) {
+            this.positionY -= this.maxSpeed;
         }
     }
 
 
-    public void update(){
+    public void update() {
         this.moveByKey();
-
     }
 
     @Override
     public void draw(Graphics g) {
-        g.drawImage(getSprite(), getPositionX(), getPositionY(), null);
+        if (this.direction == 5) {
+            this.animation.draw(g, this.positionX, this.positionY);
+        } else if (this.direction == 3) {
+            g.drawImage(this.sprite, this.positionX, this.positionY, null);
+        } else 
     }
-
-
 
     public int getDirection() {
         return direction;
@@ -75,7 +77,3 @@ public class Player extends PlayerAbstract  {
         this.direction = direction;
     }
 }
-
-
-
-
