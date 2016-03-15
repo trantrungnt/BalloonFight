@@ -84,10 +84,6 @@ public class Player extends PlayerAbstract {
             }
             g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
         }
-            /*if (this.direction == 3 || this.direction == 4) {
-                g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
-            } else if (this.direction == 1 || this.direction == 2) {
-                g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);*/
     }
 
     public int getDirection() {
