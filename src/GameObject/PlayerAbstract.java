@@ -7,8 +7,14 @@ public abstract class PlayerAbstract extends GameObject {
     private int speedX;
     private int speedY;
     private int speed;
-    private int health;
+    private int health; // so bong con lai
+    private int directionX;
+    private int directionY;
     private Animation animation;
+
+    public PlayerAbstract(int positionX, int positionY) {
+        super(positionX, positionY);
+    }
 
     public int getHealth() {
         return health;
@@ -48,5 +54,21 @@ public abstract class PlayerAbstract extends GameObject {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public int getDirectionX() {
+        return directionX;
+    }
+
+    public void setDirectionX(int directionX) {
+        this.directionX = directionX;
+    }
+
+    public int getDirectionY() {
+        return directionY;
+    }
+
+    public void setDirectionY(int directionY) {
+        this.directionY = directionY;
     }
 }

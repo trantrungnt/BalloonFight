@@ -91,14 +91,14 @@ public class Window extends Frame implements Runnable, MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) { // hien tai dang o Menu Window
-            PlayButton playButton = MenuWindowManager.getInstance().getMenuWindow().getPlayButton();
+            PlayButton playButton = MenuWindowManager.getInstance().getPlayButton();
             if (playButton.getPositionX() <= e.getX() && e.getX() <= playButton.getPositionX() + playButton.getSprite().getWidth()
                     && playButton.getPositionY() <= e.getY() && e.getY() <= playButton.getPositionY() + playButton.getSprite().getHeight()) {
                 // chuyen sang Play Window khi an Play
                 GameManager.getInstance().getGameWindowStack().add(PlayWindowManager.getInstance().getPlayWindow());
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
-            MenuButton menuButton = PlayWindowManager.getInstance().getPlayWindow().getMenuButton();
+            MenuButton menuButton = PlayWindowManager.getInstance().getMenuButton();
             if (menuButton.getPositionX() <= e.getX() && e.getX() <= menuButton.getPositionX() + menuButton.getSprite().getWidth()
                     && menuButton.getPositionY() <= e.getY() && e.getY() <= menuButton.getPositionY() + menuButton.getSprite().getHeight()) {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
@@ -110,7 +110,7 @@ public class Window extends Frame implements Runnable, MouseListener {
                 GameManager.getInstance().getGameWindowStack().add(GameOverWindowManager.getInstance().getGameOverWindow());
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof GameOverWindow) { // hien tai dang o Game Over Window
-            AgainButton againButton = GameOverWindowManager.getInstance().getGameOverWindow().getAgainButton();
+            AgainButton againButton = GameOverWindowManager.getInstance().getAgainButton();
             if (againButton.getPositionX() <= e.getX() && e.getX() <= againButton.getPositionX() + againButton.getSprite().getWidth()
                     && againButton.getPositionY() <= e.getY() && e.getY() <= againButton.getPositionY() + againButton.getSprite().getHeight()) {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {

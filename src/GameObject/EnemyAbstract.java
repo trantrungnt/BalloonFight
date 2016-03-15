@@ -8,6 +8,10 @@ public abstract class EnemyAbstract extends GameObject {
     protected int maxSpeed;
     protected int health;
 
+    public EnemyAbstract(int positionX, int positionY) {
+        super(positionX, positionY);
+    }
+
     public int getmoveSpeed() {
         return moveSpeed;
     }

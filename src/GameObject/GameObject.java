@@ -11,7 +11,7 @@ public abstract class GameObject {
     protected int positionY;
     public BufferedImage sprite;
 
-    GameObject() {
+    private GameObject() {
 
     }
 
