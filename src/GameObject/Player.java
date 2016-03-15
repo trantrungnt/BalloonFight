@@ -12,6 +12,7 @@ import java.io.IOException;
  */
 public class Player extends PlayerAbstract {
     private int direction;
+    private int printPositionX
 
     private Player() {
         setPositionX(0);
@@ -66,7 +67,7 @@ public class Player extends PlayerAbstract {
             this.animation.draw(g, this.positionX, this.positionY);
         } else if (this.direction == 3) {
             g.drawImage(this.sprite, this.positionX, this.positionY, null);
-        } else 
+        } else
     }
 
     public int getDirection() {
