@@ -15,4 +15,7 @@ public class Resources {
     public static final String AGAIN_BUTTON = "Resources/Sprite/image 206.png"; // hinh nut Again tai cua so GameOverWindow (nut tro lai PlayWindow)
     public static final String PLAYER = "Resources/Sprite/image 160.png"; // hinh Player (tinh)
     public static final String PLAYER_ANIMATION = "Resources/Sprite/image 199.png"; // hinh Player (dong)
+    public static final String SOUND_MAIN_GAME = "Resources/Sound/background-music-game-main.wav"; //duong dan file wav => day la file nhac nen chinh cua game Balloon Fight
+    public static final String SOUND_GAME_OVER ="Resources/Sound/game-over.mp3";
+    public static final String SOUND_MENU_GAME ="Resources/Sound/menu-music-game.wav";
 }
