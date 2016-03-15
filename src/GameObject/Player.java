@@ -14,6 +14,12 @@ public class Player extends PlayerAbstract {
     private int direction;
     private int flip1;
     private int flip2;
+        /*
+            Ve anh dung chieu: g.drawImage(image, x, y, width, height, null);
+            Ve anh doi xung (theo chieu thang dung): g.drawImage(image, x + width, y, -width, height, null);
+            flip1 = x hoac x + width
+            flip2 = width hoac -width
+        * */
 
     private Player() {
         setPositionX(0);
@@ -26,7 +32,7 @@ public class Player extends PlayerAbstract {
         setPositionX(positionX);
         setPositionY(positionY);
         this.flip1 = getPositionX();
-        this.flip2 = getSprite().getWidth();
+        this.flip2 = 50;
         setMoveSpeed(moveSpeed);
         setMaxSpeed(3);
         try {
@@ -67,12 +73,12 @@ public class Player extends PlayerAbstract {
     @Override
     public void draw(Graphics g) {
         if (this.direction == 5) {
-            this.animation.draw(g, this.positionX, this.positionY);
+            this.animation.draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
         } else {
-            if (this.direction == 3) {
+            if (this.direction == 3) { // di sang phai
                 this.flip1 = getPositionX() + getSprite().getWidth();
                 this.flip2 = -getSprite().getWidth();
-            } else if (this.direction == 4) {
+            } else if (this.direction == 4) { // di sang trai
                 this.flip1 = getPositionX();
                 this.flip2 = getSprite().getWidth();
             }
