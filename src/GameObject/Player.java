@@ -12,7 +12,8 @@ import java.io.IOException;
  */
 public class Player extends PlayerAbstract {
     private int direction;
-    private int printPositionX
+    private int flip1;
+    private int flip2;
 
     private Player() {
         setPositionX(0);
@@ -24,6 +25,8 @@ public class Player extends PlayerAbstract {
     public Player(int positionX, int positionY, int moveSpeed) {
         setPositionX(positionX);
         setPositionY(positionY);
+        this.flip1 = getPositionX();
+        this.flip2 = getSprite().getWidth();
         setMoveSpeed(moveSpeed);
         setMaxSpeed(3);
         try {
@@ -65,9 +68,20 @@ public class Player extends PlayerAbstract {
     public void draw(Graphics g) {
         if (this.direction == 5) {
             this.animation.draw(g, this.positionX, this.positionY);
-        } else if (this.direction == 3) {
-            g.drawImage(this.sprite, this.positionX, this.positionY, null);
-        } else
+        } else {
+            if (this.direction == 3) {
+                this.flip1 = getPositionX() + getSprite().getWidth();
+                this.flip2 = -getSprite().getWidth();
+            } else if (this.direction == 4) {
+                this.flip1 = getPositionX();
+                this.flip2 = getSprite().getWidth();
+            }
+            g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
+        }
+            /*if (this.direction == 3 || this.direction == 4) {
+                g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
+            } else if (this.direction == 1 || this.direction == 2) {
+                g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);*/
     }
 
     public int getDirection() {
