@@ -23,6 +23,7 @@ public class Resources {
     public static final String SOUND_GAME_OVER ="Resources/Sound/game-over.mp3";
     public static final String SOUND_MENU_GAME ="Resources/Sound/menu-music-game.wav";
 
+
     //Am Thanh
     public static final String SOUND_PLAY_WINDOW =
             "Resources/Sound/sound 56 (org.flixel.FlxGame_SndFlixel).mp3"; // nhac nen game tai cua so PlayWindow
@@ -34,6 +35,7 @@ public class Resources {
             "Resources/Sound/sound 65 (utils.SoundClass_BloonExplode).mp3"; // nhac khi no bong
     public static final String SOUND_PLAYER_FLY =
             "Resources/Sound/sound 60 (utils.SoundClass_Aleteo).mp3"; // nhac khi nhan vat cua minh bay
+
 
 
 }

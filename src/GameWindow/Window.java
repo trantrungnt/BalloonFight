@@ -56,11 +56,6 @@ public class Window extends Frame implements Runnable, MouseListener {
         //dang ky lang nghe su kien chuot
         this.addMouseListener(this);
 
-        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) {
-            //load file nhac nen cua Game Balloon Fight
-            JavaxSound javaxSound = new JavaxSound();
-            javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
-        }
 
         //khoi tao doi tuong javaxsound
         JavaxSound javaxSound = new JavaxSound();

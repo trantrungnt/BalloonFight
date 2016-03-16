@@ -32,6 +32,7 @@ public class PlayWindowManager {
         return obstacleVector;
     }
 
+
     public Vector<Obstacle> getObstacleLake() {
         return obstacleLake;
     }
@@ -40,6 +41,7 @@ public class PlayWindowManager {
 //    public Mountain getMountain() {
 //        return mountain;
 //    }
+
 
 
     public Mountain getMountain() {
@@ -96,6 +98,7 @@ public class PlayWindowManager {
         obstacleVector.add(new Land(100, 500));
         obstacleVector.add(new Land(600, 300));
 
+
         mountain = new Mountain(0, 100);
         cloud = new Cloud(502, 150);
         menuButton = new MenuButton(900, 50);
@@ -103,10 +106,6 @@ public class PlayWindowManager {
         playWindow = new PlayWindow();
     }
 
-
-    /*public Mountain getMountain() {
-        return mountain;
-    }*/
 }
 
 
