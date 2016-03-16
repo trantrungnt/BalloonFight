@@ -4,8 +4,12 @@ package Main;
  * Created by AsusA42F on 3/13/2016.
  */
 public class Resources {
+
+    //Hinh anh cua Object
     public static final String BACKGROUND = "Resources/Sprite/image 162.png"; // hinh nen
-    public static final String MOUNTAIN = "Resources/Sprite/image 166.png"; // hinh nui
+    public static final String LAKE = "Resources/Sprite/water.png"; // hinh dong song
+    public static final String ISLAND = "Resources/Sprite/Island.png"; //hinh hon dao
+    public static final String MOUNTAIN = "Resources/Sprite/image 1661_mountain.png"; // hinh nui
     public static final String LAND = "Resources/Sprite/image 1931.png"; // hinh mo dat
     public static final String CLOUD = "Resources/Sprite/image 228.png"; // hinh dam may
     public static final String MENU_TITLE = "Resources/Sprite/image 222.png"; // hinh ten game tai cua so MenuWindow
@@ -19,4 +23,20 @@ public class Resources {
     public static final String SOUND_MAIN_GAME = "Resources/Sound/background-music-game-main.wav"; //duong dan file wav => day la file nhac nen chinh cua game Balloon Fight
     public static final String SOUND_GAME_OVER ="Resources/Sound/game-over.mp3";
     public static final String SOUND_MENU_GAME ="Resources/Sound/menu-music-game.wav";
+
+
+    //Am Thanh
+    public static final String SOUND_PLAY_WINDOW =
+            "Resources/Sound/sound 56 (org.flixel.FlxGame_SndFlixel).mp3"; // nhac nen game tai cua so PlayWindow
+    public static final String SOUND_MENU_WINDOW =
+            "Resources/Sound/sound 61 (utils.SoundClass_MenuMusicSample).mp3"; // nhac nen game tai cua so MenuWindow
+    public static final String SOUND_PLAYER_FALLS_INTO_WATER =
+            "Resources/Sound/sound 63 (utils.SoundClass_WaterSplash).mp3"; // nhac khi nhan vat roi xuong nuoc
+    public static final String SOUND_BREAKING_BALL =
+            "Resources/Sound/sound 65 (utils.SoundClass_BloonExplode).mp3"; // nhac khi no bong
+    public static final String SOUND_PLAYER_FLY =
+            "Resources/Sound/sound 60 (utils.SoundClass_Aleteo).mp3"; // nhac khi nhan vat cua minh bay
+
+
+
 }

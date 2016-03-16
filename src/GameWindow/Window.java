@@ -56,6 +56,7 @@ public class Window extends Frame implements Runnable, MouseListener {
         //dang ky lang nghe su kien chuot
         this.addMouseListener(this);
 
+
         //khoi tao doi tuong javaxsound
         JavaxSound javaxSound = new JavaxSound();
         clipSoundMenu = javaxSound.playWAV(Resources.SOUND_MENU_GAME);
@@ -92,6 +93,8 @@ public class Window extends Frame implements Runnable, MouseListener {
     @Override
     public void run() {
         while (true) {
+
+
             PlayManager.getInstance().getPlayerKey().update();
             EnemyManager.getInstance().getEnemy1().update();
             EnemyManager.getInstance().getEnemy2().update();
