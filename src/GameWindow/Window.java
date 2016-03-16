@@ -92,8 +92,6 @@ public class Window extends Frame implements Runnable, MouseListener {
     @Override
     public void run() {
         while (true) {
-
-
             PlayManager.getInstance().getPlayerKey().update();
             EnemyManager.getInstance().getEnemy1().update();
             repaint();

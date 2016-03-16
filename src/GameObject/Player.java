@@ -2,10 +2,13 @@ package GameObject;
 
 import GameObject.Obstacles.Obstacle;
 import GameWindow.PlayWindowManager;
+import Main.Helper;
 import Main.Resources;
+import com.sun.imageio.plugins.common.SubImageInputStream;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -26,12 +29,17 @@ public class Player extends PlayerAbstract {
         super(positionX, positionY);
         setSpeed(speed);
         setHealth(2);
+
+        /* Xet anh tinh cho Player (hinh dau tien trong anh dong) */
         try {
-            setSprite(ImageIO.read(new File(Resources.PLAYER)));
+            BufferedImage bigImage = ImageIO.read(new File(Resources.PLAYER_ANIMATION)); // doc SpriteSheet anh dong
+            setSprite(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
         } catch (IOException e) {
             e.printStackTrace();
         }
-        this.setAnimation(new Animation(Resources.PLAYER_ANIMATION, 50, 75, 1, 3, 170));
+
+        /* Xet anh dong cho Player */
+        this.setAnimation(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
     }
@@ -58,28 +66,45 @@ public class Player extends PlayerAbstract {
         for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVector()) {
             Rectangle rectObstacle;
 
-            /* Xet va cham voi mep duoi vat can */
-            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY() + obstacle.getSprite().getHeight(),
-                    obstacle.getSprite().getWidth(), 1);
-            if (rectPlayer.intersects(rectObstacle)) {
-                setDirectionY(0);
-                setSpeedY(1);
-            }
-
             /* Xet va cham voi mep tren vat can */
             rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), 1);
-            if (rectPlayer.intersects(rectObstacle)) {
+            if (rectPlayer.intersects(rectObstacle) && Math.abs(obstacle.getPositionY() - this.getPositionY() - this.getSprite().getHeight()) <= 2) {
                 if (getDirectionY() != -1) { // neu khong nhay
                     setDirectionY(0);
                     setSpeedY(0);
                     isOnObstacle = true;
+                    break;
                 }
             }
+        }
+
+        if (isOnObstacle == false && getDirectionY() == 0) {
+            setSpeedY(1);
+        } else if (isOnObstacle) {
+            return;
+        }
+
+        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVector()) {
+            Rectangle rectObstacle;
+
+            /* Xet va cham voi mep tren vat can */
+            /*rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), 10);
+            if (rectPlayer.intersects(rectObstacle) && obstacle.getPositionY() == this.getPositionY() + this.getSprite().getHeight()) {
+                System.out.println("Zzz");
+                if (getDirectionY() != -1) { // neu khong nhay
+                    setDirectionY(0);
+                    setSpeedY(0);
+                    isOnObstacle = true;
+                    break;
+                }
+            }*/
 
             /* Xet va cham voi mep trai vat can */
             rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), 1, obstacle.getSprite().getHeight());
             if (rectPlayer.intersects(rectObstacle)) {
                 setDirectionX(0);
+                setSpeedX(0);
+                break;
             }
 
             /* Xet va cham voi mep phai vat can */
@@ -87,11 +112,18 @@ public class Player extends PlayerAbstract {
                     1, obstacle.getSprite().getHeight());
             if (rectPlayer.intersects(rectObstacle)) {
                 setDirectionX(0);
+                setSpeedX(0);
+                break;
             }
-        }
 
-        if (isOnObstacle == false && getDirectionY() == 0) {
-            setSpeedY(1);
+            /* Xet va cham voi mep duoi vat can */
+            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY() + obstacle.getSprite().getHeight(),
+                    obstacle.getSprite().getWidth(), 1);
+            if (rectPlayer.intersects(rectObstacle)) {
+                setDirectionY(0);
+                setSpeedY(1);
+                break;
+            }
         }
     }
 

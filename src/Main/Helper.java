@@ -6,4 +6,5 @@ package Main;
 public class Helper {
     public static final int WINDOW_WIDTH = 1024; // chieu rong man hinh game
     public static final int WINDOW_HEIGHT = 768; // chieu cao man hinh game
+    public static final int IMAGE_EPS = 10; // chieu cao man hinh game
 }
