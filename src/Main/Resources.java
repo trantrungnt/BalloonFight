@@ -7,9 +7,9 @@ public class Resources {
 
     //Hinh anh cua Object
     public static final String BACKGROUND = "Resources/Sprite/image 162.png"; // hinh nen
-    public static final String LAKE = "Resources/Sprite/image 19356.png"; // hinh dong song
+    public static final String LAKE = "Resources/Sprite/water.png"; // hinh dong song
     public static final String ISLAND = "Resources/Sprite/image Island.png"; //hinh hon dao
-    public static final String MOUNTAIN = "Resources/Sprite/image 166.png"; // hinh nui
+    public static final String MOUNTAIN = "Resources/Sprite/image 1661_mountain.png"; // hinh nui
     public static final String LAND = "Resources/Sprite/image 1931.png"; // hinh mo dat
     public static final String CLOUD = "Resources/Sprite/image 228.png"; // hinh dam may
     public static final String MENU_TITLE = "Resources/Sprite/image 222.png"; // hinh ten game tai cua so MenuWindow

@@ -3,12 +3,11 @@ package GameWindow;
 import GameObject.Cloud;
 import GameObject.MenuButton;
 import GameObject.Mountain;
-import GameObject.Obstacles.Island;
 import GameObject.Obstacles.Lake;
 import GameObject.Obstacles.Land;
+import GameObject.Obstacles.Island;
 import GameObject.Obstacles.Obstacle;
-import GameObject.Obstacles.Land;
-import GameObject.Obstacles.Obstacle;
+
 import java.util.Vector;
 
 /**
@@ -32,18 +31,12 @@ public class PlayWindowManager {
         return obstacleVectorLand;
     }
 
-
     public Vector<Obstacle> getObstacleLake() {
         return obstacleLake;
     }
-    public Vector<Obstacle> getObstacleIsland() {
-        return obstacleIsland; }
-
-//    public Mountain getMountain() {
-//        return mountain;
-//    }
-
-
+    public Vector<Obstacle> getObstacleIsland(){
+        return obstacleIsland;
+    }
 
     public Mountain getMountain() {
         return mountain;
@@ -89,17 +82,17 @@ public class PlayWindowManager {
         obstacleVectorLand.add(new Land(250, 350));
         obstacleVectorLand.add(new Land(160, 260));
 
-        obstacleVectorLand.add(new Land(100, 500));
-        obstacleVectorLand.add(new Land(600, 300));
+//        obstacleVectorLand.add(new Land(100, 500));
+//        obstacleVectorLand.add(new Land(600, 300));
 
         obstacleLake = new Vector<>();
-        obstacleLake.add(new Lake(0, 450));
+        obstacleLake.add(new Lake(450, 630));
+        obstacleLake.add(new Lake(110, 630));
 
         obstacleIsland = new Vector<>();
-        obstacleIsland.add(new Island(50, 250));
+        obstacleIsland.add(new Island(300, 300));
 
-
-        mountain = new Mountain(0, 120);
+        mountain = new Mountain(0, 550);
         cloud = new Cloud(502, 150);
         menuButton = new MenuButton(900, 50);
 
