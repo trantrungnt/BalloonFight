@@ -4,6 +4,8 @@ import GameObject.*;
 import Main.GameManager;
 import Main.Helper;
 import Main.Resources;
+import Sound.JavaxSound;
+import Sound.SoundPlayer;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -14,6 +16,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 
 /**
  * Created by AsusA42F on 3/13/2016.
@@ -48,6 +51,13 @@ public class Window extends Frame implements Runnable, MouseListener {
         }
 
         this.addMouseListener(this);
+
+        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) {
+            //load file nhac nen cua Game Balloon Fight
+            JavaxSound javaxSound = new JavaxSound();
+            javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
+        }
+
     }
 
     @Override
@@ -77,6 +87,8 @@ public class Window extends Frame implements Runnable, MouseListener {
     @Override
     public void run() {
         while (true) {
+
+
             PlayManager.getInstance().getPlayerKey().update();
             EnemyManager.getInstance().getEnemy1().update();
             repaint();
