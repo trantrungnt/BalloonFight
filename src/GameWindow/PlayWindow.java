@@ -31,6 +31,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
         PlayWindowManager.getInstance().getMenuButton().draw(g);
         PlayManager.getInstance().getPlayerKey().draw(g);
         EnemyManager.getInstance().getEnemy1().draw(g);
+        EnemyManager.getInstance().getEnemy2().draw(g);
     }
 
     @Override
