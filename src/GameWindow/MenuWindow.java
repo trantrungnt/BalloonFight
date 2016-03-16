@@ -1,6 +1,7 @@
 package GameWindow;
 
 import GameObject.MenuTitle;
+import GameObject.Obstacles.Obstacle;
 import GameObject.PlayButton;
 import Sound.JISoundPlayer;
 
@@ -18,5 +19,8 @@ public class MenuWindow extends GameWindow {
     public void draw(Graphics g) {
         MenuWindowManager.getInstance().getMenuTitle().draw(g);
         MenuWindowManager.getInstance().getPlayButton().draw(g);
+        for (Obstacle obstacleIsland: PlayWindowManager.getInstance().getObstacleIsland()){
+            obstacleIsland.draw(g);
+        }
     }
 }

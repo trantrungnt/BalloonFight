@@ -8,7 +8,7 @@ public class Resources {
     //Hinh anh cua Object
     public static final String BACKGROUND = "Resources/Sprite/image 162.png"; // hinh nen
     public static final String LAKE = "Resources/Sprite/water.png"; // hinh dong song
-    public static final String ISLAND = "Resources/Sprite/image Island.png"; //hinh hon dao
+    public static final String ISLAND = "Resources/Sprite/Island.png"; //hinh hon dao
     public static final String MOUNTAIN = "Resources/Sprite/image 1661_mountain.png"; // hinh nui
     public static final String LAND = "Resources/Sprite/image 1931.png"; // hinh mo dat
     public static final String CLOUD = "Resources/Sprite/image 228.png"; // hinh dam may
