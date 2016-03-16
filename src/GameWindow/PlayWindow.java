@@ -1,20 +1,20 @@
 package GameWindow;
 
-import GameObject.Cloud;
-import GameObject.Land;
-import GameObject.MenuButton;
-import GameObject.Mountain;
+import GameObject.*;
 import Main.Helper;
 import Main.Main;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 
 /**
  * Created by AsusA42F on 3/13/2016.
  */
-public class PlayWindow extends GameWindow implements MouseListener {
+public class PlayWindow extends GameWindow implements KeyListener /*MouseListener,*/{
     private Mountain mountain = new Mountain(0, Helper.WINDOW_HEIGHT - 204);
     private Land land1 = new Land(100, 500);
     private Land land2 = new Land(600, 300);
@@ -22,7 +22,8 @@ public class PlayWindow extends GameWindow implements MouseListener {
     private MenuButton menuButton = new MenuButton(900, 50);
 
     public PlayWindow() {
-        WindowManager.getInstance().getWindow().addMouseListener(new MouseListener() {
+
+        /*WindowManager.getInstance().getWindow().addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 MenuButton menuButton = PlayWindowManager.getInstance().getPlayWindow().getMenuButton();
@@ -38,6 +39,8 @@ public class PlayWindow extends GameWindow implements MouseListener {
 
             @Override
             public void mousePressed(MouseEvent e) {
+
+
 
             }
 
@@ -55,7 +58,11 @@ public class PlayWindow extends GameWindow implements MouseListener {
             public void mouseExited(MouseEvent e) {
 
             }
-        });
+        });*/
+
+        //dang ky de lang nghe su kien keyboard
+        WindowManager.getInstance().getWindow().addKeyListener(this);
+
     }
 
     @Override
@@ -65,6 +72,7 @@ public class PlayWindow extends GameWindow implements MouseListener {
         land2.draw(g);
         cloud.draw(g);
         menuButton.draw(g);
+        PlayManager.getInstance().getPlayerKey().draw(g);
     }
 
     public Mountain getMountain() {
@@ -87,7 +95,7 @@ public class PlayWindow extends GameWindow implements MouseListener {
         return menuButton;
     }
 
-    @Override
+    /*@Override
     public void mouseClicked(MouseEvent e) {
 
     }
@@ -110,6 +118,45 @@ public class PlayWindow extends GameWindow implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
 
+    }*/
+
+
+
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
     }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if(e.getKeyCode() == KeyEvent.VK_A){ //nhan phim a de di sang trai
+            PlayManager.getInstance().getPlayerKey().setdirection(4);
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_W){ //nhan phim W de di len
+            PlayManager.getInstance().getPlayerKey().setdirection(2);
+        }
+
+         if(e.getKeyCode() == KeyEvent.VK_D){ //nhan phim d de sang phai
+             PlayManager.getInstance().getPlayerKey().setdirection(3);
+        }
+
+        if(e.getKeyCode()==KeyEvent.VK_S){ //nhan phim s de di xuong
+            PlayManager.getInstance().getPlayerKey().setdirection(1);
+
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_Z){ //nhan phim x de bat dau bay
+            PlayManager.getInstance().getPlayerKey().setdirection(5);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        PlayManager.getInstance().getPlayerKey().setdirection(0);
+    }
+
+
 }
 

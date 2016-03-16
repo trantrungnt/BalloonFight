@@ -13,4 +13,5 @@ public class Resources {
     public static final String PLAY_BUTTON = "Resources/Sprite/image 211.png"; // hinh nut Play tai cua so MenuWindow
     public static final String MENU_BUTTON = "Resources/Sprite/image 219.png"; // hinh nut Menu tai cua so PlayWindow (nut tro lai MenuWindow)
     public static final String AGAIN_BUTTON = "Resources/Sprite/image 206.png"; // hinh nut Again tai cua so GameOverWindow (nut tro lai PlayWindow)
+    public static final String PLAYER = "Resources/Sprite/player.png";
 }

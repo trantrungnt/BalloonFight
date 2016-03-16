@@ -1,5 +1,6 @@
 package GameWindow;
 
+import GameObject.PlayManager;
 import Main.GameManager;
 import Main.Helper;
 import Main.Main;
@@ -73,6 +74,8 @@ public class Window extends Frame implements Runnable {
     @Override
     public void run() {
         while (true) {
+            PlayManager.getInstance().getPlayerKey().update();
+
             repaint();
             try {
                 Thread.sleep(17);
@@ -81,4 +84,6 @@ public class Window extends Frame implements Runnable {
             }
         }
     }
+
+
 }
