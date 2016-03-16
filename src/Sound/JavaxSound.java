@@ -10,6 +10,7 @@ import java.io.IOException;
 public class JavaxSound {
 
     //phuong thuc doc file sound wav dung cho background sound game
+    //phuong thuc nay chi ho tro dinh dang dang file wav, au, aiff
     public void playWAV(String dir)
     {
         try {
