@@ -2,6 +2,7 @@ package GameWindow;
 
 import GameObject.MenuTitle;
 import GameObject.PlayButton;
+import Sound.JISoundPlayer;
 
 import java.awt.*;
 
@@ -10,24 +11,12 @@ import java.awt.*;
  */
 
 public class MenuWindow extends GameWindow {
-    private MenuTitle menuTitle = new MenuTitle(256, 100);
-    private PlayButton playButton = new PlayButton(420, 600);
-
     public MenuWindow() {
-
     }
 
     @Override
     public void draw(Graphics g) {
-        menuTitle.draw(g);
-        playButton.draw(g);
-    }
-
-    public MenuTitle getMenuTitle() {
-        return menuTitle;
-    }
-
-    public PlayButton getPlayButton() {
-        return playButton;
+        MenuWindowManager.getInstance().getMenuTitle().draw(g);
+        MenuWindowManager.getInstance().getPlayButton().draw(g);
     }
 }

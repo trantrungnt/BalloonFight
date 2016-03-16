@@ -15,8 +15,7 @@ public class Enemy extends EnemyAbstract {
     private int direction;
 
     public Enemy(int positionX, int positionY, int moveSpeed) {
-        this.positionX = positionX;
-        this.positionY = positionY;
+        super(positionX, positionY);
         this.moveSpeed = moveSpeed;
         try {
             this.sprite = ImageIO.read(new File(Resources.ENEMY));

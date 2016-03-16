@@ -32,7 +32,6 @@ public class Animation {
         int count = 0; // dem thu tu anh
         try {
             bigImage = ImageIO.read(new File(dirImage));
-            System.out.println((int) (bigImage.getHeight() / height));
             for (int i = 0; i < (int) (bigImage.getHeight() / height); i++) {
                 for (int j = 0; j < (int) bigImage.getWidth() / width; j++) {
                     count++;

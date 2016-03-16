@@ -1,4 +1,4 @@
-package GameObject;
+package GameObject.Obstacles;
 
 import Main.Resources;
 
@@ -7,13 +7,13 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * Created by AsusA42F on 3/13/2016.
+ * Created by Admin on 3/16/2016.
  */
-public class Mountain extends GameObject {
-    public Mountain(int positionX, int positionY) {
+public class Lake extends Obstacle {
+    public Lake (int positionX, int positionY) {
         super(positionX, positionY);
         try {
-            setSprite(ImageIO.read(new File(Resources.MOUNTAIN)));
+            setSprite(ImageIO.read(new File(Resources.LAKE)));
         } catch (IOException e) {
             e.printStackTrace();
         }

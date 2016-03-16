@@ -14,7 +14,7 @@ public class PlayManager {
 
     private PlayManager()
     {
-        playerKey = new Player(400, 400, 3);
+        playerKey = new Player(400, 400, 2);
     }
 
     public static PlayManager getInstance(){
