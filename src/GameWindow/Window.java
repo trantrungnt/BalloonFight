@@ -8,6 +8,7 @@ import Sound.JavaxSound;
 import Sound.SoundPlayer;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -25,6 +26,8 @@ public class Window extends Frame implements Runnable, MouseListener {
     private Graphics seconds;
     private Image image;
     private BufferedImage background;
+    private static Clip clipSoundMain;
+    private static Clip clipSoundMenu;
 
     public Window() {
         //thiet lap tieu de cho cua so
@@ -50,14 +53,16 @@ public class Window extends Frame implements Runnable, MouseListener {
             e.printStackTrace();
         }
 
+        //dang ky lang nghe su kien chuot
         this.addMouseListener(this);
 
-        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) {
-            //load file nhac nen cua Game Balloon Fight
-            JavaxSound javaxSound = new JavaxSound();
-            javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
-        }
+        //khoi tao doi tuong javaxsound
+        JavaxSound javaxSound = new JavaxSound();
+        clipSoundMenu = javaxSound.playWAV(Resources.SOUND_MENU_GAME);
+        clipSoundMain = javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
 
+        //goi phuong thuc chay Soudn MenuBackground
+        playSoundMenu();
     }
 
     @Override
@@ -87,8 +92,6 @@ public class Window extends Frame implements Runnable, MouseListener {
     @Override
     public void run() {
         while (true) {
-
-
             PlayManager.getInstance().getPlayerKey().update();
             EnemyManager.getInstance().getEnemy1().update();
             repaint();
@@ -108,6 +111,8 @@ public class Window extends Frame implements Runnable, MouseListener {
                     && playButton.getPositionY() <= e.getY() && e.getY() <= playButton.getPositionY() + playButton.getSprite().getHeight()) {
                 // chuyen sang Play Window khi an Play
                 GameManager.getInstance().getGameWindowStack().add(PlayWindowManager.getInstance().getPlayWindow());
+                clipSoundMenu.stop();
+                clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
             MenuButton menuButton = PlayWindowManager.getInstance().getMenuButton();
@@ -116,6 +121,8 @@ public class Window extends Frame implements Runnable, MouseListener {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Menu Window khi an Menu
                     GameManager.getInstance().getGameWindowStack().pop();
+                    clipSoundMain.stop();
+                    clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             } else {
                 // chuyen sang Game Over Window (DEBUG MODE: khi an ngoai nut Menu)
@@ -128,6 +135,8 @@ public class Window extends Frame implements Runnable, MouseListener {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Play Window khi an Again
                     GameManager.getInstance().getGameWindowStack().pop();
+                    clipSoundMenu.stop();
+                    clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             }
         }
@@ -152,4 +161,17 @@ public class Window extends Frame implements Runnable, MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
+
+    //play Sound Menu
+    private void playSoundMenu()
+    {
+        //kiem tra cua so hien tai co la menuGame khong va nhac chua mo thi chay nhac
+        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow)
+        {
+            clipSoundMain.stop();
+            //load file nhac nen cua Game Balloon Fight
+            clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+    }
+
 }

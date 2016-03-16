@@ -10,6 +10,7 @@ public class Resources {
     public static final String CLOUD = "Resources/Sprite/image 228.png"; // hinh dam may
     public static final String MENU_TITLE = "Resources/Sprite/image 222.png"; // hinh ten game tai cua so MenuWindow
     public static final String ENEMY = "Resources/Sprite/image 204.png"; // hinh Enemy
+    public static final String ENEMY_ANIMATION="Resources/Sprite/image 189.png";
     public static final String PLAY_BUTTON = "Resources/Sprite/image 211.png"; // hinh nut Play tai cua so MenuWindow
     public static final String MENU_BUTTON = "Resources/Sprite/image 219.png"; // hinh nut Menu tai cua so PlayWindow (nut tro lai MenuWindow)
     public static final String AGAIN_BUTTON = "Resources/Sprite/image 206.png"; // hinh nut Again tai cua so GameOverWindow (nut tro lai PlayWindow)

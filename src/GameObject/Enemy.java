@@ -5,46 +5,61 @@ import Main.Resources;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
+import static Main.Helper.*;
 
 /**
  * Created by TuấnCon on 3/14/2016.
  */
 public class Enemy extends EnemyAbstract {
-    private int direction;
+    private int flip1;
+    private int flip2;
 
-    public Enemy(int positionX, int positionY, int moveSpeed) {
+    public Enemy(int positionX, int positionY, int Speed) {
         super(positionX, positionY);
-        this.moveSpeed = moveSpeed;
+        setSpeed(Speed);
+        setHealth(2);
+        /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
         try {
-            this.sprite = ImageIO.read(new File(Resources.ENEMY));
-
+            BufferedImage bigImage = ImageIO.read(new File(Resources.ENEMY_ANIMATION)); // doc SpriteSheet anh dong
+            setSprite(bigImage.getSubimage(0, 0, 60, 60)); //lay anh dau tien lam anh tinh
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
 
-    public int getDirection() {
-        return direction;
-    }
-
-    public void setDirection(int direction) {
-        this.direction = direction;
+        /* Xet anh dong cho Enemy */
+        this.setAnimation(new Animation(Resources.ENEMY_ANIMATION, 60, 60, 1, 3, 70));
+        this.flip1 = this.getPositionX();
+        this.flip2 = this.getSprite().getWidth();
+        this.setSpeedX(1);
+        this.setSpeedY(1);
     }
 
     public void move() {
-        this.positionX += this.moveSpeed;
-        if (this.positionX <= 0) {
-            this.moveSpeed = -this.getmoveSpeed();
+        this.positionX += this.getSpeedX();
+        if (this.positionX<=0) {
+           setSpeedX(+1);
         }
-        if (this.positionX >= Helper.WINDOW_WIDTH) {
-            this.moveSpeed = -this.moveSpeed;
+        if (this.positionX>=WINDOW_WIDTH-120 ) {
+            setSpeedX(-1);
         }
     }
     public  void draw(Graphics g){
-        g.drawImage(sprite,positionX,positionY,null);
-    }
+        if (this.getSpeedX() > 0) {{
+            this.flip1 = this.getPositionX() + this.getSprite().getWidth();
+            this.flip2 = -this.getSprite().getWidth();
+            }
+        }
+            else {
+            this.flip1 = this.getPositionX();
+            this.flip2 = this.getSprite().getWidth();
+            }
+        this.getAnimation().draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
+        }
+
 
     public void update() {
         this.move();

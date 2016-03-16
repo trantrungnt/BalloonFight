@@ -4,36 +4,73 @@ package GameObject;
  * Created by TuấnCon on 3/14/2016.
  */
 public abstract class EnemyAbstract extends GameObject {
-    protected int moveSpeed;
-    protected int maxSpeed;
-    protected int health;
+    private int speedX;
+    private int speedY;
+    private int speed;
+    private int health; // so bong con lai
+    private int directionX;
+    private int directionY;
+    private Animation animation;
 
     public EnemyAbstract(int positionX, int positionY) {
         super(positionX, positionY);
     }
 
-    public int getmoveSpeed() {
-        return moveSpeed;
+    public Animation getAnimation() {
+        return animation;
     }
 
-    public void setmoveSpeed(int moveSpeed) {
-        this.moveSpeed = moveSpeed;
+    public void setAnimation(Animation animation) {
+        this.animation = animation;
     }
 
-    public int getmaxSpeed() {
-        return maxSpeed;
+    public int getSpeedX() {
+        return speedX;
     }
 
-    public void setmaxSpeed(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
+    public void setSpeedX(int speedX) {
+        this.speedX = speedX;
     }
 
-    public int gethealth() {
+    public int getSpeedY() {
+        return speedY;
+    }
+
+    public void setSpeedY(int speedY) {
+        this.speedY = speedY;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = this.speed;
+    }
+
+    public int getHealth() {
         return health;
     }
 
-    public void sethealth(int health) {
+    public void setHealth(int health) {
         this.health = health;
     }
+
+    public int getDirectionY() {
+        return directionY;
+    }
+
+    public void setDirectionY(int directionY) {
+        this.directionY = directionY;
+    }
+
+    public int getDirectionX() {
+        return directionX;
+    }
+
+    public void setDirectionX(int directionX) {
+        this.directionX = directionX;
+    }
+
 
 }
