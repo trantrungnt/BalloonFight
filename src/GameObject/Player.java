@@ -63,7 +63,7 @@ public class Player extends PlayerAbstract {
     private void checkObstacle() {
         Rectangle rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
         boolean isOnObstacle = false;
-        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVector()) {
+        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
             Rectangle rectObstacle;
 
             /* Xet va cham voi mep tren vat can */
@@ -84,7 +84,7 @@ public class Player extends PlayerAbstract {
             return;
         }
 
-        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVector()) {
+        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
             Rectangle rectObstacle;
 
             /* Xet va cham voi mep tren vat can */

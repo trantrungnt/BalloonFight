@@ -24,7 +24,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
     @Override
     public void draw(Graphics g) {
         PlayWindowManager.getInstance().getMountain().draw(g);
-        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVector()) {
+        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
             obstacle.draw(g);
         }
 

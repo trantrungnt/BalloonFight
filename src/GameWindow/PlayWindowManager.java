@@ -19,7 +19,7 @@ public class PlayWindowManager {
     private Mountain mountain;
     private Cloud cloud;
     private MenuButton menuButton;
-    private Vector<Obstacle> obstacleVector;
+    private Vector<Obstacle> obstacleVectorLand;
     private Vector<Obstacle> obstacleLake;
     private Vector<Obstacle> obstacleIsland;
 
@@ -28,15 +28,16 @@ public class PlayWindowManager {
         return playWindow;
     }
 
-    public Vector<Obstacle> getObstacleVector() {
-        return obstacleVector;
+    public Vector<Obstacle> getObstacleVectorLand() {
+        return obstacleVectorLand;
     }
 
 
     public Vector<Obstacle> getObstacleLake() {
         return obstacleLake;
     }
-    public Vector<Obstacle> getObstacleIsland() {return obstacleIsland; }
+    public Vector<Obstacle> getObstacleIsland() {
+        return obstacleIsland; }
 
 //    public Mountain getMountain() {
 //        return mountain;
@@ -64,42 +65,41 @@ public class PlayWindowManager {
     }
 
     private PlayWindowManager() {
-        obstacleVector = new Vector<>();
+        obstacleVectorLand = new Vector<>();
 
-        obstacleVector.add(new Land(850, 450));
-        obstacleVector.add(new Land(830, 450));
-        obstacleVector.add(new Land(810, 450));
-        obstacleVector.add(new Land(870, 450));
-        obstacleVector.add(new Land(890, 450));
-        obstacleVector.add(new Land(790, 450));
-        obstacleVector.add(new Land(770, 450));
+        obstacleVectorLand.add(new Land(850, 450));
+        obstacleVectorLand.add(new Land(830, 450));
+        obstacleVectorLand.add(new Land(810, 450));
+        obstacleVectorLand.add(new Land(870, 450));
+        obstacleVectorLand.add(new Land(890, 450));
+        obstacleVectorLand.add(new Land(790, 450));
+        obstacleVectorLand.add(new Land(770, 450));
 
-        obstacleVector.add(new Land(770, 360));
-        obstacleVector.add(new Land(850, 300));
+        obstacleVectorLand.add(new Land(770, 360));
+        obstacleVectorLand.add(new Land(850, 300));
 
-        obstacleVector.add(new Land(150, 420));
-        obstacleVector.add(new Land(170, 420));
-        obstacleVector.add(new Land(190, 420));
-        obstacleVector.add(new Land(210, 420));
-        obstacleVector.add(new Land(230, 420));
-        obstacleVector.add(new Land(250, 420));
-        obstacleVector.add(new Land(270, 420));
+        obstacleVectorLand.add(new Land(150, 420));
+        obstacleVectorLand.add(new Land(170, 420));
+        obstacleVectorLand.add(new Land(190, 420));
+        obstacleVectorLand.add(new Land(210, 420));
+        obstacleVectorLand.add(new Land(230, 420));
+        obstacleVectorLand.add(new Land(250, 420));
+        obstacleVectorLand.add(new Land(270, 420));
 
-        obstacleVector.add(new Land(250, 350));
-        obstacleVector.add(new Land(160, 260));
+        obstacleVectorLand.add(new Land(250, 350));
+        obstacleVectorLand.add(new Land(160, 260));
+
+        obstacleVectorLand.add(new Land(100, 500));
+        obstacleVectorLand.add(new Land(600, 300));
 
         obstacleLake = new Vector<>();
         obstacleLake.add(new Lake(0, 450));
 
-        obstacleIsland.add(new Island(50, 450));
+        obstacleIsland = new Vector<>();
+        obstacleIsland.add(new Island(50, 250));
 
 
-        obstacleVector = new Vector<>();
-        obstacleVector.add(new Land(100, 500));
-        obstacleVector.add(new Land(600, 300));
-
-
-        mountain = new Mountain(0, 100);
+        mountain = new Mountain(0, 120);
         cloud = new Cloud(502, 150);
         menuButton = new MenuButton(900, 50);
 
