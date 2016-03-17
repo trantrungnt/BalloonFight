@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="e55603e0-19ef-408f-8fe7-4a834d34a448" name="Default" comment="">
+=======
     <list default="true" id="e0c4eb28-d84b-4401-8861-aa11e3e65c2c" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GameObject/AuthorButton.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GameWindow/AuthorWindow.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GameWindow/AuthorWindowManager.java" />
@@ -15,6 +19,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java" afterPath="$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow/Window.java" afterPath="$PROJECT_DIR$/src/GameWindow/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main/Resources.java" afterPath="$PROJECT_DIR$/src/Main/Resources.java" />
+=======
+>>>>>>> origin/master
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/PlayWindow.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/PlayWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/PlayWindowManager.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/PlayWindowManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow/PlayWindow.java" afterPath="$PROJECT_DIR$/src/GameWindow/PlayWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow/PlayWindowManager.java" afterPath="$PROJECT_DIR$/src/GameWindow/PlayWindowManager.java" />
+>>>>>>> origin/master
+>>>>>>> origin/master
     </list>
     <ignored path="BalloonFight.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,6 +50,7 @@
     <favorites_list name="BalloonFight" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="PlayWindowManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameWindow/PlayWindowManager.java">
@@ -44,6 +60,24 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+<<<<<<< HEAD
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Window.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameWindow/Window.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+=======
+    <leaf>
+      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameObject/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+>>>>>>> origin/master
+              <folding />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -51,16 +85,28 @@
       <file leaf-file-name="AuthorWindowManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameWindow/AuthorWindowManager.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0">
               <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
                 <element signature="e#455#456#0" expanded="true" />
                 <element signature="e#512#513#0" expanded="true" />
               </folding>
+=======
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+=======
+            <state vertical-scroll-proportion="0.75298125">
+              <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+>>>>>>> origin/master
+              <folding />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="MenuWindowManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -70,25 +116,83 @@
                 <element signature="e#1115#1116#0" expanded="true" />
                 <element signature="e#1150#1151#0" expanded="true" />
               </folding>
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GameObject/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.5525424">
+              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+=======
+      <file leaf-file-name="MenuWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameWindow/MenuWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+>>>>>>> origin/master
+              <folding />
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="GameWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameWindow/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameObject/Enemy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+=======
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameObject/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+>>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="GameOverWindowManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameWindow/GameOverWindowManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="28" column="5" selection-start-line="8" selection-start-column="3" selection-end-line="28" selection-end-column="5" />
+=======
+<<<<<<< HEAD
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="23.615385">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuWindowManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+=======
+      <file leaf-file-name="Island.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GameObject/Obstacles/Island.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+>>>>>>> origin/master
+>>>>>>> origin/master
               <folding />
             </state>
           </provider>
@@ -98,8 +202,23 @@
         <entry file="file://$PROJECT_DIR$/src/GameWindow/GameOverWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
+=======
+<<<<<<< HEAD
+              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+              <folding />
+=======
+              <caret line="63" column="49" selection-start-line="63" selection-start-column="49" selection-end-line="63" selection-end-column="49" />
+              <folding>
+                <element signature="e#592#593#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#678#679#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+              </folding>
+>>>>>>> origin/master
+>>>>>>> origin/master
             </state>
           </provider>
         </entry>
@@ -173,8 +292,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+<<<<<<< HEAD
+=======
         <option value="$PROJECT_DIR$/src/GameWindow/PlayWindow.java" />
         <option value="$PROJECT_DIR$/src/GameWindow/PlayWindowManager.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/GameObject/AuthorButton.java" />
         <option value="$PROJECT_DIR$/src/GameWindow/MenuWindow.java" />
         <option value="$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java" />
@@ -182,14 +304,26 @@
         <option value="$PROJECT_DIR$/src/GameWindow/AuthorWindowManager.java" />
         <option value="$PROJECT_DIR$/src/GameWindow/AuthorWindow.java" />
         <option value="$PROJECT_DIR$/src/GameWindow/Window.java" />
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
+    <option name="width" value="1363" />
+    <option name="height" value="728" />
+=======
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
+<<<<<<< HEAD
     <option name="height" value="744" />
+=======
+    <option name="height" value="784" />
+>>>>>>> origin/master
+>>>>>>> origin/master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -216,6 +350,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+      <pane id="Scratches" />
+      <pane id="Scope" />
+=======
+>>>>>>> origin/master
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -322,9 +461,19 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
+=======
+<<<<<<< HEAD
+      <pane id="PackagesPane" />
+=======
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+>>>>>>> origin/master
+>>>>>>> origin/master
     </panes>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -619,16 +768,49 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
+      <changelist id="e55603e0-19ef-408f-8fe7-4a834d34a448" name="Default" comment="" />
+      <created>1458185242802</created>
+      <option name="number" value="Default" />
+      <updated>1458185242802</updated>
+=======
       <changelist id="e0c4eb28-d84b-4401-8861-aa11e3e65c2c" name="Default" comment="" />
       <created>1458194656590</created>
       <option name="number" value="Default" />
       <updated>1458194656590</updated>
+>>>>>>> origin/master
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
+=======
+<<<<<<< HEAD
+    <frame x="0" y="0" width="1363" height="728" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.4914625" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.51150703" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.48849294" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2635486" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+=======
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
+>>>>>>> origin/master
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -652,6 +834,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> origin/master
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -674,6 +857,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/GameObject/GameObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -771,7 +955,13 @@
         </state>
       </provider>
     </entry>
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/Window.java">
+=======
+>>>>>>> origin/master
     <entry file="file://$PROJECT_DIR$/src/GameObject/Enemy.java">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35112935">
           <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
@@ -826,7 +1016,79 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GameObject/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/PlayWindowManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/EnemyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/PlayManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/PlayerAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/AgainButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/GameManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Main.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/Window.java">
+>>>>>>> origin/master
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -874,19 +1136,79 @@
     <entry file="file://$PROJECT_DIR$/src/Main/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
+=======
+<<<<<<< HEAD
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+=======
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+>>>>>>> origin/master
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/GameWindow/MenuWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="66" selection-start-line="19" selection-start-column="66" selection-end-line="19" selection-end-column="66" />
+=======
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GameObject/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+=======
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/PlayManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/PlayerAbstract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/PlayButton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/EnemyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+=======
     <entry file="file://$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -901,20 +1223,55 @@
     <entry file="file://$PROJECT_DIR$/src/GameWindow/GameOverWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+>>>>>>> origin/master
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/GameWindow/GameOverWindowManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="5" selection-start-line="8" selection-start-column="3" selection-end-line="28" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/GameObject/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+<<<<<<< HEAD
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+=======
+          <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="23.615385">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> origin/master
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/GameWindow/GameWindow.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/MenuWindowManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/PlayWindow.java">
+>>>>>>> origin/master
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
@@ -945,13 +1302,40 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+>>>>>>> origin/master
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameWindow/PlayWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+=======
+<<<<<<< HEAD
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameWindow/PlayWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameObject/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5525424">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+=======
+        <state vertical-scroll-proportion="0.75298125">
+          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
+>>>>>>> origin/master
+>>>>>>> origin/master
           <folding />
         </state>
       </provider>
