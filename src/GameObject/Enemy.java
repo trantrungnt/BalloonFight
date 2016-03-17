@@ -1,5 +1,7 @@
 package GameObject;
 
+import GameObject.Obstacles.Obstacle;
+import GameWindow.PlayWindowManager;
 import Main.Helper;
 import Main.Resources;
 
@@ -37,6 +39,51 @@ public class Enemy extends EnemyAbstract {
         this.setSpeedX(1);
         this.setSpeedY(1);
     }
+    private void checkObstacle1() {
+        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
+        boolean isOnObstacle = false;
+        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
+            Rectangle rectObstacle;
+
+            /* Xet va cham voi mep tren vat can */
+            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), 1);
+            if (rectEnemy.intersects(rectObstacle) && Math.abs(obstacle.getPositionY() - this.getPositionY() - this.getSprite().getHeight()) <= 2) {
+                 { // neu khong nhay
+                    isOnObstacle = true;
+                    break;
+                }
+            }
+        }
+
+
+        for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
+            Rectangle rectObstacle;
+
+
+            /* Xet va cham voi mep trai vat can */
+            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), 1, obstacle.getSprite().getHeight());
+            if (rectEnemy.intersects(rectObstacle)) {
+
+                setSpeedX(0);
+                break;
+            }
+
+            /* Xet va cham voi mep phai vat can */
+            rectObstacle = new Rectangle(obstacle.getPositionX() + obstacle.getSprite().getWidth(), obstacle.getPositionY(),
+                    1, obstacle.getSprite().getHeight());
+            if (rectEnemy.intersects(rectObstacle)) {
+                setSpeedX(0);
+                break;
+            }
+
+            /* Xet va cham voi mep duoi vat can */
+            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY() + obstacle.getSprite().getHeight(),
+                    obstacle.getSprite().getWidth(),1);
+            if (rectEnemy.intersects(rectObstacle)) {
+                setSpeedY(1);
+                break;
+            }
+        }}
 
     public void move() {
         this.positionX += this.getSpeedX();
@@ -63,5 +110,6 @@ public class Enemy extends EnemyAbstract {
 
     public void update() {
         this.move();
+        this.checkObstacle1();
     }
 }
