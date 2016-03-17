@@ -98,6 +98,7 @@ public class Window extends Frame implements Runnable, MouseListener {
 
             PlayManager.getInstance().getPlayerKey().update();
             EnemyManager.getInstance().getEnemy1().update();
+            EnemyManager.getInstance().getEnemy2().update();
             repaint();
             try {
                 Thread.sleep(17);
