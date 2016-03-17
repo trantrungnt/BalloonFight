@@ -113,6 +113,8 @@ public class Window extends Frame implements Runnable, MouseListener {
                     && playButton.getPositionY() <= e.getY() && e.getY() <= playButton.getPositionY() + playButton.getSprite().getHeight()) {
                 // chuyen sang Play Window khi an Play
                 GameManager.getInstance().getGameWindowStack().add(PlayWindowManager.getInstance().getPlayWindow());
+                clipSoundMenu.stop();
+                clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
             MenuButton menuButton = PlayWindowManager.getInstance().getMenuButton();
@@ -121,6 +123,8 @@ public class Window extends Frame implements Runnable, MouseListener {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Menu Window khi an Menu
                     GameManager.getInstance().getGameWindowStack().pop();
+                    clipSoundMain.stop();
+                    clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             } else {
                 // chuyen sang Game Over Window (DEBUG MODE: khi an ngoai nut Menu)
@@ -133,19 +137,10 @@ public class Window extends Frame implements Runnable, MouseListener {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Play Window khi an Again
                     GameManager.getInstance().getGameWindowStack().pop();
+                    clipSoundMenu.stop();
+                    clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             }
-        }
-
-
-        //////////////////////////////////////////////////////
-        //kiem tra nhac dang phat hay khong va phat nhac
-        if ((GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow)
-                && (clipSoundMenu.isOpen())
-                )
-        {
-            clipSoundMenu.stop();
-            clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
         }
     }
 
