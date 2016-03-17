@@ -69,7 +69,5 @@ public class MenuWindowManager {
         obstacleLake.add(new Lake(110, 630));
         obstacleLake.add(new Lake(640, 630));
         obstacleLake.add(new Lake(0, 630));
-
-
     }
 }

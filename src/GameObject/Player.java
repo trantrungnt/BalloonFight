@@ -68,8 +68,8 @@ public class Player extends PlayerAbstract {
             Rectangle rectObstacle;
 
             /* Xet va cham voi mep tren vat can */
-            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), 1);
-            if (rectPlayer.intersects(rectObstacle) && Math.abs(obstacle.getPositionY() - this.getPositionY() - this.getSprite().getHeight()) <= 2) {
+            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), Helper.EPS);
+            if (rectPlayer.intersects(rectObstacle) && Math.abs(obstacle.getPositionY() - this.getPositionY() - this.getSprite().getHeight()) <= Helper.EPS) {
                 if (getDirectionY() != -1) { // neu khong nhay
                     setDirectionY(0);
                     setSpeedY(0);
@@ -88,20 +88,8 @@ public class Player extends PlayerAbstract {
         for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
             Rectangle rectObstacle;
 
-            /* Xet va cham voi mep tren vat can */
-            /*rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), 10);
-            if (rectPlayer.intersects(rectObstacle) && obstacle.getPositionY() == this.getPositionY() + this.getSprite().getHeight()) {
-                System.out.println("Zzz");
-                if (getDirectionY() != -1) { // neu khong nhay
-                    setDirectionY(0);
-                    setSpeedY(0);
-                    isOnObstacle = true;
-                    break;
-                }
-            }*/
-
             /* Xet va cham voi mep trai vat can */
-            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), 1, obstacle.getSprite().getHeight());
+            rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), Helper.EPS, obstacle.getSprite().getHeight());
             if (rectPlayer.intersects(rectObstacle)) {
                 setDirectionX(0);
                 setSpeedX(0);
@@ -110,7 +98,7 @@ public class Player extends PlayerAbstract {
 
             /* Xet va cham voi mep phai vat can */
             rectObstacle = new Rectangle(obstacle.getPositionX() + obstacle.getSprite().getWidth(), obstacle.getPositionY(),
-                    1, obstacle.getSprite().getHeight());
+                    Helper.EPS, obstacle.getSprite().getHeight());
             if (rectPlayer.intersects(rectObstacle)) {
                 setDirectionX(0);
                 setSpeedX(0);
@@ -119,10 +107,10 @@ public class Player extends PlayerAbstract {
 
             /* Xet va cham voi mep duoi vat can */
             rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY() + obstacle.getSprite().getHeight(),
-                    obstacle.getSprite().getWidth(), 1);
+                    obstacle.getSprite().getWidth(), Helper.EPS);
             if (rectPlayer.intersects(rectObstacle)) {
                 setDirectionY(0);
-                setSpeedY(1);
+                setSpeedY(obstacle.getPositionY() + obstacle.getSprite().getHeight() - getPositionY() + Helper.EPS);
                 break;
             }
         }
