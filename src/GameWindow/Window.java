@@ -8,6 +8,7 @@ import Sound.JavaxSound;
 import Sound.SoundPlayer;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -52,11 +53,10 @@ public class Window extends Frame implements Runnable, MouseListener {
 
         this.addMouseListener(this);
 
-        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) {
-            //load file nhac nen cua Game Balloon Fight
-            JavaxSound javaxSound = new JavaxSound();
-            javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
-        }
+        //load file nhac nen cua Game Balloon Fight
+        JavaxSound javaxSound = new JavaxSound();
+        javaxSound.playWAV(Resources.SOUND_MAIN_GAME).loop(Clip.LOOP_CONTINUOUSLY);
+
 
     }
 
