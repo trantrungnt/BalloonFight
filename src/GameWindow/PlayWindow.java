@@ -28,20 +28,27 @@ public class PlayWindow extends GameWindow implements KeyListener {
         PlayWindowManager.getInstance().getMountain().draw(g);
         PlayWindowManager.getInstance().getCloud().draw(g);
         PlayWindowManager.getInstance().getMenuButton().draw(g);
-        PlayManager.getInstance().getPlayerKey().draw(g);
         for (Obstacle obstacleLand : PlayWindowManager.getInstance().getObstacleVectorLand()) {
             obstacleLand.draw(g);
         }
-        for (Obstacle obstacleIsland: PlayWindowManager.getInstance().getObstacleIsland()){
-            obstacleIsland.draw(g);
+//        for (Obstacle obstacleIsland: PlayWindowManager.getInstance().getObstacleIsland()){
+//            obstacleIsland.draw(g);
+//        }
+
+        for (int i = 0; i < (PlayWindowManager.getInstance().getObstacleLake().size() - 1)/2; i++){
+            PlayWindowManager.getInstance().getObstacleLake().get(i).draw(g);
         }
 
-        for (Obstacle obstacleLake : PlayWindowManager.getInstance().getObstacleLake()){
-            obstacleLake.draw(g);
-        }
-
+        PlayManager.getInstance().getPlayerKey().draw(g);
         EnemyManager.getInstance().getEnemy1().draw(g);
         EnemyManager.getInstance().getEnemy2().draw(g);
+        for (int j = (PlayWindowManager.getInstance().getObstacleLake().size() - 1)/2; j< (PlayWindowManager.getInstance().getObstacleLake().size()-1); j++){
+            PlayWindowManager.getInstance().getObstacleLake().get(j).draw(g);
+        }
+
+        PlayWindowManager.getInstance().getObstacleLake().get(PlayWindowManager.getInstance().getObstacleLake().size() - 1).draw(g);
+
+
     }
 
     @Override
