@@ -4,6 +4,7 @@ import GameObject.Obstacles.Obstacle;
 import GameWindow.PlayWindowManager;
 import Main.Helper;
 import Main.Resources;
+import Sound.JISoundPlayer;
 import com.sun.imageio.plugins.common.SubImageInputStream;
 
 import javax.imageio.ImageIO;

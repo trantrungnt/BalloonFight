@@ -41,21 +41,22 @@ public class Resources {
 
     //Am Thanh
     public static final String SOUND_PLAY_WINDOW =
-            "Resources/Sound/sound 56 (org.flixel.FlxGame_SndFlixel).mp3"; // nhac nen game tai cua so PlayWindow
+            "Resources/Sound/sound 56 (org.flixel.FlxGame_SndFlixel).wav"; // nhac nen game tai cua so PlayWindow
     public static final String SOUND_MENU_WINDOW =
-            "Resources/Sound/sound 61 (utils.SoundClass_MenuMusicSample).mp3"; // nhac nen game tai cua so MenuWindow
+            "Resources/Sound/sound 61 (utils.SoundClass_MenuMusicSample).wav"; // nhac nen game tai cua so MenuWindow
     public static final String SOUND_PLAYER_FALLS_INTO_WATER =
-            "Resources/Sound/sound 63 (utils.SoundClass_WaterSplash).mp3"; // nhac khi nhan vat roi xuong nuoc
+            "Resources/Sound/sound 63 (utils.SoundClass_WaterSplash).wav"; // nhac khi nhan vat roi xuong nuoc
     public static final String SOUND_BREAKING_BALL =
-            "Resources/Sound/sound 65 (utils.SoundClass_BloonExplode).mp3"; // nhac khi no bong
+            "Resources/Sound/sound 65 (utils.SoundClass_BloonExplode).wav"; // nhac khi no bong
     public static final String SOUND_PLAYER_FLY =
-            "Resources/Sound/sound 60 (utils.SoundClass_Aleteo).mp3"; // nhac khi nhan vat cua minh bay
+            "Resources/Sound/sound 60 (utils.SoundClass_Aleteo).wav"; // nhac khi nhan vat cua minh bay
     public static final String SOUND_MAIN_GAME =
             "Resources/Sound/background-music-game-main.wav"; //duong dan file wav => day la file nhac nen chinh cua game Balloon Fight
     public static final String SOUND_GAME_OVER =
-            "Resources/Sound/game-over.mp3";
+            "Resources/Sound/game-over.wav";
     public static final String SOUND_MENU_GAME =
             "Resources/Sound/menu-music-game.wav";
+
 
 
 

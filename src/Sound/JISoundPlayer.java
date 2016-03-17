@@ -16,6 +16,8 @@ public class JISoundPlayer {
     //dung thu vien JLayer javazoom.ji doc cac file mp3 dang effect cua Game
 
     public void playmp3(String dir) {
+
+
         try {
             File file = new File(dir);
             FileInputStream fis = null;
@@ -33,6 +35,7 @@ public class JISoundPlayer {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
 
     }
 
