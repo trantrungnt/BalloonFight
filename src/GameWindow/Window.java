@@ -94,11 +94,11 @@ public class Window extends Frame implements Runnable, MouseListener {
     @Override
     public void run() {
         while (true) {
-
-
-            PlayManager.getInstance().getPlayerKey().update();
-            EnemyManager.getInstance().getEnemy1().update();
-            EnemyManager.getInstance().getEnemy2().update();
+            if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) {
+                PlayManager.getInstance().getPlayerKey().update();
+                EnemyManager.getInstance().getEnemy1().update();
+                EnemyManager.getInstance().getEnemy2().update();
+            }
             repaint();
             try {
                 Thread.sleep(17);

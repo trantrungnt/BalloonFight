@@ -57,18 +57,24 @@ public class MenuWindowManager {
         mountain = new Mountain(0, 550);
 
         obstacleIsland = new Vector<>();
-        obstacleIsland.add(new Island(660, 600));
-        obstacleIsland.add(new Island(580, 600));
-        obstacleIsland.add(new Island(500, 600));
-        obstacleIsland.add(new Island(420, 600));
-        obstacleIsland.add(new Island(340, 600));
-        obstacleIsland.add(new Island(260, 600));
+        obstacleIsland.add(new Island(660, 625));
+        obstacleIsland.add(new Island(580, 625));
+        obstacleIsland.add(new Island(500, 625));
+        obstacleIsland.add(new Island(420, 625));
+        obstacleIsland.add(new Island(340, 625));
+        obstacleIsland.add(new Island(260, 625));
 
         obstacleLake = new Vector<>();
-        obstacleLake.add(new Lake(450, 630));
-        obstacleLake.add(new Lake(110, 630));
-        obstacleLake.add(new Lake(640, 630));
-        obstacleLake.add(new Lake(0, 630));
+//        obstacleLake.add(new Lake(450, 630));
+        obstacleLake.add(new Lake(350, 640));
+        obstacleLake.add(new Lake(640, 640));
+        obstacleLake.add(new Lake(0, 640));
+//        obstacleLake.add(new Lake(450, 680));
+        obstacleLake.add(new Lake(320, 680));
+        obstacleLake.add(new Lake(640, 680));
+        obstacleLake.add(new Lake(0, 680));
+
+
 
 
     }

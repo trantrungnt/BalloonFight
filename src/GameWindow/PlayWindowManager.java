@@ -18,24 +18,19 @@ public class PlayWindowManager {
     private Mountain mountain;
     private Cloud cloud;
     private MenuButton menuButton;
-    private Vector<Obstacle> obstacleVectorLand;
+    private Vector<Obstacle> obstacleVector;
     private Vector<Obstacle> obstacleLake;
-    private Vector<Obstacle> obstacleIsland;
-
 
     public PlayWindow getPlayWindow() {
         return playWindow;
     }
 
     public Vector<Obstacle> getObstacleVectorLand() {
-        return obstacleVectorLand;
+        return obstacleVector;
     }
 
     public Vector<Obstacle> getObstacleLake() {
         return obstacleLake;
-    }
-    public Vector<Obstacle> getObstacleIsland(){
-        return obstacleIsland;
     }
 
     public Mountain getMountain() {
@@ -58,44 +53,47 @@ public class PlayWindowManager {
     }
 
     private PlayWindowManager() {
-        obstacleVectorLand = new Vector<>();
 
-        obstacleVectorLand.add(new Land(850, 450));
-        obstacleVectorLand.add(new Land(830, 450));
-        obstacleVectorLand.add(new Land(810, 450));
-        obstacleVectorLand.add(new Land(870, 450));
-        obstacleVectorLand.add(new Land(890, 450));
-        obstacleVectorLand.add(new Land(790, 450));
-        obstacleVectorLand.add(new Land(770, 450));
+        obstacleVector = new Vector<>();
+        obstacleVector.add(new Land(850, 450));
+        obstacleVector.add(new Land(830, 450));
+        obstacleVector.add(new Land(810, 450));
+        obstacleVector.add(new Land(870, 450));
+        obstacleVector.add(new Land(890, 450));
+        obstacleVector.add(new Land(790, 450));
+        obstacleVector.add(new Land(770, 450));
 
-        obstacleVectorLand.add(new Land(770, 360));
-        obstacleVectorLand.add(new Land(850, 300));
+        obstacleVector.add(new Land(770, 350));
+        obstacleVector.add(new Land(850, 270));
 
-        obstacleVectorLand.add(new Land(150, 420));
-        obstacleVectorLand.add(new Land(170, 420));
-        obstacleVectorLand.add(new Land(190, 420));
-        obstacleVectorLand.add(new Land(210, 420));
-        obstacleVectorLand.add(new Land(230, 420));
-        obstacleVectorLand.add(new Land(250, 420));
-        obstacleVectorLand.add(new Land(270, 420));
+        obstacleVector.add(new Land(150, 420));
+        obstacleVector.add(new Land(170, 420));
+        obstacleVector.add(new Land(190, 420));
+        obstacleVector.add(new Land(210, 420));
+        obstacleVector.add(new Land(230, 420));
+        obstacleVector.add(new Land(250, 420));
+        obstacleVector.add(new Land(270, 420));
 
-        obstacleVectorLand.add(new Land(250, 350));
-        obstacleVectorLand.add(new Land(160, 260));
+        obstacleVector.add(new Land(250, 320));
+        obstacleVector.add(new Land(160, 240));
 
-//        obstacleVectorLand.add(new Land(100, 500));
-//        obstacleVectorLand.add(new Land(600, 300));
+        obstacleVector.add(new Island(900, 630));
+        obstacleVector.add(new Island(810, 630));
+        obstacleVector.add(new Island(55, 630));
+        obstacleVector.add(new Island(0, 630));
 
         obstacleLake = new Vector<>();
-        obstacleLake.add(new Lake(450, 630));
-        obstacleLake.add(new Lake(110, 630));
-        obstacleLake.add(new Lake(640, 630));
-        obstacleLake.add(new Lake(0, 630));
+        obstacleLake.add(new Lake(150, 640));
+        obstacleLake.add(new Lake(450, 640));
+        obstacleLake.add(new Lake(0, 675));
+        obstacleLake.add(new Lake(640, 672));
+        obstacleLake.add(new Lake(200, 680));
+        obstacleLake.add(new Lake(450, 680));
+        obstacleLake.add(new Lake(0, 700));
+        obstacleLake.add(new Lake(200, 700));
+        obstacleLake.add(new Lake(450, 700));
+        obstacleLake.add(new Lake(640, 700));
 
-        obstacleIsland = new Vector<>();
-        obstacleIsland.add(new Island(820, 600));
-        obstacleIsland.add(new Island(720, 600));
-        obstacleIsland.add(new Island(100, 600));
-        obstacleIsland.add(new Island(0, 600));
 
         mountain = new Mountain(0, 550);
         cloud = new Cloud(502, 150);
