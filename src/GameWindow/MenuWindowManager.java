@@ -1,5 +1,6 @@
 package GameWindow;
 
+import GameObject.AuthorButton;
 import GameObject.MenuTitle;
 import GameObject.Mountain;
 import GameObject.Obstacles.Island;
@@ -16,6 +17,7 @@ public class MenuWindowManager {
     private MenuWindow menuWindow;
     private MenuTitle menuTitle;
     private PlayButton playButton;
+    private AuthorButton authorButton;
     private Vector<Obstacle> obstacleIsland;
     private Vector<Obstacle> obstacleLake;
     private Mountain mountain;
@@ -43,6 +45,10 @@ public class MenuWindowManager {
         return playButton;
     }
 
+    public AuthorButton getAuthorButton() {
+        return authorButton;
+    }
+
     private static MenuWindowManager ourInstance = new MenuWindowManager();
 
     public static MenuWindowManager getInstance() {
@@ -53,6 +59,7 @@ public class MenuWindowManager {
         menuWindow = new MenuWindow();
         menuTitle = new MenuTitle(256, 100);
         playButton = new PlayButton(485, 480);
+        authorButton = new AuthorButton(50, 50);
 
         mountain = new Mountain(0, 550);
 
