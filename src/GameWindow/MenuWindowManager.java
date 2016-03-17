@@ -1,7 +1,9 @@
 package GameWindow;
 
 import GameObject.MenuTitle;
+import GameObject.Mountain;
 import GameObject.Obstacles.Island;
+import GameObject.Obstacles.Lake;
 import GameObject.Obstacles.Obstacle;
 import GameObject.PlayButton;
 
@@ -15,19 +17,28 @@ public class MenuWindowManager {
     private MenuTitle menuTitle;
     private PlayButton playButton;
     private Vector<Obstacle> obstacleIsland;
+    private Vector<Obstacle> obstacleLake;
+    private Mountain mountain;
 
     public Vector<Obstacle> getObstacleIsland() {
         return obstacleIsland;
+    }
+
+    public Vector<Obstacle> getObstacleLake() {
+        return obstacleLake;
     }
 
     public MenuWindow getMenuWindow() {
         return menuWindow;
     }
 
+    public Mountain getMountain() {
+        return mountain;
+    }
+
     public MenuTitle getMenuTitle() {
         return menuTitle;
     }
-
     public PlayButton getPlayButton() {
         return playButton;
     }
@@ -43,7 +54,22 @@ public class MenuWindowManager {
         menuTitle = new MenuTitle(256, 100);
         playButton = new PlayButton(485, 480);
 
+        mountain = new Mountain(0, 550);
+
         obstacleIsland = new Vector<>();
-        obstacleIsland.add(new Island(100, 600));
+        obstacleIsland.add(new Island(660, 600));
+        obstacleIsland.add(new Island(580, 600));
+        obstacleIsland.add(new Island(500, 600));
+        obstacleIsland.add(new Island(420, 600));
+        obstacleIsland.add(new Island(340, 600));
+        obstacleIsland.add(new Island(260, 600));
+
+        obstacleLake = new Vector<>();
+        obstacleLake.add(new Lake(450, 630));
+        obstacleLake.add(new Lake(110, 630));
+        obstacleLake.add(new Lake(640, 630));
+        obstacleLake.add(new Lake(0, 630));
+
+
     }
 }

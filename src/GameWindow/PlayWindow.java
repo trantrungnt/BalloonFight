@@ -3,6 +3,11 @@ package GameWindow;
 import GameObject.*;
 import GameObject.Obstacles.Land;
 import GameObject.Obstacles.Obstacle;
+import Main.Resources;
+import Sound.JISoundPlayer;
+import Sound.JavaxSound;
+import javazoom.jl.player.*;
+import javazoom.jl.player.Player;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -15,6 +20,7 @@ import java.util.Vector;
  */
 public class PlayWindow extends GameWindow implements KeyListener {
     //private Vector<Obstacle> obstacleVector = new Vector<>();
+    private JavaxSound javaxSound = new JavaxSound();
 
     public PlayWindow() {
         //dang ky de lang nghe su kien keyboard
@@ -49,20 +55,25 @@ public class PlayWindow extends GameWindow implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+
         if (e.getKeyCode() == KeyEvent.VK_A) { //nhan phim a de di sang trai
             PlayManager.getInstance().getPlayerKey().setDirectionX(-1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
 
         if (e.getKeyCode() == KeyEvent.VK_D) { //nhan phim d de sang phai
             PlayManager.getInstance().getPlayerKey().setDirectionX(1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
 
         if (e.getKeyCode() == KeyEvent.VK_S) { //nhan phim s de di xuong
             PlayManager.getInstance().getPlayerKey().setDirectionY(1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
 
         if (e.getKeyCode() == KeyEvent.VK_Z) { //nhan phim z de bat dau bay
             PlayManager.getInstance().getPlayerKey().setDirectionY(-1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
     }
 
@@ -73,4 +84,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
         PlayManager.getInstance().getPlayerKey().setSpeedX(0);
         PlayManager.getInstance().getPlayerKey().setSpeedY(1);
     }
+
+    //check khi chay file mp3
+
 }
