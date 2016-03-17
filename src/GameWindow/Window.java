@@ -26,6 +26,8 @@ public class Window extends Frame implements Runnable, MouseListener {
     private Graphics seconds;
     private Image image;
     private BufferedImage background;
+    private static Clip clipSoundMain;
+    private static Clip clipSoundMenu;
 
     public Window() {
         //thiet lap tieu de cho cua so
@@ -51,13 +53,16 @@ public class Window extends Frame implements Runnable, MouseListener {
             e.printStackTrace();
         }
 
+        //dang ky lang nghe su kien chuot
         this.addMouseListener(this);
 
-        //load file nhac nen cua Game Balloon Fight
+        //khoi tao doi tuong javaxsound
         JavaxSound javaxSound = new JavaxSound();
-        javaxSound.playWAV(Resources.SOUND_MAIN_GAME).loop(Clip.LOOP_CONTINUOUSLY);
+        clipSoundMenu = javaxSound.playWAV(Resources.SOUND_MENU_GAME);
+        clipSoundMain = javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
 
-
+        //goi phuong thuc chay Soudn MenuBackground
+        playSoundMenu();
     }
 
     @Override
@@ -131,6 +136,17 @@ public class Window extends Frame implements Runnable, MouseListener {
                 }
             }
         }
+
+
+        //////////////////////////////////////////////////////
+        //kiem tra nhac dang phat hay khong va phat nhac
+        if ((GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow)
+                && (clipSoundMenu.isOpen())
+                )
+        {
+            clipSoundMenu.stop();
+            clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
+        }
     }
 
     @Override
@@ -152,4 +168,17 @@ public class Window extends Frame implements Runnable, MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
+
+    //play Sound Menu
+    private void playSoundMenu()
+    {
+        //kiem tra cua so hien tai co la menuGame khong va nhac chua mo thi chay nhac
+        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow)
+        {
+            clipSoundMain.stop();
+            //load file nhac nen cua Game Balloon Fight
+            clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
+        }
+    }
+
 }
