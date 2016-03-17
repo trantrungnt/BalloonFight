@@ -15,8 +15,7 @@ public class EnemyManager {
     private EnemyManager()
     {
         Enemy1   = new Enemy(250, 250, 1);
-
-    Enemy2   = new Enemy(500, 550, 1);
+         Enemy2   = new Enemy(350, 400, 1);
     }
 
 

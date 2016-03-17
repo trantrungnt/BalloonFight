@@ -1,18 +1,14 @@
 package GameWindow;
 
-import GameObject.*;
-import GameObject.Obstacles.Land;
+import GameObject.EnemyManager;
 import GameObject.Obstacles.Obstacle;
+import GameObject.PlayManager;
 import Main.Resources;
-import Sound.JISoundPlayer;
 import Sound.JavaxSound;
-import javazoom.jl.player.*;
-import javazoom.jl.player.Player;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.Vector;
 
 
 /**
@@ -55,6 +51,9 @@ public class PlayWindow extends GameWindow implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        if (PlayManager.getInstance().getPlayerKey().getDirectionY() == 0) {
+            PlayManager.getInstance().getPlayerKey().setSpeedY(1);
+        }
 
         if (e.getKeyCode() == KeyEvent.VK_A) { //nhan phim a de di sang trai
             PlayManager.getInstance().getPlayerKey().setDirectionX(-1);
