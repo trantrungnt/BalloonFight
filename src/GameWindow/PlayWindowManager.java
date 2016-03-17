@@ -88,16 +88,14 @@ public class PlayWindowManager {
         obstacleLake = new Vector<>();
         obstacleLake.add(new Lake(450, 630));
         obstacleLake.add(new Lake(110, 630));
-        obstacleLake.add(new Lake(600, 630));
+        obstacleLake.add(new Lake(640, 630));
         obstacleLake.add(new Lake(0, 630));
 
         obstacleIsland = new Vector<>();
-        obstacleIsland.add(new Island(100, 630));
-        obstacleIsland.add(new Island(50, 630));
-        obstacleIsland.add(new Island(10, 630));
-        obstacleIsland.add(new Island(750, 630));
-        obstacleIsland.add(new Island(800, 630));
-        obstacleIsland.add(new Island(850, 630));
+        obstacleIsland.add(new Island(820, 600));
+        obstacleIsland.add(new Island(720, 600));
+        obstacleIsland.add(new Island(100, 600));
+        obstacleIsland.add(new Island(0, 600));
 
         mountain = new Mountain(0, 550);
         cloud = new Cloud(502, 150);
@@ -105,6 +103,7 @@ public class PlayWindowManager {
 
         playWindow = new PlayWindow();
     }
+
 
 }
 

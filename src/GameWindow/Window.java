@@ -1,11 +1,12 @@
 package GameWindow;
 
 import GameObject.*;
+import GameObject.MenuButton;
+import GameObject.PlayButton;
 import Main.GameManager;
 import Main.Helper;
 import Main.Resources;
 import Sound.JavaxSound;
-import Sound.SoundPlayer;
 
 import javax.imageio.ImageIO;
 import javax.sound.sampled.Clip;
