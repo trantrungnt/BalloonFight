@@ -68,8 +68,8 @@ public class PlayWindowManager {
         obstacleVectorLand.add(new Land(790, 450));
         obstacleVectorLand.add(new Land(770, 450));
 
-        obstacleVectorLand.add(new Land(770, 360));
-        obstacleVectorLand.add(new Land(850, 300));
+        obstacleVectorLand.add(new Land(770, 350));
+        obstacleVectorLand.add(new Land(850, 270));
 
         obstacleVectorLand.add(new Land(150, 420));
         obstacleVectorLand.add(new Land(170, 420));
@@ -79,23 +79,31 @@ public class PlayWindowManager {
         obstacleVectorLand.add(new Land(250, 420));
         obstacleVectorLand.add(new Land(270, 420));
 
-        obstacleVectorLand.add(new Land(250, 350));
-        obstacleVectorLand.add(new Land(160, 260));
+        obstacleVectorLand.add(new Land(250, 320));
+        obstacleVectorLand.add(new Land(160, 240));
 
 //        obstacleVectorLand.add(new Land(100, 500));
 //        obstacleVectorLand.add(new Land(600, 300));
 
         obstacleLake = new Vector<>();
-        obstacleLake.add(new Lake(450, 630));
-        obstacleLake.add(new Lake(110, 630));
-        obstacleLake.add(new Lake(640, 630));
-        obstacleLake.add(new Lake(0, 630));
+        obstacleLake.add(new Lake(450, 640));
+        obstacleLake.add(new Lake(150, 640));
+//        obstacleLake.add(new Lake(640, 630));
+//        obstacleLake.add(new Lake(0, 630));
+        obstacleLake.add(new Lake(450, 680));
+        obstacleLake.add(new Lake(200, 680));
+        obstacleLake.add(new Lake(640, 672));
+        obstacleLake.add(new Lake(0, 675));
+        obstacleLake.add(new Lake(200, 700));
+        obstacleLake.add(new Lake(640, 700));
+        obstacleLake.add(new Lake(0, 700));
+
 
         obstacleIsland = new Vector<>();
-        obstacleIsland.add(new Island(820, 600));
-        obstacleIsland.add(new Island(720, 600));
-        obstacleIsland.add(new Island(100, 600));
-        obstacleIsland.add(new Island(0, 600));
+        obstacleIsland.add(new Island(900, 630));
+        obstacleIsland.add(new Island(810, 630));
+        obstacleIsland.add(new Island(55, 630));
+        obstacleIsland.add(new Island(0, 630));
 
         mountain = new Mountain(0, 550);
         cloud = new Cloud(502, 150);
