@@ -144,6 +144,7 @@ public class Player extends PlayerAbstract {
                     if (rectEnemy.intersects(rectPlayer)) {
                         if (this.getHealth() == 1) {
                             this.setHealth(this.getHealth() - 1);
+//
                         }
                     }
                 }
@@ -168,9 +169,16 @@ public class Player extends PlayerAbstract {
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
         if ((this.getHealth() == 0) || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)) {
-            GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
-            WindowManager.getInstance().getWindow().getClipSoundMain().stop();
-            clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
+            if((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
+                    || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)
+                    && ((PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
+                    || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= 700)))
+            {
+                GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+                WindowManager.getInstance().getWindow().getClipSoundMain().stop();
+                clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
+            }
+
         }
     }
 

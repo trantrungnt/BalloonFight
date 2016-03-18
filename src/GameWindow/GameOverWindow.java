@@ -20,6 +20,8 @@ public class GameOverWindow extends GameWindow {
         catch (Exception e){
             e.printStackTrace();
         }
+
+
     }
 
 
@@ -28,5 +30,6 @@ public class GameOverWindow extends GameWindow {
         GameOverWindowManager.getInstance().getAgainButton().draw(g);
         g.drawImage(gameOver, 300, 300, null);
     }
+
 
 }
