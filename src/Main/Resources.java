@@ -48,6 +48,8 @@ public class Resources {
     public static final String  ENEMY_DIE= "Resources/Sprite/image 215.png";
     public static final String NEW_ENEMY = "Resources/Sprite/new_enemy.png";
     public static final String LASER = "Resources/Sprite/DAN.png";
+    public static final String PLAYER_TWICE_AMINATION =
+            "Resources/Sprite/image_199.png"; // hinh Player Twice(dong)
 
     //Thong tin TacGia
     public static final String DETAIL =

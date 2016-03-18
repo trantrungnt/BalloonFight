@@ -28,31 +28,68 @@ public class Player extends PlayerAbstract {
         * */
     private Clip clipSoundGameOver;
 
-    public Player(int positionX, int positionY, int speed) {
+    public Player(int positionX, int positionY, int speed, int typePlayer) {
         super(positionX, positionY);
         setSpeed(speed);
         setHealth(2);
+        setTypePlayer(typePlayer);
 
-        /* Xet anh tinh cho Player (hinh dau tien trong anh dong) */
-        try {
-            BufferedImage bigImage = ImageIO.read(new File(Resources.PLAYER_ANIMATION)); // doc SpriteSheet anh dong
-            setSprite(bigImage.getSubimage(0, 0, 50, 61));
-            BufferedImage dieImage = ImageIO.read(new File(Resources.PLAYER_DIE));
-            setSprite(dieImage.getSubimage(0, 0, 50, 75));
-            setBayHaiBongTinh(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
-            setBayMotBongTinh(bigImage.getSubimage(150, 0, 50, 61));
-            setPlayDieTinh(dieImage.getSubimage(0, 0, 50, 75));
-            //150,75
-        } catch (IOException e) {
-            e.printStackTrace();
+        switch (typePlayer)
+        {
+            case 1:
+                  /* Xet anh tinh cho Player (hinh dau tien trong anh dong) */
+                try {
+                    BufferedImage bigImage = ImageIO.read(new File(Resources.PLAYER_ANIMATION)); // doc SpriteSheet anh dong
+                    setSprite(bigImage.getSubimage(0, 0, 50, 61));
+                    BufferedImage dieImage = ImageIO.read(new File(Resources.PLAYER_DIE));
+                    setSprite(dieImage.getSubimage(0, 0, 50, 75));
+                    setBayHaiBongTinh(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
+                    setBayMotBongTinh(bigImage.getSubimage(150, 0, 50, 61));
+                    setPlayDieTinh(dieImage.getSubimage(0, 0, 50, 75));
+                    //150,75
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                /* Xet anh dong cho Player */
+                this.setBayHaiBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
+                this.setBayMotBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 4, 6, 170));
+                this.setPlayerDie(new Animation(Resources.PLAYER_DIE, 50, 75, 1, 3, 170));
+                this.flip1 = this.getPositionX();
+                this.flip2 = this.getSprite().getWidth();
+
+                break;
+            case 2:
+                /////////////////////////////////////////////////////////////////////////////////////
+                try {
+                    BufferedImage bigImagePlayTwice = ImageIO.read(new File(Resources.PLAYER_TWICE_AMINATION)); // doc SpriteSheet anh dong
+                    setSprite(bigImagePlayTwice.getSubimage(0, 0, 50, 61));
+                    BufferedImage dieImage = ImageIO.read(new File(Resources.PLAYER_DIE));
+                    setSprite(dieImage.getSubimage(0, 0, 50, 75));
+                    setBayHaiBongTinh(bigImagePlayTwice.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
+                    setBayMotBongTinh(bigImagePlayTwice.getSubimage(150, 0, 50, 61));
+                    setPlayDieTinh(dieImage.getSubimage(0, 0, 50, 75));
+                    //150,75
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                /* Xet anh dong cho Player */
+                this.setBayHaiBongDong(new Animation(Resources.PLAYER_TWICE_AMINATION, 50, 61, 1, 3, 170));
+                this.setBayMotBongDong(new Animation(Resources.PLAYER_TWICE_AMINATION, 50, 61, 4, 6, 170));
+                this.setPlayerDie(new Animation(Resources.PLAYER_DIE, 50, 75, 1, 3, 170));
+                this.flip1 = this.getPositionX();
+                this.flip2 = this.getSprite().getWidth();
+
+                break;
         }
 
-        /* Xet anh dong cho Player */
-        this.setBayHaiBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
-        this.setBayMotBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 4, 6, 170));
-        this.setPlayerDie(new Animation(Resources.PLAYER_DIE, 50, 75, 1, 3, 170));
-        this.flip1 = this.getPositionX();
-        this.flip2 = this.getSprite().getWidth();
+
+
+
+
+
+
 
         JavaxSound javaxSound = new JavaxSound();
         clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
@@ -144,6 +181,7 @@ public class Player extends PlayerAbstract {
                     if (rectEnemy.intersects(rectPlayer)) {
                         if (this.getHealth() == 1) {
                             this.setHealth(this.getHealth() - 1);
+//
                         }
                     }
                 }
@@ -168,9 +206,16 @@ public class Player extends PlayerAbstract {
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
         if ((this.getHealth() == 0) || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)) {
-            GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
-            WindowManager.getInstance().getWindow().getClipSoundMain().stop();
-            clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
+            if((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
+                    || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)
+                    && ((PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
+                    || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= 700)))
+            {
+                GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+                WindowManager.getInstance().getWindow().getClipSoundMain().stop();
+                clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
+            }
+
         }
     }
 

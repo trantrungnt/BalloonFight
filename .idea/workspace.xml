@@ -2,16 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e76dde98-9ffa-4839-9312-99cd1b89b3ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/GameObject.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/GameObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/Laser.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/Laser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/NewEnemy.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/NewEnemy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/NewEnemyManager.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/NewEnemyManager.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sprite/image _199.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Resources/Sprite/image_199.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Sprite/Detail.png" afterPath="$PROJECT_DIR$/Resources/Sprite/Detail.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/Sprite/image 215.png" afterPath="$PROJECT_DIR$/Resources/Sprite/image 215.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/PlayManager.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/PlayManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/Player.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/PlayerAbstract.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameObject/PlayerAbstract.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/GameOverWindow.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/GameOverWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/Window.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/GameWindow/Window.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BalloonFight/Main/Resources.class" afterPath="$PROJECT_DIR$/out/production/BalloonFight/Main/Resources.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/GameObject.java" afterPath="$PROJECT_DIR$/src/GameObject/GameObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/Laser.java" afterPath="$PROJECT_DIR$/src/GameObject/Laser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/NewEnemy.java" afterPath="$PROJECT_DIR$/src/GameObject/NewEnemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/NewEnemyManager.java" afterPath="$PROJECT_DIR$/src/GameObject/NewEnemyManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/PlayManager.java" afterPath="$PROJECT_DIR$/src/GameObject/PlayManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/Player.java" afterPath="$PROJECT_DIR$/src/GameObject/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameObject/PlayerAbstract.java" afterPath="$PROJECT_DIR$/src/GameObject/PlayerAbstract.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow/GameOverWindow.java" afterPath="$PROJECT_DIR$/src/GameWindow/GameOverWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameWindow/Window.java" afterPath="$PROJECT_DIR$/src/GameWindow/Window.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main/Resources.java" afterPath="$PROJECT_DIR$/src/Main/Resources.java" />
     </list>
     <ignored path="BalloonFight.iws" />
@@ -64,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Laser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Laser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameObject/Laser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60362697">
+            <state vertical-scroll-proportion="0.0">
               <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
               <folding>
                 <element signature="e#724#725#0" expanded="true" />
@@ -81,7 +88,17 @@
         <entry file="file://$PROJECT_DIR$/src/Main/Resources.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
+              <caret line="49" column="58" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -102,26 +119,9 @@
       </file>
     </leaf>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
-    </option>
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/GameWindow/Window.java" />
-        <option value="$PROJECT_DIR$/src/GameWindow/GameOverWindowManager.java" />
-        <option value="$PROJECT_DIR$/src/Main/Resources.java" />
-        <option value="$PROJECT_DIR$/src/GameObject/GameObject.java" />
-        <option value="$PROJECT_DIR$/src/GameObject/NewEnemyManager.java" />
-        <option value="$PROJECT_DIR$/src/GameObject/NewEnemy.java" />
-        <option value="$PROJECT_DIR$/src/GameObject/Laser.java" />
-      </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -247,9 +247,6 @@
       <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="D:/it36002/Java" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -539,12 +536,6 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e76dde98-9ffa-4839-9312-99cd1b89b3ba" name="Default" comment="" />
-      <created>1458336861883</created>
-      <option name="number" value="Default" />
-      <updated>1458336861883</updated>
-    </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -553,7 +544,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -598,9 +589,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -675,13 +663,6 @@
         <state vertical-scroll-proportion="-0.21882352">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -771,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main/Resources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObject/NewEnemy.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -789,12 +762,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameObject/Laser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60362697">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
           <folding>
             <element signature="e#724#725#0" expanded="true" />
             <element signature="e#746#747#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="58" selection-start-line="49" selection-start-column="58" selection-end-line="49" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
