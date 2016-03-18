@@ -32,10 +32,10 @@ public class Enemy extends EnemyAbstract {
         setHealth(2);
 
         animationCurrent = getEnemyAmiantionBlowingBalloon();
-        try{
-            BufferedImage Enemy_Die=ImageIO.read(new File(Resources.ENEMY_DIE));
-            setDie(Enemy_Die.getSubimage(0,0,25,25));
-        }catch (IOException e){
+        try {
+            BufferedImage Enemy_Die = ImageIO.read(new File(Resources.ENEMY_DIE));
+            setDie(Enemy_Die.getSubimage(0, 0, 25, 25));
+        } catch (IOException e) {
             e.printStackTrace();
 
         }
@@ -100,11 +100,7 @@ public class Enemy extends EnemyAbstract {
                 PlayManager.getInstance().getPlayerKey().getPositionY() + PlayManager.getInstance().getPlayerKey().getSprite().getHeight() - Helper.EPS,
                 PlayManager.getInstance().getPlayerKey().getSprite().getWidth(),
                 Helper.EPS);
-
-//        boolean isOnCollision = false;
-        Rectangle rectEnemy;
-
-        rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
+        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
 
         //va cham voi bong Enemy
         if (rectEnemy.intersects(rectPlayer)) {
@@ -116,9 +112,22 @@ public class Enemy extends EnemyAbstract {
             }
         }
 
+        rectPlayer = new Rectangle(
+                PlayManager.getInstance().getPlayerTwice().getPositionX(),
+                PlayManager.getInstance().getPlayerTwice().getPositionY() + PlayManager.getInstance().getPlayerTwice().getSprite().getHeight() - Helper.EPS,
+                PlayManager.getInstance().getPlayerTwice().getSprite().getWidth(),
+                Helper.EPS);
+        rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
 
-//        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight()-Helper.EPS);
-
+        //va cham voi bong Enemy
+        if (rectEnemy.intersects(rectPlayer)) {
+            if (this.getHealth() == 2) {
+                setHealth(getHealth() - 1);
+                if (this.getHealth() == 1) {
+                    setHealth(getHealth() - 1);
+                }
+            }
+        }
     }
 
     public void move() {
@@ -130,10 +139,11 @@ public class Enemy extends EnemyAbstract {
         if (this.positionX >= WINDOW_WIDTH - Helper.ENEMY_WIDTH) {
             setSpeedX(-1);
         }
-        if (this.getHealth()==0){
+        if (this.getHealth() == 0) {
             setSpeedY(10);
-            this.positionY+=this.getSpeedY();
-        };
+            this.positionY += this.getSpeedY();
+        }
+        ;
 
 
         // this.positionY-=1;
@@ -154,7 +164,7 @@ public class Enemy extends EnemyAbstract {
         }
         animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
         //this.getAnimation().draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
-         if(this.getHealth()==0){
+        if (this.getHealth() == 0) {
             g.drawImage(this.getDie(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
         }
     }
@@ -167,10 +177,9 @@ public class Enemy extends EnemyAbstract {
         if (count >= 60) {
             animationCurrent = getAnimationBayHaiBong();
             this.move();
-            if(this.getHealth() == 2){
+            if (this.getHealth() == 2) {
                 animationCurrent = getAnimationBayHaiBong();
-            }
-            else if(this.getHealth() == 1) {
+            } else if (this.getHealth() == 1) {
                 animationCurrent = getAnimationBayMotBong();
             }
         }
@@ -217,6 +226,7 @@ public class Enemy extends EnemyAbstract {
         }
         return new Animation(Resources.ENEMY_ANIMATION, 60, 60, 4, 6, 70);
     }
+
     //get anh dong khi Enemy bay
     private Animation getAnimationBayHaiBong() {
             /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */

@@ -1,7 +1,9 @@
 package GameObject;
 
 import GameObject.Obstacles.Obstacle;
-import GameWindow.*;
+import GameWindow.GameOverWindowManager;
+import GameWindow.PlayWindowManager;
+import GameWindow.WindowManager;
 import Main.GameManager;
 import Main.Helper;
 import Main.Resources;
@@ -20,12 +22,12 @@ import java.io.IOException;
 public class Player extends PlayerAbstract {
     private int flip1;
     private int flip2;
-        /*
-            Ve anh dung chieu: g.drawImage(image, x, y, width, height, null);
-            Ve anh doi xung (theo chieu thang dung): g.drawImage(image, x + width, y, -width, height, null);
-            flip1 = x hoac x + width
-            flip2 = width hoac -width
-        * */
+    /*
+        Ve anh dung chieu: g.drawImage(image, x, y, width, height, null);
+        Ve anh doi xung (theo chieu thang dung): g.drawImage(image, x + width, y, -width, height, null);
+        flip1 = x hoac x + width
+        flip2 = width hoac -width
+    * */
     private Clip clipSoundGameOver;
 
     public Player(int positionX, int positionY, int speed, int typePlayer) {
@@ -34,8 +36,7 @@ public class Player extends PlayerAbstract {
         setHealth(2);
         setTypePlayer(typePlayer);
 
-        switch (typePlayer)
-        {
+        switch (typePlayer) {
             case 1:
                   /* Xet anh tinh cho Player (hinh dau tien trong anh dong) */
                 try {
@@ -83,14 +84,6 @@ public class Player extends PlayerAbstract {
 
                 break;
         }
-
-
-
-
-
-
-
-
         JavaxSound javaxSound = new JavaxSound();
         clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
     }
@@ -181,7 +174,6 @@ public class Player extends PlayerAbstract {
                     if (rectEnemy.intersects(rectPlayer)) {
                         if (this.getHealth() == 1) {
                             this.setHealth(this.getHealth() - 1);
-//
                         }
                     }
                 }
@@ -209,9 +201,9 @@ public class Player extends PlayerAbstract {
                 || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700))
                 && ((PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
                 || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= 700))) {
-                GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
-                WindowManager.getInstance().getWindow().getClipSoundMain().stop();
-                clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
+            GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+            WindowManager.getInstance().getWindow().getClipSoundMain().stop();
+            clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
         }
     }
 
