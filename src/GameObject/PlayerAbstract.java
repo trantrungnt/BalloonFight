@@ -17,6 +17,15 @@ public abstract class PlayerAbstract extends GameObject {
     private BufferedImage bayHaiBongTinh;
     private BufferedImage bayMotBongTinh;
     private Animation PlayerDie;
+    private BufferedImage PlayDieTinh;
+
+    public BufferedImage getPlayDieTinh() {
+        return PlayDieTinh;
+    }
+
+    public void setPlayDieTinh(BufferedImage playDieTinh) {
+        PlayDieTinh = playDieTinh;
+    }
 
     public Animation getPlayerDie() {
         return PlayerDie;
