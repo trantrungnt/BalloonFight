@@ -148,9 +148,19 @@ public class Enemy extends EnemyAbstract {
         if (count >= 60) {
             animationCurrent = getAnimationBayHaiBong();
             this.move();
+            if(this.getHealth() == 2){
+                animationCurrent = getAnimationBayHaiBong();
+            }
+            else if(this.getHealth() == 1) {
+                animationCurrent = getAnimationBayMotBong();
+            }
         }
         this.checkCollisionEnemyPlayer();
 
+<<<<<<< HEAD
+
+
+=======
         if (count >= 60) {
             if (this.getHealth() == 2) {
                 animationCurrent = getAnimationBayHaiBong();
@@ -158,6 +168,7 @@ public class Enemy extends EnemyAbstract {
                 animationCurrent = getAnimationBayMotBong();
             }
         }
+>>>>>>> origin/master
     }
 
     //ham kiem tra Bom Bong: khi den anh thu 7 thi bom bong xong
