@@ -11,6 +11,10 @@ public class EnemyManager {
     private static EnemyManager _sharePointer;
     private Vector<Enemy> enemyVector = new Vector<>();
 
+    public Vector<Enemy> getEnemyVector() {
+        return enemyVector;
+    }
+
     private EnemyManager() {
         enemyVector.add(new Enemy(800, 450 - Helper.ENEMY_HEIGHT, 1));
         enemyVector.add(new Enemy(160, 240 - Helper.ENEMY_HEIGHT, 1));

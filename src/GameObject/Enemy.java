@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Vector;
 
 import static Main.Helper.*;
 
@@ -82,7 +83,33 @@ public class Enemy extends EnemyAbstract {
                 setSpeedY(1);
                 break;
             }
-        }}
+        }
+    }
+    private void checkCollisionEnemyPlayer(){
+
+        Rectangle rectPlayer = new Rectangle(
+                PlayManager.getInstance().getPlayerKey().getPositionX(),
+                PlayManager.getInstance().getPlayerKey().getPositionY() + PlayManager.getInstance().getPlayerKey().getSprite().getHeight()- Helper.EPS,
+                PlayManager.getInstance().getPlayerKey().getSprite().getWidth(),
+                Helper.EPS);
+
+        boolean isOnCollision = false;
+            Rectangle rectEnemy;
+
+            rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
+
+            //va cham voi bong Enemy
+            if(rectEnemy.intersects(rectPlayer)){
+                if (this.getHealth() == 2) {
+                    setHealth(getHealth() - 1);
+                    System.out.println("Zzz");
+                }
+            }
+
+
+//        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight()-Helper.EPS);
+
+    }
 
     public void move() {
         this.positionX += this.getSpeedX();
@@ -108,8 +135,10 @@ public class Enemy extends EnemyAbstract {
             this.flip1 = this.getPositionX();
             this.flip2 = this.getSprite().getWidth();
             }
-        animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
-       //this.getAnimation().draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
+
+
+       animationCurrent.draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
+
     }
 
 
@@ -118,9 +147,18 @@ public class Enemy extends EnemyAbstract {
         this.checkObstacle1();
         count++;
         if (count>=60) {
-            animationCurrent = getEnemyAminationFly();
+            animationCurrent = getAnimationBayHaiBong();
             this.move();
         }
+        this.checkCollisionEnemyPlayer();
+
+        if(this.getHealth() == 2){
+           animationCurrent = getAnimationBayHaiBong();
+        }
+        else if(this.getHealth() == 1) {
+            animationCurrent = getAnimationBayMotBong();
+        }
+
     }
 
     //ham kiem tra Bom Bong: khi den anh thu 7 thi bom bong xong
@@ -153,7 +191,7 @@ public class Enemy extends EnemyAbstract {
     }
 
     //get anh dong khi Enemy bay
-    private Animation getEnemyAminationFly()
+    private Animation getAnimationBayHaiBong()
     {
             /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
             try {
@@ -183,5 +221,8 @@ public class Enemy extends EnemyAbstract {
         //this.setAnimation(new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 70));
         return new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 200);
     }
+
+
+
 
 }

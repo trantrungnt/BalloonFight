@@ -115,16 +115,10 @@ public class Player extends PlayerAbstract {
         }
     }
 
-    private void checkVaCham() {
-        Rectangle rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY() + this.getSprite().getHeight() - Helper.EPS,
-                this.getSprite().getWidth(), Helper.EPS);
-        for (Enemy enemy : EnemyManager.getInstance().get)
-    }
 
     public void update() {
         this.moveByKey();
         this.checkObstacle();
-        this.checkVaCham();
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
     }

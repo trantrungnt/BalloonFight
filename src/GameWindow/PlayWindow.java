@@ -1,6 +1,7 @@
 package GameWindow;
 
 import GameObject.Animation;
+import GameObject.Enemy;
 import GameObject.EnemyManager;
 import GameObject.Obstacles.Obstacle;
 import GameObject.PlayManager;
@@ -43,9 +44,12 @@ public class PlayWindow extends GameWindow implements KeyListener {
         PlayManager.getInstance().getPlayerKey().draw(g);
 
         //animation_current = EnemyManager.getInstance().getEnemy3().getEnemyAmiantionBlowingBalloon();
-        EnemyManager.getInstance().getEnemy3().draw(g);
-        EnemyManager.getInstance().getEnemy1().draw(g);
-        EnemyManager.getInstance().getEnemy2().draw(g);
+        for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()){
+            enemy.draw(g);
+        }
+//        EnemyManager.getInstance().getEnemy3().draw(g);
+//        EnemyManager.getInstance().getEnemy1().draw(g);
+//        EnemyManager.getInstance().getEnemy2().draw(g);
 
         //EnemyManager.getInstance().getEnemy3().draw(g);
         for (int j = (PlayWindowManager.getInstance().getObstacleLake().size() - 1)/2; j< (PlayWindowManager.getInstance().getObstacleLake().size()-1); j++){
