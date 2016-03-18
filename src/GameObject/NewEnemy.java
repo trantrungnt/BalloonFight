@@ -82,7 +82,6 @@ public class NewEnemy extends EnemyAbstract {
     }
 
     public void draw(Graphics g) {
-        System.out.println( NewEnemyManager.getInstance().getLaserVector().size());
         for (Laser laser : NewEnemyManager.getInstance().getLaserVector()) {
             laser.draw(g);
         }
