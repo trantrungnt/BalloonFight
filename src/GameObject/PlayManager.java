@@ -15,7 +15,7 @@ public class PlayManager {
     private Player playerKey;
 
     private PlayManager() {
-        playerKey = new Player(30, 630 - Helper.PLAYER_HEIGHT, 2);
+        playerKey = new Player(900, 630 - Helper.PLAYER_HEIGHT, 2);
     }
 
     public static PlayManager getInstance() {

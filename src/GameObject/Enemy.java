@@ -32,6 +32,13 @@ public class Enemy extends EnemyAbstract {
         setHealth(2);
 
         animationCurrent = getEnemyAmiantionBlowingBalloon();
+        try{
+            BufferedImage Enemy_Die=ImageIO.read(new File(Resources.ENEMY_DIE));
+            setDie(Enemy_Die.getSubimage(0,0,25,25));
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }
 
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
@@ -103,6 +110,9 @@ public class Enemy extends EnemyAbstract {
         if (rectEnemy.intersects(rectPlayer)) {
             if (this.getHealth() == 2) {
                 setHealth(getHealth() - 1);
+                if (this.getHealth() == 1) {
+                    setHealth(getHealth() - 1);
+                }
             }
         }
 
@@ -113,12 +123,18 @@ public class Enemy extends EnemyAbstract {
 
     public void move() {
         this.positionX += this.getSpeedX();
+
         if (this.positionX <= 0) {
             setSpeedX(+1);
         }
         if (this.positionX >= WINDOW_WIDTH - Helper.ENEMY_WIDTH) {
             setSpeedX(-1);
         }
+        if (this.getHealth()==0){
+            setSpeedY(+5);
+            this.positionY+=this.getSpeedY();
+        };
+
 
         // this.positionY-=1;
 
@@ -138,6 +154,9 @@ public class Enemy extends EnemyAbstract {
         }
         animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
         //this.getAnimation().draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
+         if(this.getHealth()==0){
+            g.drawImage(this.getDie(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
+        }
     }
 
 
@@ -156,7 +175,9 @@ public class Enemy extends EnemyAbstract {
                 animationCurrent = getAnimationBayHaiBong();
             } else if (this.getHealth() == 1) {
                 animationCurrent = getAnimationBayMotBong();
+
             }
+
         }
     }
 
@@ -188,6 +209,11 @@ public class Enemy extends EnemyAbstract {
         }
         return new Animation(Resources.ENEMY_ANIMATION, 60, 60, 4, 6, 70);
     }
+//    private  Animation getAnimationBayVoiDu(){
+//        try{
+//            BufferedImage ENEMY_DIE= ImageIO.read(new File(Resources))
+//        }
+//    }
 
     //get anh dong khi Enemy bay
     private Animation getAnimationBayHaiBong() {
