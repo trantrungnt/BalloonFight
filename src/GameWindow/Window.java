@@ -153,12 +153,6 @@ public class Window extends Frame implements Runnable, MouseListener {
                     clipSoundGameOver.stop();
                     clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
                 }
-            } else {
-                // chuyen sang Game Over Window (DEBUG MODE: khi an ngoai nut Menu)
-                GameManager.getInstance().getGameWindowStack().add(GameOverWindowManager.getInstance().getGameOverWindow());
-                clipSoundMain.stop();
-                clipSoundMenu.stop();
-                clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof GameOverWindow) { // hien tai dang o Game Over Window
             AgainButton againButton = GameOverWindowManager.getInstance().getAgainButton();
