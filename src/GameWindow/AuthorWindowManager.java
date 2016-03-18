@@ -20,6 +20,6 @@ public class AuthorWindowManager {
     }
 
     private AuthorWindowManager() {
-        authorWindow = new AuthorWindow(300, 300);
+        authorWindow = new AuthorWindow();
     }
 }

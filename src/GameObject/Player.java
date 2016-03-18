@@ -149,8 +149,9 @@ public class Player extends PlayerAbstract {
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
-        if (this.getHealth() == 1){
+        if (this.getHealth() == 0){
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+
         }
     }
 
