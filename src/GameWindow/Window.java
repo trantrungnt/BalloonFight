@@ -96,9 +96,9 @@ public class Window extends Frame implements Runnable, MouseListener {
         while (true) {
             if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) {
                 PlayManager.getInstance().getPlayerKey().update();
-                EnemyManager.getInstance().getEnemy1().update();
-                EnemyManager.getInstance().getEnemy2().update();
-                EnemyManager.getInstance().getEnemy3().update();
+                for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
+                    enemy.update();
+                }
             }
             repaint();
             try {
