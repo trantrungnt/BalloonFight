@@ -171,7 +171,7 @@ public class Player extends PlayerAbstract {
                 this.getBayHaiBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
             } else if (this.getHealth() == 1) {
                 this.getBayMotBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
-            }else if(this.getHealth()==0 ){
+            }else if(this.getHealth()==0  ){
                 this.getPlayerDie().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
 
             }
@@ -188,9 +188,10 @@ public class Player extends PlayerAbstract {
             } else if (this.getHealth() == 1) {
                 g.drawImage(this.getBayMotBongTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
             }
-            else if(this.getHealth()==0){
+            else if(positionY>700){
                 g.drawImage(this.getPlayDieTinh(),this.flip1,this.positionY,this.flip2,getSprite().getHeight(),null);
             }
+
             }
         }
     }

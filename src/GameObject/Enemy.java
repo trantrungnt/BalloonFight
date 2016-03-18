@@ -131,7 +131,7 @@ public class Enemy extends EnemyAbstract {
             setSpeedX(-1);
         }
         if (this.getHealth()==0){
-            setSpeedY(+5);
+            setSpeedY(10);
             this.positionY+=this.getSpeedY();
         };
 
@@ -211,18 +211,12 @@ public class Enemy extends EnemyAbstract {
         try {
 
             BufferedImage Image = ImageIO.read(new File(Resources.ENEMY_ANIMATION));
-            setSprite(Image.getSubimage(0, 0, 60, 60));
+            setSprite(Image.getSubimage(180, 360, 60, 60));
         } catch (IOException e) {
             e.printStackTrace();
         }
         return new Animation(Resources.ENEMY_ANIMATION, 60, 60, 4, 6, 70);
     }
-//    private  Animation getAnimationBayVoiDu(){
-//        try{
-//            BufferedImage ENEMY_DIE= ImageIO.read(new File(Resources))
-//        }
-//    }
-
     //get anh dong khi Enemy bay
     private Animation getAnimationBayHaiBong() {
             /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
