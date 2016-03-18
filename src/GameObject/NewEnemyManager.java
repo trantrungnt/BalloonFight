@@ -16,7 +16,7 @@ public class NewEnemyManager {
     }
 
     private NewEnemyManager() {
-        newEnemyVector.add(new NewEnemy(0, 0, 1));
+        newEnemyVector.add(new NewEnemy(1, 1, 1));
         for (NewEnemy newEnemy : newEnemyVector) {
             newEnemy.setDirectionY(1);
             newEnemy.setSpeedY(newEnemy.getSpeed());

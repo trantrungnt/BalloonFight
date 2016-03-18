@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.Vector;
 
 /**
  * Created by AsusA42F on 3/19/2016.
@@ -18,6 +19,8 @@ public class NewEnemy extends EnemyAbstract {
     private int flip1;
     private int flip2;
     private int count = 0;
+   // private Vector<Laser> laserVector = new Vector<>();
+
 
     public NewEnemy(int positionX, int positionY, int Speed) {
         super(positionX, positionY);
@@ -79,12 +82,23 @@ public class NewEnemy extends EnemyAbstract {
     }
 
     public void draw(Graphics g) {
+        System.out.println( NewEnemyManager.getInstance().getLaserVector().size());
+        for (Laser laser : NewEnemyManager.getInstance().getLaserVector()) {
+            laser.draw(g);
+        }
         g.drawImage(this.getSprite(), this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight(), null);
+
     }
 
+
+
     public void shot() {
-        NewEnemyManager.getInstance().getLaserVector().add(new Laser(this.getPositionX(), this.getPositionY()));
+      Laser laser= new Laser(this.positionX,this.positionY);
+        NewEnemyManager.getInstance().getLaserVector().add(laser);
+
     }
+       // NewEnemyManager.getInstance().getLaserVector().add(new Laser(this.getPositionX(), this.getPositionY()));
+
 
     public void move() {
         setDirectionX(0);
@@ -104,8 +118,13 @@ public class NewEnemy extends EnemyAbstract {
 
     public void update() {
         count++;
-        NewEnemyManager.getInstance().getLaserVector().clear();
+       // NewEnemyManager.getInstance().getLaserVector().clear();
         move();
+
+        for (Laser laser :NewEnemyManager.getInstance().getLaserVector()) {
+            laser.update();
+        }
+
         if (count >= Helper.SHOT_DELAY) {
             shot();
             count = 0;

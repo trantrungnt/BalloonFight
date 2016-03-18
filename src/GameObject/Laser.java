@@ -13,10 +13,21 @@ import java.io.IOException;
 public class Laser extends GameObject {
     public Laser(int positionX, int positionY) {
         super(positionX, positionY);
+        this.setSpeed(3);
         try {
             setSprite(ImageIO.read(new File(Resources.LASER)));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void draw(Graphics g) {
+        g.drawImage(this.sprite,(int)this.positionX, (int)this.positionY, null);
+    }
+    public void move() {
+        this.positionX += this.getSpeed();
+
+    }
+    public  void update(){
+        move();
     }
 }
