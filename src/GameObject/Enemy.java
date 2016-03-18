@@ -152,15 +152,16 @@ public class Enemy extends EnemyAbstract {
         if (count>=60) {
             animationCurrent = getAnimationBayHaiBong();
             this.move();
+            if(this.getHealth() == 2){
+                animationCurrent = getAnimationBayHaiBong();
+            }
+            else if(this.getHealth() == 1) {
+                animationCurrent = getAnimationBayMotBong();
+            }
         }
         this.checkCollisionEnemyPlayer();
 
-        if(this.getHealth() == 2){
-           animationCurrent = getAnimationBayHaiBong();
-        }
-        else if(this.getHealth() == 1) {
-            animationCurrent = getAnimationBayMotBong();
-        }
+
 
     }
 

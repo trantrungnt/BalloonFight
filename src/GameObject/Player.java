@@ -1,7 +1,9 @@
 package GameObject;
 
 import GameObject.Obstacles.Obstacle;
+import GameWindow.GameOverWindowManager;
 import GameWindow.PlayWindowManager;
+import Main.GameManager;
 import Main.Helper;
 import Main.Resources;
 
@@ -137,6 +139,9 @@ public class Player extends PlayerAbstract {
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
+        if (this.getHealth() == 1){
+            GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+        }
     }
 
     @Override
