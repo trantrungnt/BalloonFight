@@ -27,6 +27,19 @@ public class Window extends Frame implements Runnable, MouseListener {
     private Graphics seconds;
     private Image image;
     private BufferedImage background;
+
+    public static Clip getClipSoundMain() {
+        return clipSoundMain;
+    }
+
+    public static Clip getClipSoundMenu() {
+        return clipSoundMenu;
+    }
+
+    public static Clip getClipSoundGameOver() {
+        return clipSoundGameOver;
+    }
+
     private static Clip clipSoundMain;
     private static Clip clipSoundMenu;
     private static Clip clipSoundGameOver;
