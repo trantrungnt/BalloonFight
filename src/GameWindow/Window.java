@@ -27,6 +27,19 @@ public class Window extends Frame implements Runnable, MouseListener {
     private Graphics seconds;
     private Image image;
     private BufferedImage background;
+
+    public static Clip getClipSoundMain() {
+        return clipSoundMain;
+    }
+
+    public static Clip getClipSoundMenu() {
+        return clipSoundMenu;
+    }
+
+    public static Clip getClipSoundGameOver() {
+        return clipSoundGameOver;
+    }
+
     private static Clip clipSoundMain;
     private static Clip clipSoundMenu;
     private static Clip clipSoundGameOver;
@@ -101,6 +114,9 @@ public class Window extends Frame implements Runnable, MouseListener {
                 for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()){
                     enemy.update();
                 };
+                for (NewEnemy newEnemy : NewEnemyManager.getInstance().getNewEnemyVector()) {
+                    newEnemy.update();
+                }
                 PlayManager.getInstance().getPlayerTwice().update();
             }
             repaint();
@@ -142,12 +158,6 @@ public class Window extends Frame implements Runnable, MouseListener {
                     clipSoundGameOver.stop();
                     clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
                 }
-            } else {
-                // chuyen sang Game Over Window (DEBUG MODE: khi an ngoai nut Menu)
-                GameManager.getInstance().getGameWindowStack().add(GameOverWindowManager.getInstance().getGameOverWindow());
-                clipSoundMain.stop();
-                clipSoundMenu.stop();
-                clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof GameOverWindow) { // hien tai dang o Game Over Window
             AgainButton againButton = GameOverWindowManager.getInstance().getAgainButton();
