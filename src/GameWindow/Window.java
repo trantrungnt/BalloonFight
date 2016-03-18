@@ -165,7 +165,7 @@ public class Window extends Frame implements Runnable, MouseListener {
                     && againButton.getPositionY() <= e.getY() && e.getY() <= againButton.getPositionY() + againButton.getSprite().getHeight()) {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Play Window khi an Again
-                    GameManager.getInstance().getGameWindowStack().pop();
+                    GameManager.getInstance().getGameWindowStack().push(PlayWindowManager.getInstance().getPlayWindow());
                     clipSoundMenu.stop();
                     clipSoundGameOver.stop();
                     clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
