@@ -63,7 +63,7 @@ public class Enemy extends EnemyAbstract {
             rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), 1, obstacle.getSprite().getHeight());
             if (rectEnemy.intersects(rectObstacle)) {
 
-                setSpeedX(0);
+                setSpeedX(-1);
                 break;
             }
 
@@ -71,7 +71,7 @@ public class Enemy extends EnemyAbstract {
             rectObstacle = new Rectangle(obstacle.getPositionX() + obstacle.getSprite().getWidth(), obstacle.getPositionY(),
                     1, obstacle.getSprite().getHeight());
             if (rectEnemy.intersects(rectObstacle)) {
-                setSpeedX(0);
+                setSpeedX(1);
                 break;
             }
 

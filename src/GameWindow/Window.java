@@ -120,7 +120,9 @@ public class Window extends Frame implements Runnable, MouseListener {
                 clipSoundMenu.stop();
                 clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
             }
-        } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
+        }
+
+        else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
             MenuButton menuButton = PlayWindowManager.getInstance().getMenuButton();
             if (menuButton.getPositionX() <= e.getX() && e.getX() <= menuButton.getPositionX() + menuButton.getSprite().getWidth()
                     && menuButton.getPositionY() <= e.getY() && e.getY() <= menuButton.getPositionY() + menuButton.getSprite().getHeight()) {
@@ -145,6 +147,15 @@ public class Window extends Frame implements Runnable, MouseListener {
                     clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             }
+        }
+        else if(GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow ){ //hien tai dang o MenuWindow
+            AuthorButton authorButton = MenuWindowManager.getInstance().getAuthorButton();
+            if(authorButton.getPositionX() <= e.getX() && e.getX() <= authorButton.getPositionX() + authorButton.getSprite().getWidth()
+                    && authorButton.getPositionY() <= e.getY() && e.getY() <= authorButton.getPositionY() + authorButton.getSprite().getHeight()){
+                //chuyen sang AuthorWindow khi nhan Author
+                GameManager.getInstance().getGameWindowStack().add(AuthorWindowManager.getInstance().getAuthorWindow());
+            }
+
         }
     }
 

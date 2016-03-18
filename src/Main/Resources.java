@@ -24,6 +24,8 @@ public class Resources {
             "Resources/Sprite/image 204.png"; // hinh Enemy
     public static final String PLAY_BUTTON =
             "Resources/Sprite/image 211.png"; // hinh nut Play tai cua so MenuWindow
+    public static final String AUTHOR_BUTTON =
+            "Resources/Sprite/AuthorButton.png"; //hinh nut Author tai cua so MenuWindow
     public static final String MORE_GAMES_BUTTON =
             "Resources/Sprite/image 190.png"; // hinh nut More Games tai cua so MenuWindow
     public static final String MORE_COOL_GAMES_BUTTON =
@@ -40,6 +42,10 @@ public class Resources {
             "Resources/Sprite/image 189.png";
     public static final String ENEMY_AMINATION_BLOWING_BALLOONS =
             "Resources/Sprite/image 226.png"; //hinh dong bom bong bay cua dich
+
+    //Thong tin TacGia
+    public static final String DETAIL =
+            "Resources/Sprite/Detail.png"; //Hinh thong tin chi tiet ve tac gia
 
     //Am Thanh
     public static final String SOUND_PLAY_WINDOW =
@@ -58,6 +64,8 @@ public class Resources {
             "Resources/Sound/game-over.wav";
     public static final String SOUND_MENU_GAME =
             "Resources/Sound/menu-music-game.wav";
+
+
 
 
 
