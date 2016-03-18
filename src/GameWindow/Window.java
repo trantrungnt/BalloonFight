@@ -124,6 +124,11 @@ public class Window extends Frame implements Runnable, MouseListener {
                 clipSoundGameOver.stop();
                 clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
             }
+            AuthorButton authorButton = MenuWindowManager.getInstance().getAuthorButton();
+            if(authorButton.getPositionX() <= e.getX() && e.getX() <= authorButton.getPositionX() + authorButton.getSprite().getWidth()
+                    && authorButton.getPositionY() <= e.getY() && e.getY() <= authorButton.getPositionY() + authorButton.getSprite().getHeight()){
+                GameManager.getInstance().getGameWindowStack().add(AuthorWindowManager.getInstance().getAuthorWindow());
+            }
         }
 
         else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
@@ -157,15 +162,15 @@ public class Window extends Frame implements Runnable, MouseListener {
                 }
             }
         }
-        else if(GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow ){ //hien tai dang o MenuWindow
-            AuthorButton authorButton = MenuWindowManager.getInstance().getAuthorButton();
-            if(authorButton.getPositionX() <= e.getX() && e.getX() <= authorButton.getPositionX() + authorButton.getSprite().getWidth()
-                    && authorButton.getPositionY() <= e.getY() && e.getY() <= authorButton.getPositionY() + authorButton.getSprite().getHeight()){
-                //chuyen sang AuthorWindow khi nhan Author
-                GameManager.getInstance().getGameWindowStack().add(AuthorWindowManager.getInstance().getAuthorWindow());
-            }
-
-        }
+//        else if(GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow ){ //hien tai dang o MenuWindow
+//            AuthorButton authorButton = MenuWindowManager.getInstance().getAuthorButton();
+//            if(authorButton.getPositionX() <= e.getX() && e.getX() <= authorButton.getPositionX() + authorButton.getSprite().getWidth()
+//                    && authorButton.getPositionY() <= e.getY() && e.getY() <= authorButton.getPositionY() + authorButton.getSprite().getHeight()){
+//                //chuyen sang AuthorWindow khi nhan Author
+//                GameManager.getInstance().getGameWindowStack().add(AuthorWindowManager.getInstance().getAuthorWindow());
+//            }
+//
+//        }
 
     }
 
