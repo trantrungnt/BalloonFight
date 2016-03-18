@@ -102,6 +102,7 @@ public class Window extends Frame implements Runnable, MouseListener {
 //                EnemyManager.getInstance().getEnemy1().update();
 //                EnemyManager.getInstance().getEnemy2().update();
 //                EnemyManager.getInstance().getEnemy3().update();
+                PlayManager.getInstance().getPlayerTwice().update();
             }
             repaint();
             try {
@@ -160,6 +161,7 @@ public class Window extends Frame implements Runnable, MouseListener {
             }
 
         }
+
     }
 
     @Override

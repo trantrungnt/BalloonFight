@@ -61,7 +61,7 @@ public class PlayWindow extends GameWindow implements KeyListener {
         }
 
         PlayWindowManager.getInstance().getObstacleLake().get(PlayWindowManager.getInstance().getObstacleLake().size() - 1).draw(g);
-
+        PlayManager.getInstance().getPlayerTwice().draw(g);
 
     }
 
@@ -95,6 +95,35 @@ public class PlayWindow extends GameWindow implements KeyListener {
             PlayManager.getInstance().getPlayerKey().setDirectionY(-1);
             javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
+
+        //////////////////////////////////////////////////////////////////////
+        if (PlayManager.getInstance().getPlayerTwice().getDirectionY() == 0) {
+            PlayManager.getInstance().getPlayerTwice().setSpeedY(1);
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_A) //nhan phim A thi di dang trai
+        {
+            PlayManager.getInstance().getPlayerTwice().setDirectionX(-1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_D) //nhan phim D de di sang phai
+        {
+            PlayManager.getInstance().getPlayerTwice().setDirectionX(1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_W) //nhan phim W de di bay len
+        {
+            PlayManager.getInstance().getPlayerTwice().setDirectionY(-1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+        }
+
+        if (e.getKeyCode() == KeyEvent.VK_S) //nhan phim S de di xuong duoi
+        {
+            PlayManager.getInstance().getPlayerTwice().setDirectionY(1);
+            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+        }
     }
 
     @Override
@@ -103,6 +132,13 @@ public class PlayWindow extends GameWindow implements KeyListener {
         PlayManager.getInstance().getPlayerKey().setDirectionY(0);
         PlayManager.getInstance().getPlayerKey().setSpeedX(0);
         PlayManager.getInstance().getPlayerKey().setSpeedY(1);
+
+
+        //////////////////////////////////////////
+        PlayManager.getInstance().getPlayerTwice().setDirectionX(0);
+        PlayManager.getInstance().getPlayerTwice().setDirectionY(0);
+        PlayManager.getInstance().getPlayerTwice().setSpeedX(0);
+        PlayManager.getInstance().getPlayerTwice().setSpeedY(1);
     }
 
 }

@@ -14,8 +14,19 @@ public class PlayManager {
 
     private Player playerKey;
 
+    public Player getPlayerTwice() {
+        return playerTwice;
+    }
+
+    private Player playerTwice;
+
     private PlayManager() {
+<<<<<<< HEAD
         playerKey = new Player(900, 630 - Helper.PLAYER_HEIGHT, 2);
+=======
+        playerKey = new Player(30, 630 - Helper.PLAYER_HEIGHT, 2);
+        playerTwice = new Player(150, 406 - Helper.PLAYER_HEIGHT, 2);
+>>>>>>> origin/master
     }
 
     public static PlayManager getInstance() {
