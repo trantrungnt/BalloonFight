@@ -14,13 +14,12 @@ public class PlayManager {
 
     private Player playerKey;
 
-    private PlayManager()
-    {
-        playerKey = new Player(30, 630- Helper.PLAYER_HEIGHT, 2);
+    private PlayManager() {
+        playerKey = new Player(30, 630 - Helper.PLAYER_HEIGHT, 2);
     }
 
-    public static PlayManager getInstance(){
-        if(_sharePointer == null){
+    public static PlayManager getInstance() {
+        if (_sharePointer == null) {
             _sharePointer = new PlayManager();
         }
         return _sharePointer;

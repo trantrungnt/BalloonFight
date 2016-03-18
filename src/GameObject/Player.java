@@ -4,8 +4,6 @@ import GameObject.Obstacles.Obstacle;
 import GameWindow.PlayWindowManager;
 import Main.Helper;
 import Main.Resources;
-import Sound.JISoundPlayer;
-import com.sun.imageio.plugins.common.SubImageInputStream;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -40,7 +38,8 @@ public class Player extends PlayerAbstract {
         }
 
         /* Xet anh dong cho Player */
-        this.setAnimation(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
+        this.setBayHaiBong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
+        this.setBayHaiBong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 4, 6, 170));
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
     }
@@ -116,9 +115,16 @@ public class Player extends PlayerAbstract {
         }
     }
 
+    private void checkVaCham() {
+        Rectangle rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY() + this.getSprite().getHeight() - Helper.EPS,
+                this.getSprite().getWidth(), Helper.EPS);
+        for (Enemy enemy : EnemyManager.getInstance().get)
+    }
+
     public void update() {
         this.moveByKey();
         this.checkObstacle();
+        this.checkVaCham();
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
     }
@@ -133,7 +139,11 @@ public class Player extends PlayerAbstract {
                 this.flip1 = this.getPositionX();
                 this.flip2 = this.getSprite().getWidth();
             }
-            this.getAnimation().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
+            if (this.getHealth() == 2) {
+                this.getBayHaiBong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
+            } else if (this.getHealth() == 1) {
+                this.getBayMotBong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
+            }
         } else {
             if (this.getDirectionX() == 1) { // di sang phai
                 this.flip1 = getPositionX() + getSprite().getWidth();
@@ -146,6 +156,3 @@ public class Player extends PlayerAbstract {
         }
     }
 }
-
-
-
