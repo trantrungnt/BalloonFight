@@ -94,7 +94,7 @@ public class Enemy extends EnemyAbstract {
                 PlayManager.getInstance().getPlayerKey().getSprite().getWidth(),
                 Helper.EPS);
 
-        boolean isOnCollision = false;
+//        boolean isOnCollision = false;
         Rectangle rectEnemy;
 
         rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
