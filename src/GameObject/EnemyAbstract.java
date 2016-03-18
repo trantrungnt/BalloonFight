@@ -56,7 +56,7 @@ public abstract class EnemyAbstract extends GameObject {
     }
 
     public void setSpeed(int speed) {
-        this.speed = this.speed;
+        this.speed = speed;
     }
 
     public int getHealth() {

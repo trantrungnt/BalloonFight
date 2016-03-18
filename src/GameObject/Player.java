@@ -35,11 +35,11 @@ public class Player extends PlayerAbstract {
         try {
             BufferedImage bigImage = ImageIO.read(new File(Resources.PLAYER_ANIMATION)); // doc SpriteSheet anh dong
             setSprite(bigImage.getSubimage(0, 0, 50, 61));
-            BufferedImage dieImage = ImageIO .read(new File(Resources.PLAYER_DIE));
-            setSprite(dieImage.getSubimage(0,0,50,75));
+            BufferedImage dieImage = ImageIO.read(new File(Resources.PLAYER_DIE));
+            setSprite(dieImage.getSubimage(0, 0, 50, 75));
             setBayHaiBongTinh(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
             setBayMotBongTinh(bigImage.getSubimage(150, 0, 50, 61));
-            setPlayDieTinh(dieImage.getSubimage(0,0,50,75));
+            setPlayDieTinh(dieImage.getSubimage(0, 0, 50, 75));
             //150,75
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,7 +48,7 @@ public class Player extends PlayerAbstract {
         /* Xet anh dong cho Player */
         this.setBayHaiBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
         this.setBayMotBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 4, 6, 170));
-        this.setPlayerDie(new Animation(Resources.PLAYER_DIE , 50,75,1,3,170));
+        this.setPlayerDie(new Animation(Resources.PLAYER_DIE, 50, 75, 1, 3, 170));
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
     }
@@ -134,14 +134,24 @@ public class Player extends PlayerAbstract {
                     enemy.getSprite().getWidth(), Helper.EPS);
             if (rectEnemy.intersects(rectPlayer)) {
                 this.setPositionY(this.getPositionY() + Helper.BOUNCE);
-                if (this.getHealth()==2) {
+                if (this.getHealth() == 2) {
                     this.setHealth(this.getHealth() - 1);
-                    if(rectEnemy.intersects(rectPlayer)){
-                        if(this.getHealth()==1){
-                            this.setHealth(this.getHealth()-1);
+                    if (rectEnemy.intersects(rectPlayer)) {
+                        if (this.getHealth() == 1) {
+                            this.setHealth(this.getHealth() - 1);
                         }
                     }
                 }
+            }
+        }
+
+        rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
+        for (Laser laser : NewEnemyManager.getInstance().getLaserVector()) {
+            Rectangle rectLaser = new Rectangle(laser.getPositionX(), laser.getPositionY(),
+                    laser.getSprite().getWidth(), laser.getSprite().getHeight());
+            if (rectLaser.intersects(rectPlayer)) {
+                setHealth(0);
+                break;
             }
         }
     }
@@ -152,7 +162,7 @@ public class Player extends PlayerAbstract {
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
-        if ((this.getHealth() == 0) || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)){
+        if ((this.getHealth() == 0) || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)) {
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
 
         }
@@ -172,7 +182,7 @@ public class Player extends PlayerAbstract {
                 this.getBayHaiBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
             } else if (this.getHealth() == 1) {
                 this.getBayMotBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
-            }else if(this.getHealth()==0  ){
+            } else if (this.getHealth() == 0) {
                 this.getPlayerDie().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
 
             }
@@ -188,11 +198,10 @@ public class Player extends PlayerAbstract {
                 g.drawImage(this.getBayHaiBongTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
             } else if (this.getHealth() == 1) {
                 g.drawImage(this.getBayMotBongTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
-            }
-            else if(getHealth()==0){
-                g.drawImage(this.getPlayDieTinh(),this.flip1,this.positionY,this.flip2,getSprite().getHeight(),null);
+            } else if (getHealth() == 0) {
+                g.drawImage(this.getPlayDieTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
             }
 
-            }
         }
     }
+}

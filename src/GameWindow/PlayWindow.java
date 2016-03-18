@@ -1,11 +1,8 @@
 package GameWindow;
 
-import GameObject.Animation;
+import GameObject.*;
 
-import GameObject.Enemy;
-import GameObject.EnemyManager;
 import GameObject.Obstacles.Obstacle;
-import GameObject.PlayManager;
 import Main.Resources;
 import Sound.JavaxSound;
 
@@ -53,6 +50,14 @@ public class PlayWindow extends GameWindow implements KeyListener {
 //        EnemyManager.getInstance().getEnemy2().draw(g);
         for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
             enemy.draw(g);
+        }
+
+        for (Laser laser : NewEnemyManager.getInstance().getLaserVector()) {
+            laser.draw(g);
+        }
+
+        for (NewEnemy newEnemy : NewEnemyManager.getInstance().getNewEnemyVector()) {
+            newEnemy.draw(g);
         }
 
         //EnemyManager.getInstance().getEnemy3().draw(g);
