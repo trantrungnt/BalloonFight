@@ -51,19 +51,22 @@ public class Player extends PlayerAbstract {
     }
 
     private void moveByKey() {
-        if (this.getDirectionY() == 1) { // nhan s de di xuong duoi
+        if (this.getDirectionY() == 1) { // di xuong duoi
             setSpeedX(0);
             setSpeedY(getSpeed());
-        } else if (this.getDirectionY() == -1) { // nhan z de bay len
+        } else if (this.getDirectionY() == -1) { // de bay len
             setSpeedX(0);
             setSpeedY(-getSpeed());
         }
 
-        if (this.getDirectionX() == 1) { // nhan d de di sang phai
+        if (this.getDirectionX() == 1) { // di sang phai
             setSpeedX(getSpeed());
-        } else if (this.getDirectionX() == -1) { // nhan a de di sang trai
+        } else if (this.getDirectionX() == -1) { //di sang trai
             setSpeedX(-getSpeed());
         }
+
+        /////////////////////////////////////////////////////////
+        //if (this.getDirectionY() == 2)
     }
 
     private void checkObstacle() {
