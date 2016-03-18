@@ -69,7 +69,7 @@ public class Resources {
     public static final String SOUND_MAIN_GAME =
             "Resources/Sound/background-music-game-main.wav"; //duong dan file wav => day la file nhac nen chinh cua game Balloon Fight
     public static final String SOUND_GAME_OVER =
-            "Resources/Sound/game-over.wav";
+            "Resources/Sound/game-over-happy.wav";
     public static final String SOUND_MENU_GAME =
             "Resources/Sound/menu-music-game.wav";
 
