@@ -19,6 +19,16 @@ public abstract class PlayerAbstract extends GameObject {
     private Animation PlayerDie;
     private BufferedImage PlayDieTinh;
 
+    public int getTypePlayer() {
+        return typePlayer;
+    }
+
+    public void setTypePlayer(int typePlayer) {
+        this.typePlayer = typePlayer;
+    }
+
+    private int typePlayer;
+
     public BufferedImage getPlayDieTinh() {
         return PlayDieTinh;
     }
