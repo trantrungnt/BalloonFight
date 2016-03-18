@@ -10,7 +10,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Vector;
 
 import static Main.Helper.WINDOW_WIDTH;
 
@@ -86,26 +85,26 @@ public class Enemy extends EnemyAbstract {
             }
         }
     }
-    private void checkCollisionEnemyPlayer(){
+
+    private void checkCollisionEnemyPlayer() {
 
         Rectangle rectPlayer = new Rectangle(
                 PlayManager.getInstance().getPlayerKey().getPositionX(),
-                PlayManager.getInstance().getPlayerKey().getPositionY() + PlayManager.getInstance().getPlayerKey().getSprite().getHeight()- Helper.EPS,
+                PlayManager.getInstance().getPlayerKey().getPositionY() + PlayManager.getInstance().getPlayerKey().getSprite().getHeight() - Helper.EPS,
                 PlayManager.getInstance().getPlayerKey().getSprite().getWidth(),
                 Helper.EPS);
 
         boolean isOnCollision = false;
-            Rectangle rectEnemy;
+        Rectangle rectEnemy;
 
-            rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
+        rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
 
-            //va cham voi bong Enemy
-            if(rectEnemy.intersects(rectPlayer)){
-                if (this.getHealth() == 2) {
-                    setHealth(getHealth() - 1);
-                    System.out.println("Zzz");
-                }
+        //va cham voi bong Enemy
+        if (rectEnemy.intersects(rectPlayer)) {
+            if (this.getHealth() == 2) {
+                setHealth(getHealth() - 1);
             }
+        }
 
 
 //        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight()-Helper.EPS);
@@ -135,13 +134,10 @@ public class Enemy extends EnemyAbstract {
         } else {
             this.flip1 = this.getPositionX();
             this.flip2 = this.getSprite().getWidth();
-       animationCurrent.draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
-
-
+            animationCurrent.draw(g, this.flip1, this.positionX, this.flip2, this.getSprite().getHeight());
         }
         animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
         //this.getAnimation().draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
-
     }
 
 
@@ -149,7 +145,7 @@ public class Enemy extends EnemyAbstract {
         //check thoi gian bom bong
         this.checkObstacle1();
         count++;
-        if (count>=60) {
+        if (count >= 60) {
             animationCurrent = getAnimationBayHaiBong();
             this.move();
             if(this.getHealth() == 2){
@@ -161,8 +157,18 @@ public class Enemy extends EnemyAbstract {
         }
         this.checkCollisionEnemyPlayer();
 
+<<<<<<< HEAD
 
 
+=======
+        if (count >= 60) {
+            if (this.getHealth() == 2) {
+                animationCurrent = getAnimationBayHaiBong();
+            } else if (this.getHealth() == 1) {
+                animationCurrent = getAnimationBayMotBong();
+            }
+        }
+>>>>>>> origin/master
     }
 
     //ham kiem tra Bom Bong: khi den anh thu 7 thi bom bong xong
@@ -195,8 +201,7 @@ public class Enemy extends EnemyAbstract {
     }
 
     //get anh dong khi Enemy bay
-    private Animation getAnimationBayHaiBong()
-    {
+    private Animation getAnimationBayHaiBong() {
             /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
         try {
             BufferedImage bigImage = ImageIO.read(new File(Resources.ENEMY_ANIMATION)); // doc SpriteSheet anh dong
@@ -224,8 +229,6 @@ public class Enemy extends EnemyAbstract {
         //this.setAnimation(new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 70));
         return new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 200);
     }
-
-
 
 
 }
