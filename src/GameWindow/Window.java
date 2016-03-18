@@ -29,6 +29,7 @@ public class Window extends Frame implements Runnable, MouseListener {
     private BufferedImage background;
     private static Clip clipSoundMain;
     private static Clip clipSoundMenu;
+    private static Clip clipSoundGameOver;
 
     public Window() {
         //thiet lap tieu de cho cua so
@@ -62,6 +63,7 @@ public class Window extends Frame implements Runnable, MouseListener {
         JavaxSound javaxSound = new JavaxSound();
         clipSoundMenu = javaxSound.playWAV(Resources.SOUND_MENU_GAME);
         clipSoundMain = javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
+        clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
 
         //goi phuong thuc chay Soudn MenuBackground
         playSoundMenu();
@@ -122,6 +124,7 @@ public class Window extends Frame implements Runnable, MouseListener {
                 // chuyen sang Play Window khi an Play
                 GameManager.getInstance().getGameWindowStack().add(PlayWindowManager.getInstance().getPlayWindow());
                 clipSoundMenu.stop();
+                clipSoundGameOver.stop();
                 clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
             }
         }
@@ -134,11 +137,15 @@ public class Window extends Frame implements Runnable, MouseListener {
                     // quay lai Menu Window khi an Menu
                     GameManager.getInstance().getGameWindowStack().pop();
                     clipSoundMain.stop();
+                    clipSoundGameOver.stop();
                     clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             } else {
                 // chuyen sang Game Over Window (DEBUG MODE: khi an ngoai nut Menu)
                 GameManager.getInstance().getGameWindowStack().add(GameOverWindowManager.getInstance().getGameOverWindow());
+                clipSoundMain.stop();
+                clipSoundMenu.stop();
+                clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
             }
         } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof GameOverWindow) { // hien tai dang o Game Over Window
             AgainButton againButton = GameOverWindowManager.getInstance().getAgainButton();
@@ -148,6 +155,7 @@ public class Window extends Frame implements Runnable, MouseListener {
                     // quay lai Play Window khi an Again
                     GameManager.getInstance().getGameWindowStack().pop();
                     clipSoundMenu.stop();
+                    clipSoundGameOver.stop();
                     clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
                 }
             }
