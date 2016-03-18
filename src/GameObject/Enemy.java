@@ -93,13 +93,11 @@ public class Enemy extends EnemyAbstract {
             setSpeedX(-1);
         }*/
 
-        //if(this.getAnimation() == getEnemyAminationFly())
-                //this.positionY -=1;
-        //if (this.getAnimation().equals(getEnemyAminationFly()))
         this.positionY-=1;
 
 
     }
+
     public void draw(Graphics g){
         /*if (this.getSpeedX() > 0) {{
             this.flip1 = this.getPositionX() + this.getSprite().getWidth();
@@ -174,12 +172,4 @@ public class Enemy extends EnemyAbstract {
         return new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 200);
     }
 
-    /*public void checkStatusBalloon()
-    {
-        if (isFinishPumpBalloon())
-            this.animationTmp = getEnemyAminationFly();
-        else
-          this.animationTmp = getEnemyAmiantionBlowingBalloon();
-        this.setAnimation(animationTmp);
-    }*/
 }

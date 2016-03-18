@@ -18,7 +18,6 @@ import java.awt.event.KeyListener;
 public class PlayWindow extends GameWindow implements KeyListener {
     //private Vector<Obstacle> obstacleVector = new Vector<>();
     private JavaxSound javaxSound = new JavaxSound();
-    //private Animation animation_current;
 
     public PlayWindow() {
         //dang ky de lang nghe su kien keyboard
@@ -43,32 +42,8 @@ public class PlayWindow extends GameWindow implements KeyListener {
 
         PlayManager.getInstance().getPlayerKey().draw(g);
 
-
         //animation_current = EnemyManager.getInstance().getEnemy3().getEnemyAmiantionBlowingBalloon();
         EnemyManager.getInstance().getEnemy3().draw(g);
-
-        /*if (EnemyManager.getInstance().getEnemy3().isFinishPumpBalloon()) {
-            animation_current = EnemyManager.getInstance().getEnemy3().getEnemyAminationFly();
-            EnemyManager.getInstance().getEnemy3().setAnimation(animation_current);
-        }*/
-
-
-        //if (EnemyManager.getInstance().getEnemy3().isFinishPumpBalloon())
-          //      EnemyManager.getInstance().getEnemy3().setAnimation(EnemyManager.getInstance().getEnemy3().getEnemyAmiantionBlowingBalloon());
-        //else
-          //  EnemyManager.getInstance().getEnemy3().setAnimation(EnemyManager.getInstance().getEnemy3().getEnemyAmiantionBlowingBalloon());
-
-        /*if (EnemyManager.getInstance().getEnemy3().isFinishPumpBalloon()) {
-            EnemyManager.getInstance().getEnemy3().setAnimation(EnemyManager.getInstance().getEnemy3().getEnemyAminationFly());
-            EnemyManager.getInstance().getEnemy3().draw(g);
-
-        }*/
-        /*else
-        {
-            EnemyManager.getInstance().getEnemy3().getEnemyAmiantionBlowingBalloon();
-
-        }*/
-        //EnemyManager.getInstance().getEnemy3().setAnimation();
 
         //EnemyManager.getInstance().getEnemy3().draw(g);
         for (int j = (PlayWindowManager.getInstance().getObstacleLake().size() - 1)/2; j< (PlayWindowManager.getInstance().getObstacleLake().size()-1); j++){
@@ -119,7 +94,5 @@ public class PlayWindow extends GameWindow implements KeyListener {
         PlayManager.getInstance().getPlayerKey().setSpeedX(0);
         PlayManager.getInstance().getPlayerKey().setSpeedY(1);
     }
-
-    //check khi chay file mp3
 
 }
