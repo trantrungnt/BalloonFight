@@ -32,14 +32,16 @@ public class Player extends PlayerAbstract {
         /* Xet anh tinh cho Player (hinh dau tien trong anh dong) */
         try {
             BufferedImage bigImage = ImageIO.read(new File(Resources.PLAYER_ANIMATION)); // doc SpriteSheet anh dong
-            setSprite(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
+            setSprite(bigImage.getSubimage(0, 0, 50, 61));
+            setBayHaiBongTinh(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
+            setBayMotBongTinh(bigImage.getSubimage(150, 0, 50, 61));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         /* Xet anh dong cho Player */
-        this.setBayHaiBong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
-        this.setBayHaiBong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 4, 6, 170));
+        this.setBayHaiBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 1, 3, 170));
+        this.setBayMotBongDong(new Animation(Resources.PLAYER_ANIMATION, 50, 61, 4, 6, 170));
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
     }
@@ -109,18 +111,35 @@ public class Player extends PlayerAbstract {
                     obstacle.getSprite().getWidth(), Helper.EPS);
             if (rectPlayer.intersects(rectObstacle)) {
                 setDirectionY(0);
-                setSpeedY(obstacle.getPositionY() + obstacle.getSprite().getHeight() - getPositionY() + Helper.EPS);
+                setSpeedY(obstacle.getPositionY() + obstacle.getSprite().getHeight() - getPositionY() + Helper.BOUNCE);
                 break;
             }
         }
     }
 
+<<<<<<< HEAD
+=======
+    private void checkVaCham() {
+        Rectangle rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), Helper.EPS);
+        for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
+            Rectangle rectEnemy = new Rectangle(enemy.getPositionX(), enemy.getPositionY() + enemy.getSprite().getHeight() - Helper.EPS,
+                    enemy.getSprite().getWidth(), Helper.EPS);
+            if (rectEnemy.intersects(rectPlayer)) {
+                this.setPositionY(this.getPositionY() + Helper.BOUNCE);
+                if (this.getHealth() == 2) {
+                    this.setHealth(this.getHealth() - 1);
+                }
+            }
+        }
+    }
+>>>>>>> origin/master
 
     public void update() {
         this.moveByKey();
         this.checkObstacle();
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
+        this.checkVaCham();
     }
 
     @Override
@@ -134,9 +153,9 @@ public class Player extends PlayerAbstract {
                 this.flip2 = this.getSprite().getWidth();
             }
             if (this.getHealth() == 2) {
-                this.getBayHaiBong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
+                this.getBayHaiBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
             } else if (this.getHealth() == 1) {
-                this.getBayMotBong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
+                this.getBayMotBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
             }
         } else {
             if (this.getDirectionX() == 1) { // di sang phai
@@ -146,7 +165,11 @@ public class Player extends PlayerAbstract {
                 this.flip1 = getPositionX();
                 this.flip2 = getSprite().getWidth();
             }
-            g.drawImage(this.sprite, this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
+            if (this.getHealth() == 2) {
+                g.drawImage(this.getBayHaiBongTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
+            } else if (this.getHealth() == 1) {
+                g.drawImage(this.getBayMotBongTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
+            }
         }
     }
 }

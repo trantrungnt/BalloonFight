@@ -10,4 +10,5 @@ public class Helper {
     public static final int PLAYER_HEIGHT = 61;
     public static final int ENEMY_WIDTH = 60;
     public static final int ENEMY_HEIGHT = 60;
+    public static final int BOUNCE = 15;
 }

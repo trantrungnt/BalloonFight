@@ -1,5 +1,7 @@
 package GameObject;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Created by Admin on 3/14/2016.
  */
@@ -10,8 +12,10 @@ public abstract class PlayerAbstract extends GameObject {
     private int health; // so bong con lai
     private int directionX;
     private int directionY;
-    private Animation bayHaiBong;
-    private Animation bayMotBong;
+    private Animation bayHaiBongDong;
+    private Animation bayMotBongDong;
+    private BufferedImage bayHaiBongTinh;
+    private BufferedImage bayMotBongTinh;
 
     public PlayerAbstract(int positionX, int positionY) {
         super(positionX, positionY);
@@ -65,19 +69,35 @@ public abstract class PlayerAbstract extends GameObject {
         this.directionY = directionY;
     }
 
-    public Animation getBayHaiBong() {
-        return bayHaiBong;
+    public Animation getBayHaiBongDong() {
+        return bayHaiBongDong;
     }
 
-    public void setBayHaiBong(Animation bayHaiBong) {
-        this.bayHaiBong = bayHaiBong;
+    public void setBayHaiBongDong(Animation bayHaiBongDong) {
+        this.bayHaiBongDong = bayHaiBongDong;
     }
 
-    public Animation getBayMotBong() {
-        return bayMotBong;
+    public Animation getBayMotBongDong() {
+        return bayMotBongDong;
     }
 
-    public void setBayMotBong(Animation bayMotBong) {
-        this.bayMotBong = bayMotBong;
+    public void setBayMotBongDong(Animation bayMotBongDong) {
+        this.bayMotBongDong = bayMotBongDong;
+    }
+
+    public BufferedImage getBayHaiBongTinh() {
+        return bayHaiBongTinh;
+    }
+
+    public void setBayHaiBongTinh(BufferedImage bayHaiBongTinh) {
+        this.bayHaiBongTinh = bayHaiBongTinh;
+    }
+
+    public BufferedImage getBayMotBongTinh() {
+        return bayMotBongTinh;
+    }
+
+    public void setBayMotBongTinh(BufferedImage bayMotBongTinh) {
+        this.bayMotBongTinh = bayMotBongTinh;
     }
 }
