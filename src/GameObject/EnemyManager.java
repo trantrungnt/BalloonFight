@@ -20,10 +20,7 @@ public class EnemyManager {
         enemyVector.add(new Enemy(160, 240 - Helper.ENEMY_HEIGHT, 1));
         enemyVector.add(new Enemy(250, 320 - Helper.ENEMY_HEIGHT, 1));
     }
-
-    public Vector<Enemy> getEnemyVector() {
-        return enemyVector;
-    }
+    
 
     public void setEnemyVector(Vector<Enemy> enemyVector) {
         this.enemyVector = enemyVector;

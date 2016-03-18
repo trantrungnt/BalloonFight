@@ -86,7 +86,6 @@ public class Enemy extends EnemyAbstract {
             }
         }
     }
-<<<<<<< HEAD
     private void checkCollisionEnemyPlayer(){
 
         Rectangle rectPlayer = new Rectangle(
@@ -112,8 +111,6 @@ public class Enemy extends EnemyAbstract {
 //        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight()-Helper.EPS);
 
     }
-=======
->>>>>>> origin/master
 
     public void move() {
         this.positionX += this.getSpeedX();
@@ -138,17 +135,13 @@ public class Enemy extends EnemyAbstract {
         } else {
             this.flip1 = this.getPositionX();
             this.flip2 = this.getSprite().getWidth();
-<<<<<<< HEAD
-            }
-
-
        animationCurrent.draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
 
-=======
+
         }
         animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
         //this.getAnimation().draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
->>>>>>> origin/master
+
     }
 
 
@@ -156,13 +149,8 @@ public class Enemy extends EnemyAbstract {
         //check thoi gian bom bong
         this.checkObstacle1();
         count++;
-<<<<<<< HEAD
         if (count>=60) {
             animationCurrent = getAnimationBayHaiBong();
-=======
-        if (count >= 60) {
-            animationCurrent = getEnemyAminationFly();
->>>>>>> origin/master
             this.move();
         }
         this.checkCollisionEnemyPlayer();
@@ -206,12 +194,8 @@ public class Enemy extends EnemyAbstract {
     }
 
     //get anh dong khi Enemy bay
-<<<<<<< HEAD
     private Animation getAnimationBayHaiBong()
     {
-=======
-    private Animation getEnemyAminationFly() {
->>>>>>> origin/master
             /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
         try {
             BufferedImage bigImage = ImageIO.read(new File(Resources.ENEMY_ANIMATION)); // doc SpriteSheet anh dong

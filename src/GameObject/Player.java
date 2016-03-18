@@ -117,8 +117,6 @@ public class Player extends PlayerAbstract {
         }
     }
 
-<<<<<<< HEAD
-=======
     private void checkVaCham() {
         Rectangle rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), Helper.EPS);
         for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
@@ -132,7 +130,6 @@ public class Player extends PlayerAbstract {
             }
         }
     }
->>>>>>> origin/master
 
     public void update() {
         this.moveByKey();
