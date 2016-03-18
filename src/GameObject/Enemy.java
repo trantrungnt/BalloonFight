@@ -85,21 +85,21 @@ public class Enemy extends EnemyAbstract {
         }}
 
     public void move() {
-        /*this.positionX += this.getSpeedX();
+        this.positionX += this.getSpeedX();
         if (this.positionX<=0) {
            setSpeedX(+1);
         }
-        if (this.positionX>=WINDOW_WIDTH-120 ) {
+        if (this.positionX>=WINDOW_WIDTH-Helper.ENEMY_WIDTH ) {
             setSpeedX(-1);
-        }*/
+        }
 
-        this.positionY-=1;
+       // this.positionY-=1;
 
 
     }
 
     public void draw(Graphics g){
-        /*if (this.getSpeedX() > 0) {{
+        if (this.getSpeedX() > 0) {{
             this.flip1 = this.getPositionX() + this.getSprite().getWidth();
             this.flip2 = -this.getSprite().getWidth();
             }
@@ -107,13 +107,15 @@ public class Enemy extends EnemyAbstract {
             else {
             this.flip1 = this.getPositionX();
             this.flip2 = this.getSprite().getWidth();
-            }*/
+            }
         animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
+       //this.getAnimation().draw(g,this.flip1,this.positionX,this.flip2,this.getSprite().getHeight());
     }
 
 
     public void update() {
         //check thoi gian bom bong
+        this.checkObstacle1();
         count++;
         if (count>=60) {
             animationCurrent = getEnemyAminationFly();
@@ -138,6 +140,16 @@ public class Enemy extends EnemyAbstract {
 
 
         return check;
+    }
+    private Animation getAnimationBayMotBong() {
+        try {
+
+            BufferedImage Image = ImageIO.read(new File(Resources.ENEMY_ANIMATION));
+            setSprite(Image.getSubimage(0,0,60,60));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new Animation(Resources.ENEMY_ANIMATION ,60,60,4,6,70);
     }
 
     //get anh dong khi Enemy bay

@@ -1,5 +1,7 @@
 package GameObject;
 
+import Main.Helper;
+
 /**
  * Created by TrungNT on 3/16/2016.
  */
@@ -14,7 +16,7 @@ public class PlayManager {
 
     private PlayManager()
     {
-        playerKey = new Player(400, 400, 2);
+        playerKey = new Player(30, 630- Helper.PLAYER_HEIGHT, 2);
     }
 
     public static PlayManager getInstance(){

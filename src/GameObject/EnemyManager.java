@@ -1,5 +1,7 @@
 package GameObject;
 
+import Main.Helper;
+
 /**
  * Created by TuấnCon on 3/15/2016.
  */
@@ -17,11 +19,10 @@ public class EnemyManager {
     }
 
 
-    private EnemyManager()
-    {
-        Enemy1 = new Enemy(250, 250, 1);
-        Enemy2 = new Enemy(350, 400, 1);
-        Enemy3 = new Enemy(190, 355, 1);
+    private EnemyManager() {
+        Enemy1 = new Enemy(800, 450 - Helper.ENEMY_HEIGHT, 1);
+        Enemy2 = new Enemy(160, 240 - Helper.ENEMY_HEIGHT, 1);
+        Enemy3 = new Enemy(250, 320-Helper.ENEMY_HEIGHT, 1);
     }
 
 

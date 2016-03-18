@@ -44,6 +44,8 @@ public class PlayWindow extends GameWindow implements KeyListener {
 
         //animation_current = EnemyManager.getInstance().getEnemy3().getEnemyAmiantionBlowingBalloon();
         EnemyManager.getInstance().getEnemy3().draw(g);
+        EnemyManager.getInstance().getEnemy1().draw(g);
+        EnemyManager.getInstance().getEnemy2().draw(g);
 
         //EnemyManager.getInstance().getEnemy3().draw(g);
         for (int j = (PlayWindowManager.getInstance().getObstacleLake().size() - 1)/2; j< (PlayWindowManager.getInstance().getObstacleLake().size()-1); j++){
@@ -66,22 +68,22 @@ public class PlayWindow extends GameWindow implements KeyListener {
             PlayManager.getInstance().getPlayerKey().setSpeedY(1);
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_A) { //nhan phim a de di sang trai
+        if (e.getKeyCode() == KeyEvent.VK_LEFT) { //nhan phim a de di sang trai
             PlayManager.getInstance().getPlayerKey().setDirectionX(-1);
             javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_D) { //nhan phim d de sang phai
+        if (e.getKeyCode() == KeyEvent.VK_RIGHT) { //nhan phim d de sang phai
             PlayManager.getInstance().getPlayerKey().setDirectionX(1);
             javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_S) { //nhan phim s de di xuong
+        if (e.getKeyCode() == KeyEvent.VK_DOWN) { //nhan phim s de di xuong
             PlayManager.getInstance().getPlayerKey().setDirectionY(1);
             javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_Z) { //nhan phim z de bat dau bay
+        if (e.getKeyCode() == KeyEvent.VK_UP) { //nhan phim z de bat dau bay
             PlayManager.getInstance().getPlayerKey().setDirectionY(-1);
             javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
         }
