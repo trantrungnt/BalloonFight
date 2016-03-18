@@ -38,6 +38,8 @@ public class Resources {
             "Resources/Sprite/image 199.png"; // hinh Player (dong)
     public static final String ENEMY_ANIMATION =
             "Resources/Sprite/image 189.png";
+    public static final String ENEMY_AMINATION_BLOWING_BALLOONS =
+            "Resources/Sprite/image 226.png"; //hinh dong bom bong bay cua dich
 
     //Am Thanh
     public static final String SOUND_PLAY_WINDOW =

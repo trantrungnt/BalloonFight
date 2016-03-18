@@ -19,21 +19,20 @@ import static Main.Helper.*;
 public class Enemy extends EnemyAbstract {
     private int flip1;
     private int flip2;
+    private Animation animationCurrent;
+    private Animation animationBomBong;
+    private Animation animationBayMotBong;
+    private Animation animationBayHaiBong;
+    private Animation animationBayVoiDu;
+    private int count=0;
 
     public Enemy(int positionX, int positionY, int Speed) {
         super(positionX, positionY);
         setSpeed(Speed);
         setHealth(2);
-        /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
-        try {
-            BufferedImage bigImage = ImageIO.read(new File(Resources.ENEMY_ANIMATION)); // doc SpriteSheet anh dong
-            setSprite(bigImage.getSubimage(0, 0, 60, 60)); //lay anh dau tien lam anh tinh
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
-        /* Xet anh dong cho Enemy */
-        this.setAnimation(new Animation(Resources.ENEMY_ANIMATION, 60, 60, 1, 3, 70));
+        animationCurrent = getEnemyAmiantionBlowingBalloon();
+
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
         this.setSpeedX(1);
@@ -86,16 +85,23 @@ public class Enemy extends EnemyAbstract {
         }}
 
     public void move() {
-        this.positionX += this.getSpeedX();
+        /*this.positionX += this.getSpeedX();
         if (this.positionX<=0) {
            setSpeedX(+1);
         }
         if (this.positionX>=WINDOW_WIDTH-120 ) {
             setSpeedX(-1);
-        }
+        }*/
+
+        //if(this.getAnimation() == getEnemyAminationFly())
+                //this.positionY -=1;
+        //if (this.getAnimation().equals(getEnemyAminationFly()))
+        this.positionY-=1;
+
+
     }
-    public  void draw(Graphics g){
-        if (this.getSpeedX() > 0) {{
+    public void draw(Graphics g){
+        /*if (this.getSpeedX() > 0) {{
             this.flip1 = this.getPositionX() + this.getSprite().getWidth();
             this.flip2 = -this.getSprite().getWidth();
             }
@@ -103,13 +109,77 @@ public class Enemy extends EnemyAbstract {
             else {
             this.flip1 = this.getPositionX();
             this.flip2 = this.getSprite().getWidth();
-            }
-        this.getAnimation().draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
-        }
+            }*/
+        animationCurrent.draw(g, this.flip1, this.positionY, this.flip2, this.getSprite().getHeight());
+    }
 
 
     public void update() {
-        this.move();
-        this.checkObstacle1();
+        //check thoi gian bom bong
+        count++;
+        if (count>=60) {
+            animationCurrent = getEnemyAminationFly();
+            this.move();
+        }
     }
+
+    //ham kiem tra Bom Bong: khi den anh thu 7 thi bom bong xong
+    public boolean isFinishPumpBalloon()
+    {
+        boolean check=false;
+
+        int count=0;
+
+        for (int i = 0; i < this.getAnimation().vecFrame.size();i++) {
+            count++;
+            if (count == (this.getAnimation().vecFrame.size()-1)) {
+                check = true;
+                break;
+            }
+        }
+
+
+        return check;
+    }
+
+    //get anh dong khi Enemy bay
+    private Animation getEnemyAminationFly()
+    {
+            /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
+            try {
+                BufferedImage bigImage = ImageIO.read(new File(Resources.ENEMY_ANIMATION)); // doc SpriteSheet anh dong
+                setSprite(bigImage.getSubimage(0, 0, 60, 60)); //lay anh dau tien lam anh tinh
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            /* Xet anh dong cho Enemy */
+            return new Animation(Resources.ENEMY_ANIMATION, 60, 60, 1, 3, 70);
+    }
+
+
+    //get anh dong khi Enemy bom bong
+    private Animation getEnemyAmiantionBlowingBalloon()
+    {
+        /* Xet anh tinh cho Enemy (hinh dau tien trong anh dong) */
+        try {
+            BufferedImage bigImage = ImageIO.read(new File(Resources.ENEMY_AMINATION_BLOWING_BALLOONS)); // doc SpriteSheet anh dong
+            setSprite(bigImage.getSubimage(0, 0, 60, 60)); //lay anh dau tien lam anh tinh
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        /* Xet anh dong cho Enemy */
+        //this.setAnimation(new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 70));
+        return new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 200);
+    }
+
+    /*public void checkStatusBalloon()
+    {
+        if (isFinishPumpBalloon())
+            this.animationTmp = getEnemyAminationFly();
+        else
+          this.animationTmp = getEnemyAmiantionBlowingBalloon();
+        this.setAnimation(animationTmp);
+    }*/
 }
