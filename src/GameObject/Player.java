@@ -152,8 +152,9 @@ public class Player extends PlayerAbstract {
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
-        if (this.getHealth() == 1){
+        if (this.getHealth() == 0){
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+
         }
     }
 
@@ -188,7 +189,7 @@ public class Player extends PlayerAbstract {
             } else if (this.getHealth() == 1) {
                 g.drawImage(this.getBayMotBongTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
             }
-            else if(positionY>700){
+            else if(getHealth()==0){
                 g.drawImage(this.getPlayDieTinh(),this.flip1,this.positionY,this.flip2,getSprite().getHeight(),null);
             }
 

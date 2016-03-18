@@ -2,6 +2,7 @@ package GameWindow;
 
 import GameObject.AgainButton;
 import GameObject.GameOverButton;
+import GameObject.MenuButton;
 
 /**
  * Created by AsusA42F on 3/15/2016.
@@ -9,7 +10,7 @@ import GameObject.GameOverButton;
 public class GameOverWindowManager {
     private GameOverWindow gameOverWindow;
     private AgainButton againButton;
-    private GameOverButton gameOverButton;
+    private MenuButton menuButton;
 
     public GameOverWindow getGameOverWindow() {
         return gameOverWindow;
@@ -18,9 +19,8 @@ public class GameOverWindowManager {
     public AgainButton getAgainButton() {
         return againButton;
     }
-
-    public GameOverButton getGameOverButton() {
-        return gameOverButton;
+    public MenuButton getMenuButton(){
+        return menuButton;
     }
 
     private static GameOverWindowManager ourInstance = new GameOverWindowManager();
@@ -32,7 +32,8 @@ public class GameOverWindowManager {
     private GameOverWindowManager() {
         gameOverWindow = new GameOverWindow();
         againButton = new AgainButton(256, 600);
-        gameOverButton = new GameOverButton(300, 300);
+        menuButton = new MenuButton(700, 50);
+
 
     }
 }

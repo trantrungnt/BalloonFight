@@ -25,7 +25,7 @@ public class Resources {
     public static final String PLAY_BUTTON =
             "Resources/Sprite/image 211.png"; // hinh nut Play tai cua so MenuWindow
     public static final String GAME_OVER_BUTTON =
-            "Resources/Sprite/image GameOver.png"; // hinh nut Game Over tai cua so Game Over
+            "Resources/Sprite/GameOver.png"; // hinh nut Game Over tai cua so Game Over
     public static final String AUTHOR_BUTTON =
             "Resources/Sprite/AuthorButton.png"; //hinh nut Author tai cua so MenuWindow
     public static final String MORE_GAMES_BUTTON =

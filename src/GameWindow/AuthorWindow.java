@@ -13,11 +13,11 @@ import java.io.File;
  * Created by Admin on 3/17/2016.
  */
 public class AuthorWindow extends GameWindow {
-    private BufferedImage sprite;
+    private BufferedImage author;
 
-    public AuthorWindow (int positionX, int positionY){
+    public AuthorWindow (){
         try{
-            setSprite(ImageIO.read(new File(Resources.DETAIL)));
+            author = ImageIO.read(new File(Resources.DETAIL));
         }
         catch (Exception e){
             e.printStackTrace();
@@ -26,14 +26,8 @@ public class AuthorWindow extends GameWindow {
 
     @Override
     public void draw(Graphics g) {
-        AuthorWindowManager.getInstance().getAuthorWindow().draw(g);
+        g.drawImage(author, 300, 300, null);
     }
 
-    public BufferedImage getSprite() {
-        return sprite;
-    }
 
-    public void setSprite(BufferedImage sprite) {
-        this.sprite = sprite;
-    }
 }
