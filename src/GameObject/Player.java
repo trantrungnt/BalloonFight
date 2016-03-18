@@ -1,13 +1,14 @@
 package GameObject;
 
 import GameObject.Obstacles.Obstacle;
-import GameWindow.GameOverWindowManager;
-import GameWindow.PlayWindowManager;
+import GameWindow.*;
 import Main.GameManager;
 import Main.Helper;
 import Main.Resources;
+import Sound.JavaxSound;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.Clip;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -25,6 +26,7 @@ public class Player extends PlayerAbstract {
             flip1 = x hoac x + width
             flip2 = width hoac -width
         * */
+    private Clip clipSoundGameOver;
 
     public Player(int positionX, int positionY, int speed) {
         super(positionX, positionY);
@@ -51,6 +53,9 @@ public class Player extends PlayerAbstract {
         this.setPlayerDie(new Animation(Resources.PLAYER_DIE , 50,75,1,3,170));
         this.flip1 = this.getPositionX();
         this.flip2 = this.getSprite().getWidth();
+
+        JavaxSound javaxSound = new JavaxSound();
+        clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
     }
 
     private void moveByKey() {
@@ -154,7 +159,8 @@ public class Player extends PlayerAbstract {
         this.checkVaCham();
         if ((this.getHealth() == 0) || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700)){
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
-
+            WindowManager.getInstance().getWindow().getClipSoundMain().stop();
+            clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
         }
     }
 
