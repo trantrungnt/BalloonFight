@@ -1,5 +1,7 @@
 package GameObject;
 
+import java.awt.image.BufferedImage;
+
 /**
  * Created by TuấnCon on 3/14/2016.
  */
@@ -11,6 +13,15 @@ public abstract class EnemyAbstract extends GameObject {
     private int directionX;
     private int directionY;
     private Animation animation;
+    private BufferedImage Die;
+
+    public BufferedImage getDie() {
+        return Die;
+    }
+
+    public void setDie(BufferedImage die) {
+        Die = die;
+    }
 
     public EnemyAbstract(int positionX, int positionY) {
         super(positionX, positionY);
