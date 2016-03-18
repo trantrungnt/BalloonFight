@@ -42,6 +42,7 @@ public class Resources {
             "Resources/Sprite/image 189.png";
     public static final String ENEMY_AMINATION_BLOWING_BALLOONS =
             "Resources/Sprite/image 226.png"; //hinh dong bom bong bay cua dich
+    public static final String  PLAYER_DIE= "Resources/Sprite/image 181.png";
 
     //Thong tin TacGia
     public static final String DETAIL =
