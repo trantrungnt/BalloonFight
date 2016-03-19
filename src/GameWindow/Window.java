@@ -124,6 +124,39 @@ public class Window extends Frame implements Runnable, MouseListener {
                 }
                 PlayManager.getInstance().getPlayerTwice().update();
             }
+
+            /* Chuyen sang cua so Game Over */
+            if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) {
+                if (((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
+                        || (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL))
+                        && (PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
+                        || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL)) {
+                    if (PlayManager.getInstance().getPlayerKey().getHealth() == 0) {
+                        PlayManager.getInstance().getPlayerKey().setHealth(-1);
+                    }
+                    if (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL) {
+                        PlayManager.getInstance().getPlayerKey().setPositionY(-100);
+                        PlayManager.getInstance().getPlayerKey().setSpeedY(0);
+                    }
+
+                    if (PlayManager.getInstance().getPlayerTwice().getHealth() == 0) {
+                        PlayManager.getInstance().getPlayerTwice().setHealth(-1);
+                    }
+                    if (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL) {
+                        PlayManager.getInstance().getPlayerTwice().setPositionY(-100);
+                        PlayManager.getInstance().getPlayerTwice().setSpeedY(0);
+                    }
+                    GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
+                    WindowManager.getInstance().getWindow().getClipSoundMain().stop();
+                    WindowManager.getInstance().getWindow().getClipSoundGameOver().loop(Clip.LOOP_CONTINUOUSLY);
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
             repaint();
             try {
                 Thread.sleep(17);
@@ -158,7 +191,9 @@ public class Window extends Frame implements Runnable, MouseListener {
                     && menuButton.getPositionY() <= e.getY() && e.getY() <= menuButton.getPositionY() + menuButton.getSprite().getHeight()) {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Menu Window khi an Menu
-                    GameManager.getInstance().getGameWindowStack().pop();
+                    //GameManager.getInstance().getGameWindowStack().pop();
+                    PlayWindowManager.getInstance().setPlayWindow(new PlayWindow());
+                    GameManager.getInstance().getGameWindowStack().push(PlayWindowManager.getInstance().getPlayWindow());
                     clipSoundMain.stop();
                     clipSoundGameOver.stop();
                     clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
