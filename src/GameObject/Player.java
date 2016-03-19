@@ -22,6 +22,7 @@ import java.io.IOException;
 public class Player extends PlayerAbstract {
     private int flip1;
     private int flip2;
+    private int count = 0;
     /*
         Ve anh dung chieu: g.drawImage(image, x, y, width, height, null);
         Ve anh doi xung (theo chieu thang dung): g.drawImage(image, x + width, y, -width, height, null);
@@ -173,11 +174,15 @@ public class Player extends PlayerAbstract {
                     enemy.getSprite().getWidth(), Helper.EPS);
             if (rectEnemy.intersects(rectPlayer)) {
                 this.setPositionY(this.getPositionY() + Helper.BOUNCE);
-                if (this.getHealth() > 0) {
+                if (this.getHealth() > 0 && count == 0) {
+                    count = Helper.PROTECT_DELAY;
                     this.setHealth(this.getHealth() - 1);
                     WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 }
             }
+        }
+        if (count > 0) {
+            count--;
         }
 
         rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
@@ -203,7 +208,7 @@ public class Player extends PlayerAbstract {
             this.checkVaCham();
             if (this.getHealth() == 0 || this.getPositionY() >= Helper.WATER_LEVEL) {
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(Helper.PLAYER_DEATH_DELAY);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

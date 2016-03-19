@@ -14,4 +14,6 @@ public class Helper {
     public static final int SHOT_DELAY = 60;
     public static final int LASER_SPEED = 5;
     public static final int WATER_LEVEL = 700;
+    public static final int PROTECT_DELAY = 180;
+    public static final int PLAYER_DEATH_DELAY = 1500;
 }

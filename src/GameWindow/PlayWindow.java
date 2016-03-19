@@ -54,6 +54,8 @@ public class PlayWindow extends GameWindow implements KeyListener {
         for (int j = (PlayWindowManager.getInstance().getObstacleLake().size() - 1) / 2; j < PlayWindowManager.getInstance().getObstacleLake().size(); j++) {
             PlayWindowManager.getInstance().getObstacleLake().get(j).draw(g);
         }
+
+        PlayWindowManager.getInstance().getInk().draw(g);
     }
 
     @Override

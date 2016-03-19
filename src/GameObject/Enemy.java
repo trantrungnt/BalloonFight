@@ -25,6 +25,7 @@ public class Enemy extends EnemyAbstract {
     private Animation animationBayMotBong;
     private Animation animationBayHaiBong;
     private int count = 0;
+    private int delay = 0;
 
     public Enemy(int positionX, int positionY, int Speed) {
         super(positionX, positionY);
@@ -122,10 +123,15 @@ public class Enemy extends EnemyAbstract {
 
             //va cham voi bong Enemy
             if (rectEnemy.intersects(rectPlayer)) {
-                if (this.getHealth() > 0) {
+                if (this.getHealth() > 0 && delay == 0) {
+                    delay = Helper.PROTECT_DELAY;
                     this.setHealth(this.getHealth() - 1);
                     WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 }
+            }
+
+            if (delay > 0) {
+                delay--;
             }
         }
     }
