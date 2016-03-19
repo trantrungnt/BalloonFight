@@ -1,6 +1,5 @@
 package GameObject;
 
-import GameObject.GameObject;
 import Main.Resources;
 
 import javax.imageio.ImageIO;

@@ -44,8 +44,8 @@ public class Resources {
             "Resources/Sprite/image 189.png";
     public static final String ENEMY_AMINATION_BLOWING_BALLOONS =
             "Resources/Sprite/image 226.png"; //hinh dong bom bong bay cua dich
-    public static final String  PLAYER_DIE= "Resources/Sprite/image 181.png";
-    public static final String  ENEMY_DIE= "Resources/Sprite/image 215.png";
+    public static final String PLAYER_DIE = "Resources/Sprite/image 181.png";
+    public static final String ENEMY_DIE = "Resources/Sprite/image 215.png";
     public static final String NEW_ENEMY = "Resources/Sprite/new_enemy.png";
     public static final String LASER = "Resources/Sprite/DAN.png";
     public static final String PLAYER_TWICE_AMINATION =
@@ -72,10 +72,6 @@ public class Resources {
             "Resources/Sound/game-over-happy.wav";
     public static final String SOUND_MENU_GAME =
             "Resources/Sound/menu-music-game.wav";
-
-
-
-
 
 
 }

@@ -1,9 +1,7 @@
 package GameWindow;
 
-import GameObject.GameObject;
 import Main.Resources;
 
-import javax.annotation.Resource;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,11 +13,10 @@ import java.io.File;
 public class AuthorWindow extends GameWindow {
     private BufferedImage author;
 
-    public AuthorWindow (){
-        try{
+    public AuthorWindow() {
+        try {
             author = ImageIO.read(new File(Resources.DETAIL));
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

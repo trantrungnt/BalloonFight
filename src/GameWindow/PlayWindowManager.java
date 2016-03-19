@@ -3,9 +3,9 @@ package GameWindow;
 import GameObject.Cloud;
 import GameObject.MenuButton;
 import GameObject.Mountain;
+import GameObject.Obstacles.Island;
 import GameObject.Obstacles.Lake;
 import GameObject.Obstacles.Land;
-import GameObject.Obstacles.Island;
 import GameObject.Obstacles.Obstacle;
 
 import java.util.Vector;

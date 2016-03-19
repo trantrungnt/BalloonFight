@@ -1,5 +1,6 @@
 package GameObject;
 
+import Main.Helper;
 import Main.Resources;
 
 import javax.imageio.ImageIO;
@@ -13,21 +14,23 @@ import java.io.IOException;
 public class Laser extends GameObject {
     public Laser(int positionX, int positionY) {
         super(positionX, positionY);
-        this.setSpeed(3);
+        this.setSpeed(Helper.LASER_SPEED);
         try {
             setSprite(ImageIO.read(new File(Resources.LASER)));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public void draw(Graphics g) {
-        g.drawImage(this.sprite,(int)this.positionX, (int)this.positionY, null);
+        g.drawImage(this.sprite, (int) this.positionX, (int) this.positionY, null);
     }
+
     public void move() {
         this.positionX += this.getSpeed();
-
     }
-    public  void update(){
+
+    public void update() {
         move();
     }
 }

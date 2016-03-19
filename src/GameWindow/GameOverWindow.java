@@ -1,6 +1,5 @@
 package GameWindow;
 
-import GameObject.AgainButton;
 import Main.Resources;
 
 import javax.imageio.ImageIO;
@@ -13,11 +12,11 @@ import java.io.File;
  */
 public class GameOverWindow extends GameWindow {
     private BufferedImage gameOver;
-    public GameOverWindow(){
-        try{
+
+    public GameOverWindow() {
+        try {
             gameOver = ImageIO.read(new File(Resources.GAME_OVER_BUTTON));
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

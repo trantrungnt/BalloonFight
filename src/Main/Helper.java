@@ -12,4 +12,6 @@ public class Helper {
     public static final int ENEMY_HEIGHT = 60;
     public static final int BOUNCE = 5;
     public static final int SHOT_DELAY = 60;
+    public static final int LASER_SPEED = 5;
+    public static final int WATER_LEVEL = 700;
 }

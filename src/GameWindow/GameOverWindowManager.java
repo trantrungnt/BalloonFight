@@ -1,7 +1,6 @@
 package GameWindow;
 
 import GameObject.AgainButton;
-import GameObject.GameOverButton;
 import GameObject.MenuButton;
 
 /**
@@ -19,7 +18,8 @@ public class GameOverWindowManager {
     public AgainButton getAgainButton() {
         return againButton;
     }
-    public MenuButton getMenuButton(){
+
+    public MenuButton getMenuButton() {
         return menuButton;
     }
 
