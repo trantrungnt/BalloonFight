@@ -23,7 +23,7 @@ public class AuthorWindow extends GameWindow {
 
     @Override
     public void draw(Graphics g) {
-        g.drawImage(author, 300, 300, null);
+        g.drawImage(author, 100, 100, null);
     }
 
 
