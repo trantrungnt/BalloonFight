@@ -163,12 +163,6 @@ public class Player extends PlayerAbstract {
                 if (this.getHealth() > 0) {
                     this.setHealth(this.getHealth() - 1);
                     WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
-                    if (rectEnemy.intersects(rectPlayer)) {
-                        if (this.getHealth() == 1) {
-                            this.setHealth(this.getHealth() - 1);
-                            WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
-                        }
-                    }
                 }
             }
         }
@@ -187,17 +181,13 @@ public class Player extends PlayerAbstract {
 
     public void update() {
         this.moveByKey();
-        this.checkObstacle();
+        if (this.getHealth() > 0) {
+            this.checkObstacle();
+        }
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
-        this.checkVaCham();
-        if (((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
-                || (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL))
-                && ((PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
-                || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL))) {
-            GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
-            WindowManager.getInstance().getWindow().getClipSoundMain().stop();
-            WindowManager.getInstance().getWindow().getClipSoundGameOver().loop(Clip.LOOP_CONTINUOUSLY);
+        if (this.getHealth() > 0) {
+            this.checkVaCham();
         }
     }
 

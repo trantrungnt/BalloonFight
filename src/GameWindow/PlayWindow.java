@@ -41,10 +41,6 @@ public class PlayWindow extends GameWindow implements KeyListener {
             enemy.draw(g);
         }
 
-        for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
-            enemy.draw(g);
-        }
-
         for (Laser laser : NewEnemyManager.getInstance().getLaserVector()) {
             laser.draw(g);
         }

@@ -31,9 +31,7 @@ public class GameOverWindowManager {
 
     private GameOverWindowManager() {
         gameOverWindow = new GameOverWindow();
-        againButton = new AgainButton(256, 600);
+        againButton = new AgainButton(400, 600);
         menuButton = new MenuButton(700, 50);
-
-
     }
 }
