@@ -2,27 +2,33 @@ package GameObject;
 
 import Main.Helper;
 
+import java.util.LinkedList;
+import java.util.Vector;
+
 /**
  * Created by TrungNT on 3/16/2016.
  */
 public class PlayManager {
     private static PlayManager _sharePointer;
 
-    public Player getPlayerKey() {
-        return playerKey;
+    private LinkedList<Player> playerVector = new LinkedList<>();
+
+    public LinkedList<Player> getPlayerVector() {
+        return playerVector;
     }
 
-    private Player playerKey;
-
-    public Player getPlayerTwice() {
-        return playerTwice;
+    public void setPlayerVector(LinkedList playerVector) {
+        this.playerVector = playerVector;
     }
 
-    private Player playerTwice;
+    public void reset() {
+        playerVector.clear();
+        playerVector.add(new Player(150, 406 - Helper.PLAYER_HEIGHT, 2, 1));
+        playerVector.add(new Player(175, 406 - Helper.PLAYER_HEIGHT, 2, 2));
+    }
 
     private PlayManager() {
-        playerKey = new Player(150, 406 - Helper.PLAYER_HEIGHT, 2, 1);
-        playerTwice = new Player(175, 406 - Helper.PLAYER_HEIGHT, 2, 2);
+        reset();
     }
 
     public static PlayManager getInstance() {

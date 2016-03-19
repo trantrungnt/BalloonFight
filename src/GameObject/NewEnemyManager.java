@@ -15,12 +15,18 @@ public class NewEnemyManager {
         return ourInstance;
     }
 
-    private NewEnemyManager() {
+    public void reset() {
+        newEnemyVector.clear();
+        laserVector.clear();
         newEnemyVector.add(new NewEnemy(1, 1, 1));
         for (NewEnemy newEnemy : newEnemyVector) {
             newEnemy.setDirectionY(1);
             newEnemy.setSpeedY(newEnemy.getSpeed());
         }
+    }
+
+    private NewEnemyManager() {
+        reset();
     }
 
     public Vector<NewEnemy> getNewEnemyVector() {

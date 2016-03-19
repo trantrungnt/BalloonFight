@@ -15,10 +15,15 @@ public class EnemyManager {
         return enemyVector;
     }
 
-    private EnemyManager() {
+    public void reset() {
+        enemyVector.clear();
         enemyVector.add(new Enemy(800, 450 - Helper.ENEMY_HEIGHT, 1));
         enemyVector.add(new Enemy(160, 240 - Helper.ENEMY_HEIGHT, 1));
         enemyVector.add(new Enemy(250, 320 - Helper.ENEMY_HEIGHT, 1));
+    }
+
+    private EnemyManager() {
+        reset();
     }
 
 

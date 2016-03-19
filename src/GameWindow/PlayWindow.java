@@ -35,14 +35,16 @@ public class PlayWindow extends GameWindow implements KeyListener {
             PlayWindowManager.getInstance().getObstacleLake().get(i).draw(g);
         }
 
-        PlayManager.getInstance().getPlayerKey().draw(g);
-
         for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
             enemy.draw(g);
         }
 
         for (Laser laser : NewEnemyManager.getInstance().getLaserVector()) {
             laser.draw(g);
+        }
+
+        for (Player player : PlayManager.getInstance().getPlayerVector()) {
+            player.draw(g);
         }
 
         for (NewEnemy newEnemy : NewEnemyManager.getInstance().getNewEnemyVector()) {
@@ -52,8 +54,6 @@ public class PlayWindow extends GameWindow implements KeyListener {
         for (int j = (PlayWindowManager.getInstance().getObstacleLake().size() - 1) / 2; j < PlayWindowManager.getInstance().getObstacleLake().size(); j++) {
             PlayWindowManager.getInstance().getObstacleLake().get(j).draw(g);
         }
-
-        PlayManager.getInstance().getPlayerTwice().draw(g);
     }
 
     @Override
@@ -63,70 +63,66 @@ public class PlayWindow extends GameWindow implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (PlayManager.getInstance().getPlayerKey().getDirectionY() == 0) {
-            PlayManager.getInstance().getPlayerKey().setSpeedY(1);
+        for (Player player : PlayManager.getInstance().getPlayerVector()) {
+            player.setSpeedY(1);
         }
 
-        if (e.getKeyCode() == KeyEvent.VK_LEFT) { //nhan phim mui ten trai de di sang trai
-            PlayManager.getInstance().getPlayerKey().setDirectionX(-1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
+        for (Player player : PlayManager.getInstance().getPlayerVector()) {
+            if (player.getTypePlayer() == 1) {
+                if (e.getKeyCode() == KeyEvent.VK_LEFT) { //nhan phim mui ten trai de di sang trai
+                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionX(-1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
 
-        if (e.getKeyCode() == KeyEvent.VK_RIGHT) { //nhan phim mui ten hphai de sang phai
-            PlayManager.getInstance().getPlayerKey().setDirectionX(1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
+                if (e.getKeyCode() == KeyEvent.VK_RIGHT) { //nhan phim mui ten hphai de sang phai
+                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionX(1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
 
-        if (e.getKeyCode() == KeyEvent.VK_DOWN) { //nhan phim mui ten xuong de di xuong
-            PlayManager.getInstance().getPlayerKey().setDirectionY(1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
+                if (e.getKeyCode() == KeyEvent.VK_DOWN) { //nhan phim mui ten xuong de di xuong
+                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionY(1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
 
-        if (e.getKeyCode() == KeyEvent.VK_UP) { //nhan phim mui ten len de bat dau bay
-            PlayManager.getInstance().getPlayerKey().setDirectionY(-1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
+                if (e.getKeyCode() == KeyEvent.VK_UP) { //nhan phim mui ten len de bat dau bay
+                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionY(-1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
+            } else if (player.getTypePlayer() == 2) {
+                if (e.getKeyCode() == KeyEvent.VK_A) //nhan phim A thi di dang trai
+                {
+                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionX(-1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
 
-        //////////////////////////////////////////////////////////////////////
-        if (PlayManager.getInstance().getPlayerTwice().getDirectionY() == 0) {
-            PlayManager.getInstance().getPlayerTwice().setSpeedY(1);
-        }
+                if (e.getKeyCode() == KeyEvent.VK_D) //nhan phim D de di sang phai
+                {
+                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionX(1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
 
-        if (e.getKeyCode() == KeyEvent.VK_A) //nhan phim A thi di dang trai
-        {
-            PlayManager.getInstance().getPlayerTwice().setDirectionX(-1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
+                if (e.getKeyCode() == KeyEvent.VK_W) //nhan phim W de di bay len
+                {
+                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionY(-1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
 
-        if (e.getKeyCode() == KeyEvent.VK_D) //nhan phim D de di sang phai
-        {
-            PlayManager.getInstance().getPlayerTwice().setDirectionX(1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
-
-        if (e.getKeyCode() == KeyEvent.VK_W) //nhan phim W de di bay len
-        {
-            PlayManager.getInstance().getPlayerTwice().setDirectionY(-1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
-        }
-
-        if (e.getKeyCode() == KeyEvent.VK_S) //nhan phim S de di xuong duoi
-        {
-            PlayManager.getInstance().getPlayerTwice().setDirectionY(1);
-            javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                if (e.getKeyCode() == KeyEvent.VK_S) //nhan phim S de di xuong duoi
+                {
+                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionY(1);
+                    javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
+                }
+            }
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        PlayManager.getInstance().getPlayerKey().setDirectionX(0);
-        PlayManager.getInstance().getPlayerKey().setDirectionY(0);
-        PlayManager.getInstance().getPlayerKey().setSpeedX(0);
-        PlayManager.getInstance().getPlayerKey().setSpeedY(1);
-
-        PlayManager.getInstance().getPlayerTwice().setDirectionX(0);
-        PlayManager.getInstance().getPlayerTwice().setDirectionY(0);
-        PlayManager.getInstance().getPlayerTwice().setSpeedX(0);
-        PlayManager.getInstance().getPlayerTwice().setSpeedY(1);
+        for (Player player : PlayManager.getInstance().getPlayerVector()) {
+            player.setDirectionX(0);
+            player.setDirectionY(0);
+            player.setSpeedX(0);
+            player.setSpeedY(1);
+        }
     }
 }

@@ -55,8 +55,7 @@ public class PlayWindowManager {
         return ourInstance;
     }
 
-    private PlayWindowManager() {
-
+    public void reset() {
         obstacleVector = new Vector<>();
         obstacleVector.add(new Land(850, 450));
         obstacleVector.add(new Land(830, 450));
@@ -101,7 +100,10 @@ public class PlayWindowManager {
         mountain = new Mountain(0, 550);
         cloud = new Cloud(502, 150);
         menuButton = new MenuButton(900, 50);
+    }
 
+    private PlayWindowManager() {
+        this.reset();
         playWindow = new PlayWindow();
     }
 

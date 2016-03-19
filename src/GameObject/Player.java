@@ -188,6 +188,14 @@ public class Player extends PlayerAbstract {
         setPositionY(getPositionY() + getSpeedY());
         if (this.getHealth() > 0) {
             this.checkVaCham();
+            if (this.getHealth() == 0 || this.getPositionY() >= Helper.WATER_LEVEL) {
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                PlayManager.getInstance().getPlayerVector().remove(this);
+            }
         }
     }
 

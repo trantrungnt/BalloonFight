@@ -115,37 +115,21 @@ public class Window extends Frame implements Runnable, MouseListener {
     public void run() {
         while (true) {
             if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) {
-                PlayManager.getInstance().getPlayerKey().update();
+                PlayManager.getInstance().getPlayerVector();
+                for (Player player : PlayManager.getInstance().getPlayerVector()) {
+                    player.update();
+                }
                 for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()){
                     enemy.update();
                 };
                 for (NewEnemy newEnemy : NewEnemyManager.getInstance().getNewEnemyVector()) {
                     newEnemy.update();
                 }
-                PlayManager.getInstance().getPlayerTwice().update();
             }
 
             /* Chuyen sang cua so Game Over */
             if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) {
-                if (((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
-                        || (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL))
-                        && (PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
-                        || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL)) {
-                    if (PlayManager.getInstance().getPlayerKey().getHealth() == 0) {
-                        PlayManager.getInstance().getPlayerKey().setHealth(-1);
-                    }
-                    if (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL) {
-                        PlayManager.getInstance().getPlayerKey().setPositionY(-100);
-                        PlayManager.getInstance().getPlayerKey().setSpeedY(0);
-                    }
-
-                    if (PlayManager.getInstance().getPlayerTwice().getHealth() == 0) {
-                        PlayManager.getInstance().getPlayerTwice().setHealth(-1);
-                    }
-                    if (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL) {
-                        PlayManager.getInstance().getPlayerTwice().setPositionY(-100);
-                        PlayManager.getInstance().getPlayerTwice().setSpeedY(0);
-                    }
+                if (PlayManager.getInstance().getPlayerVector().size() == 0) {
                     GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
                     WindowManager.getInstance().getWindow().getClipSoundMain().stop();
                     WindowManager.getInstance().getWindow().getClipSoundGameOver().loop(Clip.LOOP_CONTINUOUSLY);
@@ -207,6 +191,12 @@ public class Window extends Frame implements Runnable, MouseListener {
                     // quay lai Play Window khi an Again
                     //GameManager.getInstance().getGameWindowStack().push(PlayWindowManager.getInstance().getPlayWindow());
                     GameManager.getInstance().getGameWindowStack().pop();
+                    /* Reset */
+                    PlayWindowManager.getInstance().reset();
+                    NewEnemyManager.getInstance().reset();
+                    EnemyManager.getInstance().reset();
+                    PlayManager.getInstance().reset();
+
                     clipSoundMenu.stop();
                     clipSoundGameOver.stop();
                     clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);

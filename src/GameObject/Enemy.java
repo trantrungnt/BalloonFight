@@ -114,34 +114,18 @@ public class Enemy extends EnemyAbstract {
     }
 
     private void checkCollisionEnemyPlayer() {
+        for (Player player : PlayManager.getInstance().getPlayerVector()) {
+            Rectangle rectPlayer = new Rectangle(
+                    player.getPositionX(), player.getPositionY() + player.getSprite().getHeight() - Helper.EPS,
+                    player.getSprite().getWidth(), Helper.EPS);
+            Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
 
-        Rectangle rectPlayer = new Rectangle(
-                PlayManager.getInstance().getPlayerKey().getPositionX(),
-                PlayManager.getInstance().getPlayerKey().getPositionY() + PlayManager.getInstance().getPlayerKey().getSprite().getHeight() - Helper.EPS,
-                PlayManager.getInstance().getPlayerKey().getSprite().getWidth(),
-                Helper.EPS);
-        Rectangle rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
-
-        //va cham voi bong Enemy
-        if (rectEnemy.intersects(rectPlayer)) {
-            if (this.getHealth() > 0) {
-                this.setHealth(this.getHealth() - 1);
-                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
-            }
-        }
-
-        rectPlayer = new Rectangle(
-                PlayManager.getInstance().getPlayerTwice().getPositionX(),
-                PlayManager.getInstance().getPlayerTwice().getPositionY() + PlayManager.getInstance().getPlayerTwice().getSprite().getHeight() - Helper.EPS,
-                PlayManager.getInstance().getPlayerTwice().getSprite().getWidth(),
-                Helper.EPS);
-        rectEnemy = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
-
-        //va cham voi bong Enemy
-        if (rectEnemy.intersects(rectPlayer)) {
-            if (this.getHealth() > 0) {
-                this.setHealth(this.getHealth() - 1);
-                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
+            //va cham voi bong Enemy
+            if (rectEnemy.intersects(rectPlayer)) {
+                if (this.getHealth() > 0) {
+                    this.setHealth(this.getHealth() - 1);
+                    WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
+                }
             }
         }
     }

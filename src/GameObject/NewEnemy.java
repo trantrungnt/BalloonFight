@@ -86,9 +86,7 @@ public class NewEnemy extends EnemyAbstract {
     public void shot() {
         Laser laser = new Laser(this.positionX, this.positionY);
         NewEnemyManager.getInstance().getLaserVector().add(laser);
-
     }
-
 
     public void move() {
         setDirectionX(0);
