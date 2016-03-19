@@ -25,6 +25,10 @@ public class PlayWindowManager {
         return playWindow;
     }
 
+    public void setPlayWindow(PlayWindow playWindow) {
+        this.playWindow = playWindow;
+    }
+
     public Vector<Obstacle> getObstacleVectorLand() {
         return obstacleVector;
     }
@@ -36,7 +40,6 @@ public class PlayWindowManager {
     public Mountain getMountain() {
         return mountain;
     }
-
 
     public Cloud getCloud() {
         return cloud;

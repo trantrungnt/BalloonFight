@@ -82,6 +82,4 @@ public abstract class EnemyAbstract extends GameObject {
     public void setDirectionX(int directionX) {
         this.directionX = directionX;
     }
-
-
 }

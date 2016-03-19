@@ -179,14 +179,24 @@ public class Player extends PlayerAbstract {
 
     public void update() {
         this.moveByKey();
-        this.checkObstacle();
+        if (this.getHealth() > 0) {
+            this.checkObstacle();
+        }
         setPositionX(getPositionX() + getSpeedX());
         setPositionY(getPositionY() + getSpeedY());
-        this.checkVaCham();
-        if (((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
-                || (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL))
-                && ((PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
-                || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL))) {
+        if (this.getHealth() > 0) {
+            this.checkVaCham();
+        }
+        boolean deadPlayerKey = (PlayManager.getInstance().getPlayerKey().getHealth() == 0)
+                || (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL);
+        boolean deadPlayerTwice = (PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
+                || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL);
+        if (deadPlayerKey == true && deadPlayerTwice == true) {
+            if (deadPlayerKey) {
+                PlayManager.getInstance().getPlayerKey().setHealth(-1);
+            } else {
+                PlayManager.getInstance().getPlayerTwice().setHealth(-1);
+            }
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
             WindowManager.getInstance().getWindow().getClipSoundMain().stop();
             clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);

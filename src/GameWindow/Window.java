@@ -42,6 +42,13 @@ public class Window extends Frame implements Runnable, MouseListener {
     private static Clip clipSoundMenu;
     private static Clip clipSoundGameOver;
 
+    public static Clip getClipSoundBalloonExplode() {
+        return clipSoundBalloonExplode;
+    }
+
+    private static Clip clipSoundBalloonExplode;
+
+
     public Window() {
         //thiet lap tieu de cho cua so
         this.setTitle("Balloon Fight - Cuộc chiến khinh khí cầu");
@@ -74,6 +81,7 @@ public class Window extends Frame implements Runnable, MouseListener {
         clipSoundMenu = javaxSound.playWAV(Resources.SOUND_MENU_GAME);
         clipSoundMain = javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
         clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
+        clipSoundBalloonExplode = javaxSound.playWAV(Resources.SOUND_BREAKING_BALL);
 
         //goi phuong thuc chay Soudn MenuBackground
         playSoundMenu();
@@ -162,7 +170,8 @@ public class Window extends Frame implements Runnable, MouseListener {
                     && againButton.getPositionY() <= e.getY() && e.getY() <= againButton.getPositionY() + againButton.getSprite().getHeight()) {
                 if (GameManager.getInstance().getGameWindowStack().size() > 1) {
                     // quay lai Play Window khi an Again
-                    GameManager.getInstance().getGameWindowStack().push(PlayWindowManager.getInstance().getPlayWindow());
+                    //GameManager.getInstance().getGameWindowStack().push(PlayWindowManager.getInstance().getPlayWindow());
+                    GameManager.getInstance().getGameWindowStack().pop();
                     clipSoundMenu.stop();
                     clipSoundGameOver.stop();
                     clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
