@@ -28,7 +28,7 @@ public class Player extends PlayerAbstract {
         flip1 = x hoac x + width
         flip2 = width hoac -width
     * */
-    private Clip clipSoundGameOver;
+    //private Clip clipSoundGameOver;
 
     public Player(int positionX, int positionY, int speed, int typePlayer) {
         super(positionX, positionY);
