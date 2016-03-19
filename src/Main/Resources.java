@@ -51,6 +51,12 @@ public class Resources {
     public static final String PLAYER_TWICE_AMINATION =
             "Resources/Sprite/image_199.png"; // hinh Player Twice(dong)
 
+    //Hinh Anh Trong Level2
+    public static final String INK =
+            "Resources/Sprite/LoMuc.png"; // hinh lo muc trong cua so Play2Window
+    public static final String CAFE =
+            "Resources/Sprite/CaFe.png"; // hinh goi caFe trong cua so Play2Window
+
     //Thong tin TacGia
     public static final String DETAIL =
             "Resources/Sprite/Detail.png"; //Hinh thong tin chi tiet ve tac gia
@@ -72,6 +78,8 @@ public class Resources {
             "Resources/Sound/game-over-happy.wav";
     public static final String SOUND_MENU_GAME =
             "Resources/Sound/menu-music-game.wav";
+
+
 
 
 }

@@ -1,6 +1,7 @@
 package GameWindow;
 
 import GameObject.Cloud;
+import GameObject.Ink;
 import GameObject.MenuButton;
 import GameObject.Mountain;
 import GameObject.Obstacles.Island;
@@ -20,6 +21,12 @@ public class PlayWindowManager {
     private MenuButton menuButton;
     private Vector<Obstacle> obstacleVector;
     private Vector<Obstacle> obstacleLake;
+
+    public Ink getInk() {
+        return ink;
+    }
+
+    private Ink ink;
 
     public PlayWindow getPlayWindow() {
         return playWindow;
@@ -100,6 +107,7 @@ public class PlayWindowManager {
         mountain = new Mountain(0, 550);
         cloud = new Cloud(502, 150);
         menuButton = new MenuButton(900, 50);
+        ink = new Ink(550, 350);
     }
 
     private PlayWindowManager() {
