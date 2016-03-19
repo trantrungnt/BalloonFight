@@ -101,9 +101,8 @@ public class Player extends PlayerAbstract {
     private void checkObstacle() {
         Rectangle rectPlayer = new Rectangle(this.getPositionX(), this.getPositionY(), this.getSprite().getWidth(), this.getSprite().getHeight());
         boolean isOnObstacle = false;
+        Rectangle rectObstacle;
         for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
-            Rectangle rectObstacle;
-
             /* Xet va cham voi mep tren vat can */
             rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), obstacle.getSprite().getWidth(), Helper.EPS);
             if (rectPlayer.intersects(rectObstacle) && Math.abs(obstacle.getPositionY() - this.getPositionY() - this.getSprite().getHeight()) <= Helper.EPS) {
@@ -123,8 +122,6 @@ public class Player extends PlayerAbstract {
         }
 
         for (Obstacle obstacle : PlayWindowManager.getInstance().getObstacleVectorLand()) {
-            Rectangle rectObstacle;
-
             /* Xet va cham voi mep trai vat can */
             rectObstacle = new Rectangle(obstacle.getPositionX(), obstacle.getPositionY(), Helper.EPS, obstacle.getSprite().getHeight());
             if (rectPlayer.intersects(rectObstacle)) {
@@ -150,6 +147,22 @@ public class Player extends PlayerAbstract {
                 setSpeedY(obstacle.getPositionY() + obstacle.getSprite().getHeight() - getPositionY() + Helper.BOUNCE);
                 break;
             }
+        }
+
+        rectObstacle = new Rectangle(0, 0, Helper.WINDOW_WIDTH, Helper.EPS);
+        if (rectPlayer.intersects(rectObstacle)) {
+            setDirectionY(0);
+            setSpeedY(- getPositionY() + Helper.BOUNCE);
+        }
+
+        rectObstacle = new Rectangle(0, 0, Helper.EPS, Helper.WINDOW_HEIGHT);
+        if (rectPlayer.intersects(rectObstacle)) {
+            setSpeedX(-getPositionX() + Helper.BOUNCE);
+        }
+
+        rectObstacle = new Rectangle(Helper.WINDOW_WIDTH - Helper.EPS, 0, Helper.EPS, Helper.WINDOW_HEIGHT);
+        if (rectPlayer.intersects(rectObstacle)) {
+            setSpeedX(-getPositionX() + Helper.WINDOW_WIDTH - this.getSprite().getWidth() - Helper.EPS - Helper.BOUNCE);
         }
     }
 
