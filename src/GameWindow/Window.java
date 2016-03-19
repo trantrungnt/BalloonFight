@@ -44,6 +44,13 @@ public class Window extends Frame implements Runnable, MouseListener {
     private static Clip clipSoundMenu;
     private static Clip clipSoundGameOver;
 
+    public static Clip getClipSoundBalloonExplode() {
+        return clipSoundBalloonExplode;
+    }
+
+    private static Clip clipSoundBalloonExplode;
+
+
     public Window() {
         //thiet lap tieu de cho cua so
         this.setTitle("Balloon Fight - Cuộc chiến khinh khí cầu");
@@ -77,6 +84,7 @@ public class Window extends Frame implements Runnable, MouseListener {
         clipSoundMenu = javaxSound.playWAV(Resources.SOUND_MENU_GAME);
         clipSoundMain = javaxSound.playWAV(Resources.SOUND_MAIN_GAME);
         clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
+        clipSoundBalloonExplode = javaxSound.playWAV(Resources.SOUND_BREAKING_BALL);
 
         //goi phuong thuc chay Soudn MenuBackground
         playSoundMenu();

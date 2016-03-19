@@ -2,6 +2,7 @@ package GameObject;
 
 import GameObject.Obstacles.Obstacle;
 import GameWindow.PlayWindowManager;
+import GameWindow.WindowManager;
 import Main.Helper;
 import Main.Resources;
 
@@ -106,8 +107,10 @@ public class Enemy extends EnemyAbstract {
         if (rectEnemy.intersects(rectPlayer)) {
             if (this.getHealth() == 2) {
                 setHealth(getHealth() - 1);
+                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 if (this.getHealth() == 1) {
                     setHealth(getHealth() - 1);
+                    WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 }
             }
         }
@@ -123,8 +126,10 @@ public class Enemy extends EnemyAbstract {
         if (rectEnemy.intersects(rectPlayer)) {
             if (this.getHealth() == 2) {
                 setHealth(getHealth() - 1);
+                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 if (this.getHealth() == 1) {
                     setHealth(getHealth() - 1);
+                    WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 }
             }
         }

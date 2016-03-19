@@ -84,8 +84,8 @@ public class Player extends PlayerAbstract {
 
                 break;
         }
-        JavaxSound javaxSound = new JavaxSound();
-        clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
+        //JavaxSound javaxSound = new JavaxSound();
+        //clipSoundGameOver = javaxSound.playWAV(Resources.SOUND_GAME_OVER);
     }
 
     private void moveByKey() {
@@ -171,9 +171,11 @@ public class Player extends PlayerAbstract {
                 this.setPositionY(this.getPositionY() + Helper.BOUNCE);
                 if (this.getHealth() == 2) {
                     this.setHealth(this.getHealth() - 1);
+                    WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                     if (rectEnemy.intersects(rectPlayer)) {
                         if (this.getHealth() == 1) {
                             this.setHealth(this.getHealth() - 1);
+                            WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                         }
                     }
                 }
@@ -186,6 +188,7 @@ public class Player extends PlayerAbstract {
                     laser.getSprite().getWidth(), laser.getSprite().getHeight());
             if (rectLaser.intersects(rectPlayer)) {
                 setHealth(0);
+                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
                 break;
             }
         }
@@ -203,7 +206,7 @@ public class Player extends PlayerAbstract {
                 || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= 700))) {
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
             WindowManager.getInstance().getWindow().getClipSoundMain().stop();
-            clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
+            WindowManager.getInstance().getWindow().getClipSoundGameOver().loop(Clip.LOOP_CONTINUOUSLY);
         }
     }
 
