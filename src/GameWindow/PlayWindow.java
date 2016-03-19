@@ -70,46 +70,46 @@ public class PlayWindow extends GameWindow implements KeyListener {
         for (Player player : PlayManager.getInstance().getPlayerVector()) {
             if (player.getTypePlayer() == 1) {
                 if (e.getKeyCode() == KeyEvent.VK_LEFT) { //nhan phim mui ten trai de di sang trai
-                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionX(-1);
+                    player.setDirectionX(-1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_RIGHT) { //nhan phim mui ten hphai de sang phai
-                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionX(1);
+                    player.setDirectionX(1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_DOWN) { //nhan phim mui ten xuong de di xuong
-                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionY(1);
+                    player.setDirectionY(1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_UP) { //nhan phim mui ten len de bat dau bay
-                    PlayManager.getInstance().getPlayerVector().get(0).setDirectionY(-1);
+                    player.setDirectionY(-1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
             } else if (player.getTypePlayer() == 2) {
                 if (e.getKeyCode() == KeyEvent.VK_A) //nhan phim A thi di dang trai
                 {
-                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionX(-1);
+                    player.setDirectionX(-1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_D) //nhan phim D de di sang phai
                 {
-                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionX(1);
+                    player.setDirectionX(1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_W) //nhan phim W de di bay len
                 {
-                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionY(-1);
+                    player.setDirectionY(-1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
 
                 if (e.getKeyCode() == KeyEvent.VK_S) //nhan phim S de di xuong duoi
                 {
-                    PlayManager.getInstance().getPlayerVector().get(1).setDirectionY(1);
+                    player.setDirectionY(1);
                     javaxSound.playWAV(Resources.SOUND_PLAYER_FLY).start();
                 }
             }
