@@ -119,9 +119,10 @@ public class Window extends Frame implements Runnable, MouseListener {
                 for (Player player : PlayManager.getInstance().getPlayerVector()) {
                     player.update();
                 }
-                for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()){
+                for (Enemy enemy : EnemyManager.getInstance().getEnemyVector()) {
                     enemy.update();
-                };
+                }
+                ;
                 for (NewEnemy newEnemy : NewEnemyManager.getInstance().getNewEnemyVector()) {
                     newEnemy.update();
                 }
@@ -163,13 +164,11 @@ public class Window extends Frame implements Runnable, MouseListener {
                 clipSoundMain.loop(Clip.LOOP_CONTINUOUSLY);
             }
             AuthorButton authorButton = MenuWindowManager.getInstance().getAuthorButton();
-            if(authorButton.getPositionX() <= e.getX() && e.getX() <= authorButton.getPositionX() + authorButton.getSprite().getWidth()
-                    && authorButton.getPositionY() <= e.getY() && e.getY() <= authorButton.getPositionY() + authorButton.getSprite().getHeight()){
+            if (authorButton.getPositionX() <= e.getX() && e.getX() <= authorButton.getPositionX() + authorButton.getSprite().getWidth()
+                    && authorButton.getPositionY() <= e.getY() && e.getY() <= authorButton.getPositionY() + authorButton.getSprite().getHeight()) {
                 GameManager.getInstance().getGameWindowStack().add(AuthorWindowManager.getInstance().getAuthorWindow());
             }
-        }
-
-        else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
+        } else if (GameManager.getInstance().getGameWindowStack().peek() instanceof PlayWindow) { // hien tai dang o Play Window
             MenuButton menuButton = PlayWindowManager.getInstance().getMenuButton();
             if (menuButton.getPositionX() <= e.getX() && e.getX() <= menuButton.getPositionX() + menuButton.getSprite().getWidth()
                     && menuButton.getPositionY() <= e.getY() && e.getY() <= menuButton.getPositionY() + menuButton.getSprite().getHeight()) {
@@ -235,11 +234,9 @@ public class Window extends Frame implements Runnable, MouseListener {
     }
 
     //play Sound Menu
-    private void playSoundMenu()
-    {
+    private void playSoundMenu() {
         //kiem tra cua so hien tai co la menuGame khong va nhac chua mo thi chay nhac
-        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow)
-        {
+        if (GameManager.getInstance().getGameWindowStack().peek() instanceof MenuWindow) {
             clipSoundMain.stop();
             //load file nhac nen cua Game Balloon Fight
             clipSoundMenu.loop(Clip.LOOP_CONTINUOUSLY);
