@@ -2,6 +2,7 @@ package GameObject;
 
 import GameObject.Obstacles.Obstacle;
 import GameWindow.PlayWindowManager;
+import GameWindow.WindowManager;
 import Main.Helper;
 import Main.Resources;
 
@@ -123,8 +124,18 @@ public class Enemy extends EnemyAbstract {
 
         //va cham voi bong Enemy
         if (rectEnemy.intersects(rectPlayer)) {
+<<<<<<< HEAD
             if (this.getHealth() > 0) {
                 this.setHealth(this.getHealth() - 1);
+=======
+            if (this.getHealth() == 2) {
+                setHealth(getHealth() - 1);
+                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
+                if (this.getHealth() == 1) {
+                    setHealth(getHealth() - 1);
+                    WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
+                }
+>>>>>>> 5c04a29c6d691375d6f5c2cbe56ccb0d597d2710
             }
         }
 
@@ -137,8 +148,18 @@ public class Enemy extends EnemyAbstract {
 
         //va cham voi bong Enemy
         if (rectEnemy.intersects(rectPlayer)) {
+<<<<<<< HEAD
             if (this.getHealth() > 0) {
                 this.setHealth(this.getHealth() - 1);
+=======
+            if (this.getHealth() == 2) {
+                setHealth(getHealth() - 1);
+                WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
+                if (this.getHealth() == 1) {
+                    setHealth(getHealth() - 1);
+                    WindowManager.getInstance().getWindow().getClipSoundBalloonExplode().start();
+                }
+>>>>>>> 5c04a29c6d691375d6f5c2cbe56ccb0d597d2710
             }
         }
     }
