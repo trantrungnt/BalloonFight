@@ -19,10 +19,10 @@ public class MenuWindow extends GameWindow {
         MenuWindowManager.getInstance().getPlayButton().draw(g);
         MenuWindowManager.getInstance().getAuthorButton().draw(g);
 
-        for (Obstacle obstacleLake : MenuWindowManager.getInstance().getObstacleLake()){
+        for (Obstacle obstacleLake : MenuWindowManager.getInstance().getObstacleLake()) {
             obstacleLake.draw(g);
         }
-        for(Obstacle obstacleIsland : MenuWindowManager.getInstance().getObstacleIsland()){
+        for (Obstacle obstacleIsland : MenuWindowManager.getInstance().getObstacleIsland()) {
             obstacleIsland.draw(g);
         }
 

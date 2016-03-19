@@ -47,7 +47,6 @@ public class Player extends PlayerAbstract {
                     setBayHaiBongTinh(bigImage.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
                     setBayMotBongTinh(bigImage.getSubimage(150, 0, 50, 61));
                     setPlayDieTinh(dieImage.getSubimage(0, 0, 50, 75));
-                    //150,75
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -58,10 +57,8 @@ public class Player extends PlayerAbstract {
                 this.setPlayerDie(new Animation(Resources.PLAYER_DIE, 50, 75, 1, 3, 170));
                 this.flip1 = this.getPositionX();
                 this.flip2 = this.getSprite().getWidth();
-
                 break;
             case 2:
-                /////////////////////////////////////////////////////////////////////////////////////
                 try {
                     BufferedImage bigImagePlayTwice = ImageIO.read(new File(Resources.PLAYER_TWICE_AMINATION)); // doc SpriteSheet anh dong
                     setSprite(bigImagePlayTwice.getSubimage(0, 0, 50, 61));
@@ -70,7 +67,6 @@ public class Player extends PlayerAbstract {
                     setBayHaiBongTinh(bigImagePlayTwice.getSubimage(0, 0, 50, 61)); //lay anh dau tien lam anh tinh
                     setBayMotBongTinh(bigImagePlayTwice.getSubimage(150, 0, 50, 61));
                     setPlayDieTinh(dieImage.getSubimage(0, 0, 50, 75));
-                    //150,75
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -81,7 +77,6 @@ public class Player extends PlayerAbstract {
                 this.setPlayerDie(new Animation(Resources.PLAYER_DIE, 50, 75, 1, 3, 170));
                 this.flip1 = this.getPositionX();
                 this.flip2 = this.getSprite().getWidth();
-
                 break;
         }
         JavaxSound javaxSound = new JavaxSound();
@@ -96,15 +91,11 @@ public class Player extends PlayerAbstract {
             setSpeedX(0);
             setSpeedY(-getSpeed());
         }
-
         if (this.getDirectionX() == 1) { // di sang phai
             setSpeedX(getSpeed());
         } else if (this.getDirectionX() == -1) { //di sang trai
             setSpeedX(-getSpeed());
         }
-
-        /////////////////////////////////////////////////////////
-        //if (this.getDirectionY() == 2)
     }
 
     private void checkObstacle() {
@@ -169,13 +160,8 @@ public class Player extends PlayerAbstract {
                     enemy.getSprite().getWidth(), Helper.EPS);
             if (rectEnemy.intersects(rectPlayer)) {
                 this.setPositionY(this.getPositionY() + Helper.BOUNCE);
-                if (this.getHealth() == 2) {
+                if (this.getHealth() > 0) {
                     this.setHealth(this.getHealth() - 1);
-                    if (rectEnemy.intersects(rectPlayer)) {
-                        if (this.getHealth() == 1) {
-                            this.setHealth(this.getHealth() - 1);
-                        }
-                    }
                 }
             }
         }
@@ -198,9 +184,9 @@ public class Player extends PlayerAbstract {
         setPositionY(getPositionY() + getSpeedY());
         this.checkVaCham();
         if (((PlayManager.getInstance().getPlayerKey().getHealth() == 0)
-                || (PlayManager.getInstance().getPlayerKey().getPositionY() >= 700))
+                || (PlayManager.getInstance().getPlayerKey().getPositionY() >= Helper.WATER_LEVEL))
                 && ((PlayManager.getInstance().getPlayerTwice().getHealth() == 0)
-                || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= 700))) {
+                || (PlayManager.getInstance().getPlayerTwice().getPositionY() >= Helper.WATER_LEVEL))) {
             GameManager.getInstance().getGameWindowStack().push(GameOverWindowManager.getInstance().getGameOverWindow());
             WindowManager.getInstance().getWindow().getClipSoundMain().stop();
             clipSoundGameOver.loop(Clip.LOOP_CONTINUOUSLY);
@@ -223,7 +209,6 @@ public class Player extends PlayerAbstract {
                 this.getBayMotBongDong().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
             } else if (this.getHealth() == 0) {
                 this.getPlayerDie().draw(g, this.flip1, this.positionY, this.flip2, getSprite().getHeight());
-
             }
         } else {
             if (this.getDirectionX() == 1) { // di sang phai
@@ -240,7 +225,6 @@ public class Player extends PlayerAbstract {
             } else if (getHealth() == 0) {
                 g.drawImage(this.getPlayDieTinh(), this.flip1, this.positionY, this.flip2, getSprite().getHeight(), null);
             }
-
         }
     }
 }

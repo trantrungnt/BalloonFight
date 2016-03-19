@@ -21,10 +21,7 @@ public class PlayManager {
     private Player playerTwice;
 
     private PlayManager() {
-
-        //playerKey = new Player(900, 630 - Helper.PLAYER_HEIGHT, 2);
-
-        playerKey = new Player(150, 406 - Helper.PLAYER_HEIGHT, 2, 1);
+        playerKey = new Player(150, 406 - Helper.PLAYER_HEIGHT, 2, 2);
         playerTwice = new Player(175, 406 - Helper.PLAYER_HEIGHT, 2, 2);
     }
 

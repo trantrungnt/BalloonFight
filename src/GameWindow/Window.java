@@ -1,8 +1,6 @@
 package GameWindow;
 
 import GameObject.*;
-import GameObject.MenuButton;
-import GameObject.PlayButton;
 import Main.GameManager;
 import Main.Helper;
 import Main.Resources;
@@ -70,7 +68,6 @@ public class Window extends Frame implements Runnable, MouseListener {
 
         //dang ky lang nghe su kien chuot
         this.addMouseListener(this);
-
 
         //khoi tao doi tuong javaxsound
         JavaxSound javaxSound = new JavaxSound();
@@ -181,7 +178,6 @@ public class Window extends Frame implements Runnable, MouseListener {
 //            }
 //
 //        }
-
     }
 
     @Override

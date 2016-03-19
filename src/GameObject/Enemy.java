@@ -256,6 +256,4 @@ public class Enemy extends EnemyAbstract {
         //this.setAnimation(new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 70));
         return new Animation(Resources.ENEMY_AMINATION_BLOWING_BALLOONS, 60, 60, 1, 8, 200);
     }
-
-
 }

@@ -10,7 +10,7 @@ import java.io.IOException;
  * Created by Admin on 3/16/2016.
  */
 public class Lake extends Obstacle {
-    public Lake (int positionX, int positionY) {
+    public Lake(int positionX, int positionY) {
         super(positionX, positionY);
         try {
             setSprite(ImageIO.read(new File(Resources.LAKE)));

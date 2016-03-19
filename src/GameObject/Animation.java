@@ -47,7 +47,6 @@ public class Animation {
     }
 
 
-
     void draw(Graphics g, int x, int y, int width, int height) {
         g.drawImage(vecFrame.get(index), x, y, width, height, null);
         countTime += 17;
